@@ -82,7 +82,7 @@ Daí sai a frase de abertura que recomendamos [Rec]: **"Antes da assembleia de i
 | Condoende (Goiânia) | **Nenhum resultado público encontrado**, nem com variações do nome | Não citar até confirmar nome, CNPJ e registro no Crea-GO |
 | Marista Engenharia / "Prédio Fácil" | **Nenhum resultado encontrado.** As buscas só trouxeram imóveis no Setor Marista | Não citar. Inclusive o preço de "visita a cerca de R$ 200" é relato [R] |
 | Opus | A **Opus Incorporadora** existe e atua no alto padrão em Goiânia [F] ([MySide](https://myside.com.br/guia-goiania/historia-opus-incorporadora)). O trabalho da Cáritas para a Opus, obtido via BNI Serra, é relato [R] | Citar só com autorização da Opus e da Cáritas, e sem detalhar resultado |
-| Rodrigues da Cunha | Construtora de Goiânia de alto padrão; o portal MySide informa fundação em 2004 e o RARO Vaca Brava (Setor Bueno) entregue em outubro de 2024 [F, fonte promocional] ([MySide](https://myside.com.br/apartamento-venda-raro-vaca-brava-goiania-go)) | Descobrir com o contato qual é o **próximo** empreendimento a entregar |
+| Rodrigues da Cunha | Construtora de Goiânia de alto padrão; o portal MySide informa fundação em 2004 e o RARO Vaca Brava (Setor Bueno) entregue em outubro de 2024 [F, fonte promocional] ([MySide](https://myside.com.br/apartamento-venda-raro-vaca-brava-goiania-go)) | Era uma suposição e deixou de ser o alvo do piloto. **O piloto passou para a City** (ver `empresas-referencia-e-modelo-city.md`) |
 
 ---
 
@@ -352,7 +352,7 @@ Próximo passo: visita técnica de 30 minutos ao empreendimento e envio da lista
 ## G. WhatsApp e roteiro da reunião inicial
 
 ### G.1 Interlocutor
-- **Primeiro contato:** a pessoa que você já conhece na Rodrigues da Cunha.
+- **Primeiro contato:** a construtora-alvo agora é a **City Soluções Urbanas**; o perfil de interlocutor e as mensagens específicas estão em `empresas-referencia-e-modelo-city.md`, seções 2.4 e 2.5.
 - **Quem usa:** engenheiro responsável pela entrega ou coordenador de assistência técnica.
 - **Quem decide:** diretor técnico ou sócio.
 - O ideal é que a reunião tenha quem usa e quem decide.
@@ -407,7 +407,7 @@ Sair com **data marcada** para a visita técnica ao empreendimento e com o respo
 ## H. Plano de validação do primeiro projeto
 
 ### H.1 Escopo do piloto [Rec]
-- **Um** empreendimento da Rodrigues da Cunha, com a AGI a pelo menos 60 dias.
+- **Um** empreendimento da City, com a AGI a pelo menos 60 dias. Candidato: **City Garten**, com entrega prevista para mar/abr de 2027 segundo portais imobiliários; confirmar com a City.
 - Escopo básico, com **no máximo um opcional** (o que a construtora considerar mais útil).
 - Preço fechado, calculado pelo método da seção H.3, sem desconto. O controle está no escopo, não na margem.
 - Reunião de avaliação com a construtora até 30 dias depois da AGI.
@@ -496,7 +496,7 @@ Os percentuais incidem sobre o **preço**, não sobre o custo. Isso evita confun
 
 1. **Cáritas:** quais itens do escopo básico e quais opcionais você executa hoje com competência e equipamento próprios? Você tem câmera de inspeção de tubulação e drone? Tem engenheiro eletricista parceiro disponível?
 2. **Cáritas:** no trabalho para a Opus, quantas horas foram por etapa, que documento foi entregue e quanto foi cobrado? Podemos citar o caso?
-3. **Aruak:** qual é o próximo empreendimento da Rodrigues da Cunha a entregar, quando é a AGI e quem decide a contratação?
+3. **Aruak:** quem você conhece na City (ou quem pode te apresentar), qual a data real da AGI do City Garten e quem decide a contratação?
 4. **Ambos:** qual será a remuneração da parceria (percentual, base de cálculo e prazo), e quem emite nota para quem? Validar com o contador antes de fixar o preço.
 5. **Cáritas:** você aceita não fazer vistoria para compradores nos empreendimentos das construtoras clientes, durante o contrato e por 12 meses depois?
 
