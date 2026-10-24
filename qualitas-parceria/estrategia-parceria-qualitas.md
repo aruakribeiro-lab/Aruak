@@ -1,6 +1,6 @@
 # Parceria Entre Colunas × Qualitas Engenharia
 **Estratégia comercial para vender serviços de engenharia diagnóstica a construtoras e incorporadoras**
-Preparado para: Aruak Junqueira (Construtora Entre Colunas) · Data: 24/10/2026 · Versão 1 (hipóteses a validar)
+Preparado para: Aruak Junqueira (Construtora Entre Colunas) · Data: 24/10/2026 · Versão 2 (inclui 16 posts do Instagram; hipóteses a validar)
 
 ---
 
@@ -10,9 +10,10 @@ Preparado para: Aruak Junqueira (Construtora Entre Colunas) · Data: 24/10/2026 
 1. Card de apresentação enviado pelo Aruak (imagem "Qualitas Engenharia – Cáritas Icassatti dos Anjos").
 2. Site `qualitasengenharia.com.br` (redireciona para Google Sites): páginas Inicial, Sobre, Infiltração, Esgoto, Trincas e Fissuras.
 3. Busca na web pelo nome completo: **nenhum resultado relevante** (não há LinkedIn, Escavador ou matéria indexada).
+4. **Instagram @qualitaseng: 16 prints de posts** enviados pelo Aruak em 24/10/2026 (posts de 13/03/2026 a 24/10/2026). Análise na seção A.6.
 
 **Não acessado**
-- **Instagram @qualitaseng (88 posts e destaques):** a plataforma bloqueia leitura sem login (HTTP 429). Não analisei nenhum post. Tudo o que está aqui sobre o Instagram é lacuna, não conclusão. Ver pergunta 1 na seção 0.1.
+- **Instagram:** 72 dos 88 posts e **todos os destaques** ainda não foram vistos. As conclusões da seção A.6 valem para a amostra de 16 posts, que cobre os últimos 7 meses.
 - Portfólio, laudos-modelo, propostas e preços praticados: não fornecidos.
 - Conteúdo da conversa entre Aruak e Cáritas: não fornecido.
 
@@ -24,7 +25,7 @@ Preparado para: Aruak Junqueira (Construtora Entre Colunas) · Data: 24/10/2026 
 
 ### 0.1 As cinco perguntas essenciais (responder antes de fechar B e C)
 
-1. **Instagram e portfólio:** você consegue me mandar prints (ou o arquivo de exportação de dados do Instagram dela) dos 88 posts e dos destaques, mais 2 ou 3 laudos-modelo com dados ocultados? Preciso saber quais serviços ela de fato executa com frequência, para quem, e se há casos com construtoras.
+1. **Comprador × construtora (nova, a mais importante):** hoje a vistoria de recebimento para o comprador do imóvel é o serviço mais divulgado dela, e alguns posts falam contra a construtora ("90% dos imóveis novos entregues em Goiânia apresentam anomalias"). Ela quer continuar atendendo compradores, passar a atender construtoras, ou fazer as duas coisas com regra de conflito (seção B.3, regra 8)? Junto com isso: prints dos destaques e 2 ou 3 laudos-modelo com dados ocultados.
 2. **Capacidade e preço atual:** quantas horas por mês ela tem livres para novos contratos, quem mais trabalha com ela (o site mostra fotos de outro profissional sem nome) e quanto ela cobra hoje por vistoria cautelar e por inspeção de áreas comuns?
 3. **Foco dela:** ela quer crescer com construtoras ou prefere continuar centrada em condomínios e perícias? Ainda implanta e audita Sistema de Gestão da Qualidade (ISO 9001 / PBQP-H) ou isso ficou no passado?
 4. **A conversa de vocês:** o que ela já disse sobre parceria, remuneração e exclusividade? Os clientes do site (Caixa, Tripoli Construtora, Grupo Allpav, Grupo Recreio) são ativos? Eles ficam fora da comissão.
@@ -42,14 +43,17 @@ Enquanto isso, sigo com hipóteses identificadas.
 |---|---|---|
 | Nome | Cáritas Icassatti dos Anjos | [F] card |
 | Registro | CREA-GO 13380/D-GO; IBAPE-GO nº 212 | [F] card e site (registro confirmável no CREA-GO e IBAPE-GO) |
-| Formação | Engenharia Civil, Universidade Católica de Goiás (2005) | [F] site, Sobre |
+| Formação | Engenharia Civil, Universidade Católica de Goiás, hoje PUC Goiás | [F] site. **Ano divergente:** site diz 2005, post "Sobre a Cáritas" (13/03/2026) diz 2006. Confirmar |
 | Pós-graduações | Qualidade e Produtividade (IPOG); Engenharia Diagnóstica (INBEC); Engenharia de Avaliação de Bens e Perícias (BSSP) | [F] site |
 | Cursos | Gestão da Qualidade, ISO 9001:2015, PBQP-H 2017, Avaliação de Imóveis, Perícias | [F] site |
 | Outras credenciais | Perita cadastrada no estado de Goiás; Auditora Líder (Lead Assessor) | [D] site |
+| Perícia judicial | Post diz "Perita Judicial cadastrada no STJ desde 2015, 11 anos atuando em processos de complexidade técnica" | [D] Instagram. **Verificar:** perito de engenharia normalmente é cadastrado no tribunal estadual (TJGO) ou federal (TRF1); cadastro no STJ é incomum. Se for TJGO, corrigir antes de usar com construtoras e advogados |
+| Autoridade pública | Palestrante na Escola Politécnica e de Artes da PUC Goiás, 19/05/2026, tema "Construção 4.0"; entrevistada no Programa Negócio da TV Metrópole sobre perícia, junho/2026 | [F] Instagram |
+| Avaliações de clientes | Perfil no Google (link do Maps no post de 06/09/2026) com avaliação 5 estrelas citada (Maria José Vieira); depoimentos de clientes de vistoria de recebimento (Flávia Pollyana; Dra. Marcela e Gabriel) | [F] Instagram / [?] nota média e quantidade de avaliações no Google |
 | Experiência pericial | "Perita atuante e com mais de 150 nomeações" | [D] card |
 | Empresa | Qualitas Engenharia, fundada em 2015 | [D] site |
-| Tempo de mercado | Site diz "15 anos na construção civil"; formada em 2005, o número real é provavelmente maior (texto desatualizado) | [F] + [H] |
-| Região | Goiás, provavelmente Goiânia e região metropolitana (CREA-GO, IBAPE-GO, DDD 62) | [H] |
+| Tempo de mercado | Instagram diz 20 anos; site ainda diz 15 anos (desatualizado) | [D] Instagram |
+| Região | Goiânia (citada no post de 21/09/2026) e, provavelmente, região metropolitana | [F] Goiânia / [H] entorno |
 | Clientes/logos no site | Caixa, Tripoli Construtora, Grupo Allpav, Grupo Recreio (apenas logotipos; tipo de serviço prestado não informado) | [F] logos / [?] natureza da relação |
 | Parceiros/logos | Prothemis (Leão Engenharia), Hipertech, Miller Engenharia | [F] logos / [?] natureza |
 
@@ -65,6 +69,7 @@ Enquanto isso, sigo com hipóteses identificadas.
 | S6 | Avaliação de imóveis (venal e locativo, bens móveis e intangíveis) | site |
 | S7 | Sistemas de Gestão da Qualidade (SGQ) | site (rodapé e missão), sem descrição |
 | S8 | Assessoria a condomínios: análise de orçamentos, planejamento e acompanhamento de obras terceirizadas | site |
+| S9 | **Vistoria de recebimento de imóvel novo para o comprador** (apartamento e casa em condomínio fechado) | Instagram, 6 dos 16 posts. **É o serviço mais divulgado hoje** |
 
 O site também cita "Segurança do Trabalho" na apresentação da empresa, sem qualquer detalhe nem profissional habilitado identificado. **Não trato como serviço confirmado.**
 
@@ -86,7 +91,42 @@ O site também cita "Segurança do Trabalho" na apresentação da empresa, sem q
 4. **Logos sem contexto.** "Caixa" e "Tripoli Construtora" valem muito se houver um caso de uma linha: o que foi feito, quando, qual resultado.
 5. **Dados desatualizados** ("15 anos") e área citada sem lastro (Segurança do Trabalho).
 6. **Duas promessas genéricas** ("Tranquilize sua vida", "responsabilidade compartilhada") que não dizem o que é garantido.
-7. [?] Instagram: não analisado.
+7. Instagram: ver seção A.6.
+
+### A.6 Análise do Instagram (amostra de 16 posts, mar–out/2026)
+
+**Do que ela fala**
+
+| Tema | Posts | Curtidas (cada post) | Público visado |
+|---|---|---|---|
+| Vistoria de recebimento de imóvel (comprador) | 6 | 58 · 21 · 15 · 7 · 9 (depoimento) · e post de vistoria x inspeção | Comprador pessoa física |
+| Patologias (infiltração, fissura, fachada) | 2 | 54 · 6 | Síndico (#SindicoProfissional) |
+| Perícia e laudo pericial | 3 | 43 · 10 (TV) · 5 | Quem está em disputa |
+| Pessoal e liderança (evento de empresários, oratória) | 2 | 44 · 26 | Rede pessoal |
+| Institucional e autoridade (PUC Goiás, "Sobre a Cáritas", serviços) | 3 | 25 · 27 · 8 | Geral |
+
+**Nenhum post da amostra fala com construtora ou incorporadora como cliente.**
+
+**O que funciona**
+- **Vídeo em campo, com ela aparecendo:** o post com mais curtidas (58) é a vistoria em condomínio fechado; o segundo (54) é sobre infiltração. As artes estáticas rosa ficam entre 5 e 27.
+- **Prova social real com nome:** três depoimentos de clientes e uma avaliação 5 estrelas no Google.
+- **Autoridade verificável:** palestra na PUC Goiás e entrevista na TV Metrópole. Isso vale mais para uma construtora do que qualquer arte.
+- **A mensagem do post de 06/09** ("o laudo organiza fatos, registra evidências e estabelece o nexo causal") é exatamente o argumento de venda da vistoria cautelar.
+- **Post de 15/10 relata trabalho junto à equipe da obra:** "pronto atendimento da equipe de obra para os ajustes imediatos" e teste de estanqueidade com chuva. [H] Pode indicar que ela já trabalha em entrega lado a lado com construtora. Perguntar quem a contratou nesse caso.
+
+**O que atrapalha a venda para construtoras**
+1. **Posicionamento contra a construtora.** O serviço mais divulgado protege o comprador "garantindo as devidas correções pela construtora". Para um diretor de construtora, ela hoje parece estar do outro lado da mesa. Isso não impede a parceria, mas exige uma decisão dela (pergunta 1) e uma regra de conflito.
+2. **Estatística sem fonte:** "90% dos imóveis novos entregues em Goiânia apresentam anomalias". Sem estudo citado, um engenheiro de construtora vai perguntar a fonte. Uma perita não pode ser pega com número sem lastro. Recomendação: citar a fonte ou trocar por um dado próprio ("das últimas X vistorias que fiz, Y tinham infiltração em esquadria").
+3. **Português de Portugal em várias legendas** ("participámos", "destacámos", "partilhe", "património", "monitorização", "ligação na bio"). Sugere texto gerado por ferramenta sem revisão. Para quem vende rigor técnico, é um detalhe que pesa.
+4. **Erros nas artes:** "Perícias de" cortado no post de serviços; "PUC Goiá" na legenda da palestra.
+5. **Duas identidades visuais:** rosa com letra cursiva (Instagram) e preto com dourado (card). Para construtora, o card preto e dourado comunica melhor. Escolher uma.
+6. **Credencial a confirmar:** "cadastrada no STJ" (ver A.1).
+7. **Conta pessoal @caritasicassatti em colaboração** nos Reels: bom para alcance, mas não está claro qual das duas é o canal oficial.
+
+**Consequência para a estratégia**
+- **A Oferta 2 fica mais forte:** ela conhece por dentro o que o comprador aponta na vistoria de entrega. A construtora pode contratar esse olhar *antes* de entregar. Argumento: "corrija antes que o comprador aponte". Ver C.1.
+- **A Oferta 1 (vistoria cautelar) continua sendo a porta de entrada** porque não tem conflito com o público comprador: o vizinho não é cliente dela.
+- Toda a prova pública atual é de pessoa física e síndico. Para construtora, o primeiro caso precisa vir do piloto.
 
 ### A.4 Mapa de oportunidades por serviço (construtoras e incorporadoras)
 
@@ -98,6 +138,7 @@ O site também cita "Segurança do Trabalho" na apresentação da empresa, sem q
 | **S2 Inspeção de áreas comuns na entrega** | Incorporadora no fim de obra, antes da entrega das chaves e da assembleia de instalação do condomínio | Condomínio recém-instalado contrata engenheiro próprio e abre lista longa de pendências, misturando defeito real com uso e manutenção | 60 a 90 dias antes da entrega; reforçado quando há histórico de conflito com síndicos | U: coordenador de entrega / assistência técnica · I: jurídico, comercial · A: diretor | Relatório de inspeção das áreas comuns com checklist, fotos, classificação de anomalias e plano de correção antes da entrega. Benefício: corrigir antes de entregar e registrar o estado entregue | "Minha equipe de qualidade já faz" → oferecer olhar de terceiro independente, com método de inspeção predial. "Vai virar prova contra mim" → contrato prevê confidencialidade e o relatório é ferramenta interna antes da entrega (validar com jurídico) |
 | **S3 Engenharia diagnóstica para assistência técnica pós-obra** | Construtora com empreendimentos entregues nos últimos 5 anos e volume de chamados de garantia | Chamados de garantia em que não se sabe se é vício construtivo, falta de manutenção ou mau uso; reparo que volta | Durante o prazo de garantia; picos depois do período de chuvas | U: equipe de assistência técnica · I: engenheiro responsável pelo empreendimento, jurídico · A: diretor técnico | Laudo de causa (origem da anomalia, norma de referência, solução recomendada). Benefício: corrigir a causa certa uma vez e ter base técnica para aceitar ou recusar o chamado | "Meu engenheiro resolve" → caso de reparo que voltou. "Laudo para cada chamado é caro" → modelo por pacote de chamados críticos, não todos |
 | **S4 Assistência técnica pericial (assistente técnico da parte)** | Construtora ou incorporadora com ação judicial de vício construtivo, atraso, vizinhança | Perícia judicial em curso sem engenheiro do lado da empresa para formular quesitos e acompanhar a vistoria | Ao receber a citação ou a nomeação do perito | U: advogado da empresa · I: diretor técnico · A: dono/diretor e o advogado | Quesitos, acompanhamento da vistoria pericial, parecer técnico divergente ou concordante. Benefício: o argumento técnico da empresa chega ao processo | "Meu advogado cuida" → o advogado é quem mais pede assistente técnico. Evidência: experiência pericial declarada (150+ nomeações). **Atenção:** ela não pode atuar como assistente em processo em que é perita, nem em comarca/caso com conflito |
+| **S9 Vistoria de recebimento (comprador)** | Não se vende a construtora; é o serviço dela para pessoa física | Comprador não sabe avaliar o imóvel que recebe | Entrega das chaves | Comprador | Laudo de recebimento | **Conflito potencial** com construtoras clientes. Tratar pela regra 8 da seção B.3. A experiência é reaproveitada na Oferta 2 |
 | **S5 Inspeção com drone** | Obra com fachada alta, cobertura de difícil acesso | Inspecionar fachada e cobertura sem balancim nem alpinista | Pré-entrega, assistência técnica, vistoria cautelar de prédio vizinho alto | U: engenheiro de obra · A: diretor | Imagens georreferenciadas incorporadas ao laudo | Melhor vendido **como recurso dentro de S1, S2 e S3**, não como serviço isolado |
 | **S6 Avaliação de imóveis** | Incorporadora em permuta de terreno, dação, garantia bancária, estoque | Valor técnico para negociar terreno, permuta ou garantia | Aquisição de terreno, renegociação, inventário societário | U/A: diretor financeiro ou dono | Laudo de avaliação conforme NBR 14653 | Concorrência forte e preço pressionado; esporádico. Baixa prioridade como porta de entrada |
 | **S7 Sistema de Gestão da Qualidade (PBQP-H SiAC / ISO 9001)** | Construtora que vai entrar ou precisa manter acesso a programas habitacionais financiados pela Caixa, ou que quer padronizar processos | Exigência de certificação, perda de padrão entre obras, auditoria próxima | Antes de financiamento/programa que exija SiAC; véspera de auditoria de manutenção; após não conformidade | U: engenheiro de qualidade · I: gerente de obras · A: dono | Implantação ou manutenção do sistema, auditoria interna, preparação para auditoria externa. Benefício: chegar à auditoria preparado | "Já tenho consultoria" → oferecer auditoria interna independente. Evidência: Lead Assessor, cursos PBQP-H e ISO. **[?] Confirmar se ela atua hoje nisso** |
@@ -117,7 +158,7 @@ Critérios: urgência para o cliente, facilidade de venda, esforço de execuçã
 
 **Prioridade 1 – Vistoria cautelar de vizinhança (S1).** É a melhor porta de entrada: dor clara, momento previsível (início de cada obra), decisão rápida, escopo fácil de delimitar e repete a cada novo empreendimento da mesma construtora. Também é o serviço em que o Aruak, como engenheiro de execução, fala a língua do comprador (engenheiro de obra).
 
-**Prioridade 2 – Pacote pós-obra: inspeção de entrega (S2) + diagnóstico de chamados de garantia (S3).** Ataca o maior custo invisível da incorporadora depois do habite-se: conflito com o condomínio novo e reparo que volta. É mais consultivo e exige prova (laudos-modelo), mas tem recorrência por empreendimento e ticket maior.
+**Prioridade 2 – Pacote pós-obra: inspeção de entrega (S2) + diagnóstico de chamados de garantia (S3).** O Instagram confirma que vistoria de recebimento é o que ela mais faz hoje, só que para o comprador. Vendida para a construtora antes da entrega, é o mesmo método, do outro lado. Ataca o maior custo invisível da incorporadora depois do habite-se: conflito com o condomínio novo e reparo que volta. É mais consultivo e exige prova (laudos-modelo), mas tem recorrência por empreendimento e ticket maior.
 
 **Prioridade 3 – SGQ PBQP-H/ISO (S7), somente se a pergunta 3 confirmar atuação atual.** Receita mensal e relacionamento longo, mas ciclo de venda maior e consome muitas horas de uma operação pequena. Se ela não atua mais, a terceira oportunidade passa a ser **assistência técnica pericial (S4)**, vendida via advogados das construtoras.
 
@@ -167,9 +208,10 @@ Critérios: urgência para o cliente, facilidade de venda, esforço de execuçã
 5. **Pagamento:** em até 10 dias após cada recebimento da Qualitas, contra nota fiscal da Entre Colunas. Sem recebimento, sem comissão. Cancelamento, inadimplência ou devolução ao cliente reduzem a comissão na mesma proporção.
 6. **Despesas:** cada um arca com as próprias (deslocamento comercial do Aruak, custos técnicos da Cáritas). Despesas extraordinárias combinadas por escrito antes.
 7. **Desconto:** só a Cáritas concede. O Aruak não promete preço, prazo ou resultado técnico sem confirmação dela.
-8. **Conflito de interesse:** quando a Qualitas emite laudo diagnóstico para um cliente, a Entre Colunas **só orça o reparo desse mesmo caso se o cliente for informado por escrito da relação comercial** entre as duas. Em casos periciais ou com possibilidade de litígio, a Entre Colunas não executa o reparo. Isso protege a isenção do laudo, que é o principal ativo da Cáritas.
-9. **Encerramento:** qualquer parte encerra com 30 dias de aviso. Contratos fechados até 90 dias depois do aviso, com oportunidades já registradas, seguem comissionados.
-10. **Revisão:** reunião de resultado no fim do mês 3 e do mês 6, com os números da seção F.
+8. **Conflito de interesse com compradores:** durante o contrato com uma construtora, e por 12 meses depois, a Qualitas não faz vistoria de recebimento para compradores *no mesmo empreendimento*, e não usa dados de vistorias de compradores para atender a construtora. Fora desses empreendimentos, segue livre para atender compradores. [H] Regra sugerida; a decisão é dela.
+9. **Conflito de interesse com reparos:** quando a Qualitas emite laudo diagnóstico para um cliente, a Entre Colunas **só orça o reparo desse mesmo caso se o cliente for informado por escrito da relação comercial** entre as duas. Em casos periciais ou com possibilidade de litígio, a Entre Colunas não executa o reparo. Isso protege a isenção do laudo, que é o principal ativo da Cáritas.
+10. **Encerramento:** qualquer parte encerra com 30 dias de aviso. Contratos fechados até 90 dias depois do aviso, com oportunidades já registradas, seguem comissionados.
+11. **Revisão:** reunião de resultado no fim do mês 3 e do mês 6, com os números da seção F.
 
 ### B.4 Pontos para validar com contador e advogado antes de assinar
 
@@ -200,7 +242,8 @@ Critérios: urgência para o cliente, facilidade de venda, esforço de execuçã
 - **Cobrança:** preço por imóvel vistoriado (faixas: casa, sala/loja, apartamento, edifício área comum) + mobilização. 50% na assinatura, 50% na entrega dos laudos.
 - **Continuidade:** vistoria de encerramento ao fim da obra (compara o antes e o depois) e vistoria nas próximas obras da mesma construtora.
 
-#### Oferta 2 – "Entrega Documentada" (inspeção de áreas comuns + diagnóstico pós-obra)
+#### Oferta 2 – "Entrega Documentada" (inspeção de áreas comuns e unidades + diagnóstico pós-obra)
+- **Argumento central (vindo do Instagram):** ela faz vistoria de recebimento para compradores e sabe o que eles apontam. A construtora contrata esse olhar antes da entrega. Módulo A pode incluir **amostragem de unidades** além das áreas comuns.
 - **Público:** incorporadoras com empreendimento entrando nos últimos 90 dias de obra e/ou com empreendimentos em garantia.
 - **Problema:** lista de pendências do condomínio novo misturando defeito, uso e manutenção; chamado de garantia que volta.
 - **Promessa responsável:** um olhar independente, com método de inspeção predial, sobre as áreas comuns antes da entrega, e laudos de causa para os chamados críticos. **Não garante** ausência de reclamações nem aceitação do condomínio.
@@ -377,7 +420,13 @@ Leitura: com 10% de comissão o contrato fica saudável. **Dobrar a comissão co
 2. **Checklist "Antes de escavar"** de uma página para engenheiro de obra: o que registrar nos vizinhos e quando.
 3. **Caso curto** de reclamação de vizinho (se ela tiver e puder contar, sem identificar).
 4. **Página no site só para construtoras**, com as três ofertas, entregáveis e FAQ respondido.
-5. Instagram: série "o que o laudo mostra" com foto de anomalia + causa provável + norma. [Ajustar depois da análise dos 88 posts.]
+5. Instagram (com base na amostra de 16 posts):
+   - Mais vídeo em campo com ela aparecendo, que é o formato com mais curtidas; menos arte estática.
+   - Série "antes de escavar" com vistoria cautelar (sem identificar o vizinho) para atrair construtora sem conflito.
+   - Trocar a estatística dos 90% por número próprio contado.
+   - Revisar as legendas para português do Brasil e corrigir os erros nas artes.
+   - Fixar no topo: palestra PUC Goiás, entrevista na TV Metrópole e um post "para construtoras".
+   - Unificar identidade visual (recomendo o preto e dourado do card).
 6. Corrigir o site: responder o FAQ, atualizar o tempo de experiência, remover "Segurança do Trabalho" se não houver responsável habilitado, dar contexto a cada logo.
 
 ### 6.5 Perguntas de diagnóstico para a reunião
@@ -431,7 +480,7 @@ Meça cada etapa separadamente e ataque só a que estiver travada.
 >
 > Vi a placa da obra de vocês na [rua/bairro]. Pelo terreno, a escavação deve começar em breve, e tem [casas / prédio] encostados na divisa.
 >
-> Estou trabalhando com a engenheira Cáritas Icassatti, perita do IBAPE-GO com mais de 150 nomeações judiciais. Ela faz a vistoria cautelar dos vizinhos antes da obra: laudo por imóvel, fotos datadas e ART, para vocês terem o estado anterior registrado se aparecer reclamação.
+> Estou trabalhando com a engenheira Cáritas Icassatti, perita do IBAPE-GO com mais de 150 nomeações judiciais. Ela palestrou na PUC Goiás este ano sobre tecnologia em obra. Ela faz a vistoria cautelar dos vizinhos antes da obra: laudo por imóvel, fotos datadas e ART, para vocês terem o estado anterior registrado se aparecer reclamação.
 >
 > Faz sentido eu te mostrar um laudo-modelo em 15 minutos aí na obra? Consigo na quarta às 8h ou na quinta às 17h.
 
@@ -441,7 +490,7 @@ Variação para incorporadora perto da entrega:
 >
 > Vi que o [empreendimento] está perto da entrega. Nessa fase, a lista de pendências do condomínio novo costuma misturar defeito real com uso e manutenção.
 >
-> A engenheira Cáritas Icassatti, perita do IBAPE-GO, faz uma inspeção independente das áreas comuns antes da entrega, para vocês corrigirem o que precisa e entregarem com o estado registrado.
+> A engenheira Cáritas Icassatti, perita do IBAPE-GO, faz vistoria de recebimento para compradores e sabe exatamente o que eles apontam. Ela faz o mesmo olhar para a construtora antes da entrega, nas áreas comuns e numa amostra de unidades, para vocês corrigirem antes e entregarem com o estado registrado.
 >
 > Posso te apresentar como funciona em 20 minutos na próxima semana? Terça às 9h ou quinta às 15h?
 
