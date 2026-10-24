@@ -2,6 +2,8 @@
 **Pesquisa de mercado, base técnica e kit comercial para vender a construtoras**
 Preparado para: Aruak Junqueira (Entre Colunas) e Cáritas Icassatti (Qualitas Engenharia) · Goiânia · 24/10/2026 · Versão 1
 
+> **Nota de atualização:** a oferta para validar com a Cáritas foi revista em `proposta-inicial-oferta-caritas.md`, com base em `pesquisa-comparativa-vistoria-entrega.md`. Os valores e o percentual de remuneração comercial deste arquivo são apenas ilustrativos e não devem ser usados como proposta.
+
 **Legenda:** **[F]** fato confirmado na fonte citada · **[R]** relato da conversa entre Aruak e Cáritas, não confirmado publicamente · **[Rec]** recomendação nossa · **[H]** hipótese a validar no piloto.
 
 ---
