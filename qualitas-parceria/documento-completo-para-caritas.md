@@ -154,7 +154,7 @@ Texto sugerido para a proposta e para o documento final:
 
 > "Este trabalho foi contratado por [construtora]. Os honorários foram fixados antes da vistoria e não dependem dos achados. A responsável técnica não executa, não orça e não indica executores para os reparos deste empreendimento. Todos os achados constam deste documento, inclusive os não corrigidos, aqueles de que a contratante discorda e os não verificados."
 
-Junto com isso, proponho uma regra: **não fazer vistoria para comprador no mesmo empreendimento** durante o contrato com a construtora e por 12 meses depois. Fora desses empreendimentos, você continua livre.
+Junto com isso, proponho uma regra: **não fazer vistoria para comprador no mesmo empreendimento** (a forma de administrar esse conflito será definida com você). Fora desses empreendimentos, você continua livre.
 
 ---
 
@@ -221,8 +221,8 @@ Junto com isso, proponho uma regra: **não fazer vistoria para comprador no mesm
 
 **Respostas às objeções mais prováveis:**
 - **"Nossa equipe já faz isso."** E deve continuar fazendo. A diferença é que um terceiro identificado, com ART, registra o estado. Se a equipe interna for boa, o relatório vem curto, e isso também é informação.
-- **"Vai gerar mais pendências."** Elas já existem; a vistoria só antecipa quando vocês ficam sabendo. Vocês decidem o que corrigir antes, e o documento registra a decisão.
-- **"Não podemos atrasar a entrega."** O cronograma é montado de trás para frente a partir da data da assembleia, e a vistoria não é condição para entregar.
+- **"Vai gerar mais pendências."** Elas já existem; a vistoria só antecipa quando vocês ficam sabendo. A construtora recebe os achados priorizados para planejar as correções; as pendências permanecem registradas.
+- **"Não podemos atrasar a entrega."** O trabalho é integrado ao cronograma de entrega, com comunicação imediata dos achados relevantes.
 - **"O condomínio vai contratar outra empresa."** Pode contratar. Vocês chegam com um registro feito antes e com metodologia descrita.
 - **"Por que antes da entrega?"** Antes, o achado vira correção planejada. Depois, vira item da lista do síndico.
 - **"Para que serve depois?"** É a referência do estado na entrega, para comparar com chamados futuros. Quanto isso ajuda é uma das coisas que o piloto vai medir.

@@ -161,7 +161,7 @@ Remuneração e formato contratual ficam para depois, com os números do piloto 
 7. **Responsabilidade técnica:** qual ART você emitiria? Os especialistas emitem a própria?
 8. **Correções e reinspeções:** como prefere tratar reinspeções extras e divergências da construtora?
 9. **Casos:** a experiência com a Opus, ou outra, pode ser citada? Em que termos?
-10. **Conflito:** você aceita não fazer vistoria para comprador nos empreendimentos das construtoras atendidas, durante o contrato e por 12 meses depois?
+10. **Conflito:** você aceita não fazer vistoria para comprador nos empreendimentos das construtoras atendidas, (a forma de administrar será definida com você)?
 
 ### 8.3 Piloto que proponho (para você ajustar)
 - Um empreendimento, só áreas comuns, escopo básico mais no máximo um opcional.
