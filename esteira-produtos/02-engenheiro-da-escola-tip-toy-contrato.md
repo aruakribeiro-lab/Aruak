@@ -1,88 +1,106 @@
 # Engenheiro da Escola · Tip Toy
-## Sugestões para o contrato (para o Vicente)
+## Sugestões para o contrato (para o Vicente) · v2
 
-Entre Colunas · 01/11/2026 · documento interno · enviado por Aruak para o Vicente redigir o contrato
+Entre Colunas · 01/11/2026 · documento interno · do Aruak para o Vicente redigir o contrato
 
 ---
 
-### Contexto em 4 linhas
+### Contexto
 
-- A Tip Toy já recebe o serviço **Engenheiro da Escola**, validado na prática, mas ainda não tem contrato assinado.
-- A referência é **R$ 1.800 por mês, pagos em permuta**.
-- Pela esteira de produtos (v4), este é o produto que **mostra utilidade**. A próxima escola paga em dinheiro, e este contrato vai servir de modelo para ela.
-- O que está entre colchetes **[ ]** o Aruak precisa confirmar antes de o Vicente fechar o texto.
+- **O acordo econômico já existe** (arquivo 09): fechado em **30/09/2026**, início previsto em **outubro de 2026**, **R$ 1.800 por mês compensados na mensalidade escolar do Theo**.
+- **Falta escrever três coisas:** como o serviço prestado pela empresa quita uma despesa da família, quem reconhece essa quitação e quanto dinheiro a Entre Colunas desembolsa para atender a escola.
+- Este contrato será o modelo para a próxima escola, que paga em dinheiro.
+- O que está entre **[ ]** o Aruak confirma antes do texto final.
 
 ---
 
 ### 1. Partes e objeto
-- **Contratada:** Entre Colunas [razão social, CNPJ], com responsável técnico Eng. Aruak Junqueira, CREA 1014776589 D/GO.
-- **Contratante:** [razão social da Tip Toy, CNPJ, endereço da unidade].
-- **Objeto:** assessoria técnica mensal de manutenção predial da unidade [endereço], na modalidade "Engenheiro da Escola". O objetivo é manter a escola segura, com os documentos em dia e as decisões de manutenção bem fundamentadas.
+- **Prestadora:** Entre Colunas [razão social, CNPJ], responsável técnico Eng. Aruak Junqueira, CREA 1014776589 D/GO.
+- **Contratante:** [razão social da Tip Toy, CNPJ, endereço da unidade, quem assina].
+- **Interveniente (se o contador e o Vicente concluírem que é necessário):** [responsável financeiro escolar do Theo], que reconhece que o crédito da prestação de serviços quita a mensalidade.
+- **Objeto:** assessoria técnica mensal de manutenção predial da unidade [endereço], na modalidade "Engenheiro da Escola".
 
-### 2. O que está incluído (escopo)
-Descrever em lista fechada, para que nada além disso seja entendido como incluso:
-1. [1] visita técnica por mês, com checklist e fotos, em dia e horário combinados, fora do horário de aula sempre que possível.
-2. Relatório mensal curto com semáforo (verde, amarelo, vermelho), pendências e as 3 prioridades do mês.
-3. Calendário de vencimentos com aviso 60 dias antes, por exemplo: CERCON, extintores, limpeza da caixa d'água, alvará sanitário e de funcionamento, laudos. [confirmar a lista com o Aruak]
-4. Cotação de serviços: até [2] serviços por mês, com até 3 propostas de fornecedores e um comparativo técnico. **A contratação e o acompanhamento dos fornecedores são da escola.**
-5. Orientação técnica por WhatsApp em horário comercial, com resposta em até 1 dia útil.
-6. [Itens próprios de escola, a confirmar: verificação visual do parquinho, de guarda-corpos, vidros, tomadas ao alcance de crianças e portões.]
+### 2. Escopo incluído (lista fechada)
+1. [1] visita técnica programada por mês, fora do horário de aula sempre que possível, com acesso agendado com a direção.
+2. Ronda visual das áreas acessíveis, com checklist e fotos **somente das instalações, sem crianças**.
+3. Relatório mensal curto: semáforo, pendências, 3 prioridades e limitações da visita.
+4. Calendário de vencimentos com aviso 60 dias antes [lista a confirmar: CERCON, extintores, limpeza da caixa d'água, alvarás, laudos].
+5. Cotações: até [1] demanda delimitada por mês, até 3 propostas e comparativo com critério escrito. **A contratação, a fiscalização e a aceitação são da escola.**
+6. Orientação por WhatsApp em horário comercial, resposta em 1 dia útil, até [4] consultas por mês.
+7. [Itens de escola, se praticados hoje: verificação visual de parquinho, guarda-corpos, vidros, tomadas ao alcance de crianças e portões.]
+8. **Ocorrência crítica:** aviso imediato ao responsável da escola, com horário, orientação e encaminhamento registrados.
 
-### 3. O que não está incluído
-Deixar explícito, porque é aqui que nasce o "achei que estava incluso":
-- Execução de obras, reparos ou serviços.
-- Acompanhamento ou fiscalização de obra ou de serviço de terceiros.
-- Laudos e projetos que exigem ART própria, como laudo elétrico, SPDA, projeto de incêndio, inspeção predial e laudo de parquinho. Esses serviços são cotados à parte.
-- Atendimento de emergência fora do horário comercial.
-- Responsabilidade por serviços contratados pela escola com terceiros, mesmo quando a Entre Colunas fez a cotação.
-- **Regra geral:** qualquer coisa fora desta lista só é feita com orçamento aprovado por escrito.
+**Quem recebe os alertas:** [nome]. **Quem pode autorizar despesa:** [nome].
 
-### 4. Remuneração e permuta
-- **Valor de referência do serviço: R$ 1.800 por mês.** O valor cheio precisa constar no contrato, mesmo pago em permuta.
-- **Forma de pagamento: permuta por [o que a Entre Colunas recebe: mensalidade escolar de quem? valor? quantos meses?].**
-- **Equivalência:** se o valor permutado for menor que R$ 1.800, a diferença é paga em dinheiro até o dia [x]. Se for maior, [definir].
-- **Fim da permuta:** se a permuta deixar de existir (por exemplo, saída do aluno ou mudança de mensalidade), o pagamento passa a ser em dinheiro, no mesmo valor, a partir do mês seguinte, ou qualquer das partes pode encerrar com o aviso da cláusula 6.
-- **Nota fiscal e imposto:** ⚠️ ponto para o **Ivan confirmar com o contador** antes de assinar. Em geral, permuta de serviço também é receita e gera nota e imposto. Se for assim, a Entre Colunas paga cerca de 13% (R$ 234 por mês) em dinheiro sem receber dinheiro. O contrato e as notas precisam refletir o que o contador definir.
-- **Reajuste:** anual pelo IPCA.
+### 3. Fora do escopo
+- Execução de obra, reparo ou serviço.
+- Acompanhamento, medição ou fiscalização de obra ou serviço de terceiros.
+- Laudos e projetos com ART própria (elétrica, SPDA, incêndio, inspeção predial, parquinho), que recebem proposta à parte.
+- Emergência fora do horário comercial.
+- Qualquer item fora da lista só com orçamento aprovado por escrito.
 
-### 5. Prazo
-- Prazo indeterminado, a partir de [data de início; considerar o início real do serviço]. **Sem fidelidade.**
-- Para a próxima escola (modelo): implantação maior, paga no início e sem devolução, e depois mensalidade menor de manutenção. Na Tip Toy, a implantação já aconteceu na prática; o contrato só registra a rotina.
+### 4. Remuneração e compensação
+- **Valor do serviço: R$ 1.800 por mês**, sempre escrito, mesmo quando compensado.
+- **Forma:** compensação com a mensalidade escolar do Theo, na competência [mês], conforme o contrato escolar [nº/data].
+- **Comprovação mensal (3 documentos):** (1) aceite do serviço pela escola; (2) documento fiscal aplicável, conforme orientação do contador; (3) **confirmação escrita da escola de qual mensalidade foi quitada**.
+- **Quando os valores deixam de coincidir:**
 
-### 6. Rescisão
-- Qualquer parte pode encerrar com aviso prévio de 30 dias, sem multa.
-- Os serviços do mês em curso são devidos.
-- [Se houver implantação cobrada, ela não é devolvida.]
+| Situação | Tratamento sugerido |
+|---|---|
+| Mensalidade menor que R$ 1.800 (bolsa, desconto, reajuste diferente) | A escola paga a diferença em dinheiro à Entre Colunas até o dia [x] |
+| Mensalidade maior que R$ 1.800 | A família paga a diferença à escola, como paga hoje |
+| Matrícula, material, férias e meses sem mensalidade | O serviço do mês é pago em dinheiro ou o crédito fica para a competência seguinte [escolher] |
+| Reajuste da engenharia (IPCA) em data diferente do reajuste escolar | Cada valor segue seu próprio reajuste; a diferença segue as regras acima |
+| Saída do aluno ou fim da compensação | A partir do mês seguinte, pagamento em dinheiro no valor vigente, ou encerramento com o aviso da cláusula 6 |
 
-### 7. Responsabilidade técnica
-- A Entre Colunas emite ART do serviço de assessoria.
-- A responsabilidade da Entre Colunas se limita ao escopo da cláusula 2: ela orienta, registra e alerta, e a decisão e a contratação são da escola.
-- A Entre Colunas não responde por defeito de serviço de terceiros nem por pendência que a escola tenha sido alertada por escrito e não tenha tratado.
-- **O alerta registrado no relatório ou por escrito é a prova de diligência para os dois lados.**
+- **Reajuste:** IPCA anual, data-base [data da assinatura].
+
+### 5. Pergunta fiscal completa (Ivan com o contador, antes de assinar)
+1. Quem é o contratante, quem é a prestadora e quem é o responsável financeiro escolar; o que precisa ser documentado entre eles.
+2. Emissão de NFS-e pela Entre Colunas: base de cálculo, alíquota efetiva no regime da empresa e retenções.
+3. **Como lançar a contrapartida que beneficia a família:** pró-labore, distribuição de lucro ou outro tratamento entre empresa e sócio.
+4. **Quanto a Entre Colunas desembolsa em dinheiro por mês.** Os R$ 234 eram só 13% de R$ 1.800 numa simulação; o valor real depende do regime e do enquadramento.
+5. No controle financeiro: **R$ 0 de entrada bancária** em cada mês de compensação integral, com o custo das horas e o imposto registrados como saída.
+
+### 6. Prazo e encerramento
+- Vigência a partir de [data real da 1ª visita; a assinatura leva a data real em que for assinada]. **Sem fidelidade.**
+- Qualquer parte encerra com aviso de 30 dias, sem multa; o período atendido é devido; os registros são entregues à escola.
+
+### 7. Responsabilidade
+- A Entre Colunas observa, orienta, registra e alerta dentro do escopo da cláusula 2. A escola decide e contrata. Cada fornecedor responde pelo próprio serviço.
+- O alerta escrito documenta a comunicação; o contrato **não** promete isenção automática por qualquer falha de terceiro.
+- ART correspondente ao serviço e à participação efetiva. **Verificar com o CREA-GO a regularização do período já trabalhado desde outubro**, com as datas reais.
+- Se a Entre Colunas assumir execução, medição ou fiscalização em outro contrato, essas obrigações ficam descritas naquele contrato.
 
 ### 8. Obrigações da escola
-- Dar acesso às áreas e aos documentos (alvarás, CERCON, contratos de manutenção, laudos).
-- Indicar um responsável interno como ponto de contato.
-- Avisar ocorrências (vazamento, queda de energia, acidente) assim que acontecerem.
+- Acesso agendado às áreas e aos documentos.
+- Um responsável interno como contato.
+- Aviso imediato de ocorrências.
 
-### 9. Imagem, dados e crianças
-- **Nenhuma foto com criança.** As fotos do relatório mostram apenas instalações.
-- Dados da escola e dos relatórios são confidenciais (LGPD).
-- **Uso do caso:** a Tip Toy autoriza a Entre Colunas a citá-la como cliente e a usar fotos das instalações, sem crianças, em apresentações comerciais. [Confirmar com a Tip Toy; é importante porque este é o primeiro caso do produto.]
+### 9. Dados, imagem e crianças
+- Nenhuma foto com criança.
+- Confidencialidade e LGPD. Definir quem acessa os dados: Aruak, Yan, revisores e, se for o caso, ferramentas de IA usadas para redigir relatórios.
+- **Uso do nome, de imagens das instalações e de depoimento:** autorização específica, em documento separado, obtida de fato. Não vai como cláusula padrão.
 
-### 10. Conflito de interesse
-Se a Entre Colunas apresentar proposta para executar uma obra na escola, ela avisa por escrito que é proposta própria e a apresenta ao lado de outras. [Confirmar com o Aruak se esta cláusula entra.]
+### 10. Obras futuras
+- O arquivo 09 registra condições específicas da Tip Toy para administração de obras, com **faixas de 0%, 10% e 8%**; o catálogo geral indica **15%**. **O Vicente confere com o Aruak e a escola o que foi pactuado**, os limites das faixas e a base de cálculo.
+- Obra futura sempre em proposta e contrato próprios, com aceite independente quando a Entre Colunas for a executora.
 
 ### 11. Foro
 Goiânia/GO.
 
 ---
 
-### Pendências que o Aruak confirma antes do texto final
+### Pendências antes do texto final
 
-1. Razão social, CNPJ e endereço da Tip Toy e quem assina por ela.
-2. Quantas visitas por mês são feitas hoje e o que é entregue (relatório? calendário?).
-3. O que exatamente é a permuta (o que a Entre Colunas recebe, de que valor, por quanto tempo).
-4. A data de início real do serviço.
-5. Se já foi emitida ART.
-6. Se a Tip Toy aceita a cláusula de uso do caso.
+| Pendência | Quem |
+|---|---|
+| Razão social, CNPJ, endereço e signatário da Tip Toy | Aruak |
+| Data real da 1ª visita, visitas praticadas, áreas cobertas e o que é entregue hoje | Aruak |
+| Competências já compensadas, contrato escolar e comprovantes | Aruak |
+| Quem recebe alertas e quem autoriza despesas na escola | Aruak com a direção |
+| Tratamento fiscal e contábil da compensação | Ivan com o contador |
+| Condições de obras (0%, 10%, 8% ou 15%) | Vicente com o Aruak |
+| ART e regularização do período trabalhado | Aruak no CREA-GO |
+
+**As duas respostas que fecham a Tip Toy:** quanto a compensação economiza para a família, quanto custa à empresa (horas e imposto) e como as duas partes comprovam a quitação a cada mês.
