@@ -157,7 +157,9 @@ Aplicando a tabela do Bora a uma obra com o mesmo perfil do exemplo deles, a tax
 
 ## 4. Ajustes obrigatórios para a nossa realidade
 
-0. **Choque com a frente atual de reformas com preço fechado.** A regra do Bora (empreita só abaixo de uma semana, até 3 itens e sem demolição) bate com a nossa frente de "reformas com preço e data fechados" até 18/12. **Recomendação:** manter preço fechado (× 1,43) só para serviços pequenos e empacotados, como o banheiro sem quebrar (3 a 4 dias) e a pintura; **reforma com demolição ou com mais de uma semana passa para Gestão de Obra**. A decisão é sua, porque mexe na frente atual.
+0. **DECIDIDO pelo Aruak em 01/11/2026:** **preço fechado só no Reparo Rápido (banheiro e cozinha); todo o resto é administração** no modelo desta ficha. Avatares e filtros de entrada no documento 04.
+0. **Fixo mensal pelo modelo real do Bora** (aba "Custo fixo" do EVF, ver documento 05): custos gerais rateados pelo prazo (caixa de projeto, uniformes, quadro, plaquinhas, placa, ART, EPI, escritório) + manual do proprietário e overdelivery + combustível e horas da equipe no mês, com imposto por cima. Na obra-exemplo de R$ 300 mil e 4 meses, isso dá **cerca de R$ 5.000 por mês** (em vez dos R$ 4.414 da seção 3) e a gestão total fica perto de **16,5% do custo**. A taxa também incide sobre a mão de obra e sobre reembolsos.
+0. **Vender a obra dentro do EVF:** o EVF já informa ao cliente o fixo mensal e a estimativa das taxas. Quem compra o EVF decide a obra sabendo quanto custa a gestão.
 0. **O Aruak fora do papel de mestre.** Hoje 60% das horas do Aruak são de canteiro (arquivo 01). No modelo do Bora, quem faz a presença diária é o gestor de campo (o Yan ou um estagiário treinado), com empreiteiros-núcleo, e o Aruak fica no estratégico. Isso é o que permite chegar à meta de 6 h por semana no canteiro.
 1. **Conselho e lei:** os modelos são de arquiteto (CAU, RRT, Lei 12.378). Trocar por **CREA-GO, ART e Lei 5.194/66**.
 2. **Uso de imagem:** o contrato do Bora dá à empresa o direito de usar imagens "sem aprovação do contratante". Isso contraria o que já decidimos (autorização específica e separada) e a LGPD. **Retirar.**

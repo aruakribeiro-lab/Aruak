@@ -19,6 +19,14 @@ Status na esteira: **T** (teste). Documento interno. Os números são estimativa
 - **Dor:** a responsabilidade pela conservação é do síndico (art. 1.348 do Código Civil), mas ele não sabe o que vence, quando vence e quem assina.
 - **Gatilho de compra:** susto recente, cobrança do CBMGO, assembleia cobrando, troca de síndico ou indicação.
 
+### Avatar e filtro de entrada (detalhe no documento 04)
+- **Prédio com 20 anos ou mais**, sem engenheiro fixo e **sem administradora que já faça a parte técnica**.
+- **Arrecadação de R$ 25 mil por mês ou mais** (o plano Essencial a R$ 1.600 fica em até ~6%). Abaixo disso, o produto aperta o caixa do condomínio e vira cancelamento.
+- **Síndico com pelo menos 12 meses de mandato pela frente**, ou reeleito com frequência. Sem fidelidade, a troca de síndico é o maior risco de saída.
+- Mostra a pasta de documentos (mesmo incompleta), sabe quem aprova a despesa e quando, e aceita que obra e acompanhamento de obra ficam fora.
+- **Eliminatórios:** quer fiscalização de obra de graça; quer que o engenheiro assine o que não viu; condomínio em litígio com a construtora procurando laudo (é outro produto); inadimplência alta sem verba aprovada.
+- **No Trípoli:** conferir arrecadação real (a estimativa do dossiê vai de R$ 15 mil a R$ 35 mil) e o tempo de mandato da Carmem antes de fechar o preço.
+
 ## 2. Promessa
 
 > O síndico deixa de *achar* que está em dia e passa a *provar* que está em dia: visita programada, calendário do que vence e relatório curto para a assembleia, assinado por engenheiro.

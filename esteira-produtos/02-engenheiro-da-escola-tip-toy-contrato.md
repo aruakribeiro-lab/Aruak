@@ -10,6 +10,7 @@ Entre Colunas · 01/11/2026 · documento interno · do Aruak para o Vicente redi
 - **O acordo econômico já existe** (arquivo 09): fechado em **30/09/2026**, início previsto em **outubro de 2026**, **R$ 1.800 por mês compensados na mensalidade escolar do Theo**.
 - **Falta escrever três coisas:** como o serviço prestado pela empresa quita uma despesa da família, quem reconhece essa quitação e quanto dinheiro a Entre Colunas desembolsa para atender a escola.
 - Este contrato será o modelo para a próxima escola, que paga em dinheiro.
+- **Avatar da próxima escola (documento 04):** escola particular com prédio próprio, ou alugado com a manutenção a cargo dela; direção ou mantenedora decide e **paga em dinheiro**; pressão de alvarás (Bombeiro, Vigilância Sanitária). **Eliminatórios:** pagamento em mensalidade escolar e obra inclusa na assessoria.
 - O que está entre **[ ]** o Aruak confirma antes do texto final.
 
 ---
