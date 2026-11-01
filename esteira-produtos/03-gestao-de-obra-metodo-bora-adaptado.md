@@ -1,6 +1,6 @@
 # Produto · Gestão de Obra no modelo Bora na Obra, adaptado à Entre Colunas
 
-Análise e modelagem · v1 · Entre Colunas · 01/11/2026 · documento interno
+Análise e modelagem · v2 (com módulos 7 e 8) · Entre Colunas · 01/11/2026 · documento interno
 Fonte: material da Certificação Método BORA (CMB, fev/2022) no Drive do Aruak, cruzado com a esteira v4, o arquivo 01 (contexto real) e o arquivo 09 (decisões ativas).
 
 ---
@@ -9,7 +9,7 @@ Fonte: material da Certificação Método BORA (CMB, fev/2022) no Drive do Aruak
 
 | Material | Situação |
 |---|---|
-| Apostila completa (43 MB) | **Lida até a página 294**: módulos 0, 1, 2, 3 (projeto, só passado por cima) e 4 até "As bases de um cronograma". O Drive corta o texto de arquivos grandes. **Faltam os módulos 5 a 8**, inclusive o **módulo 7, Metodologia de Execução BNO**, que é o centro da gestão de obra |
+| Apostila completa (versão comprimida, 647 páginas) | **Lida a parte de negócio e gestão:** módulos 0, 1, 2, 4, **7 (Metodologia de Execução BNO, completo)** e **8 (negócio, completo)**. Módulo 3 (projeto) passado por cima. **Módulos 5 e 6 não lidos em detalhe:** são técnicos (fundação, estrutura, instalações, acabamentos) e não mudam o modelo de negócio; ficam como referência para os checklists de fiscalização |
 | Modelos do módulo 7 | Lidos: relatório financeiro mensal (com a tabela real de taxas), controle de medição, relatório semanal, checklist de fiscalização, checklist da obra memorável, arquivos do Sistema Gestão BNO (RDO, recibo, proposta) |
 | Contratos | Lidos: execução de obra, acompanhamento de obra, consultoria. Não lidos: projeto de arquitetura, prestação de serviço, termo de recebimento |
 | Padrões (Asana) | Lidos: reforma de apartamento (obra), EVF/OE. Pós-obra veio vazio |
@@ -42,7 +42,8 @@ Cliente entra por um produto menor e sobe: **projeto → EVF → orçamento exec
 | Etapa | Taxa | Lógica |
 |---|---|---|
 | Demolições e retiradas; alvenarias e vedações | 25% | Etapa barata e trabalhosa |
-| Mobilização; locação de equipamentos; estrutura; instalações; forro de gesso | 20% | |
+| Mobilização; locação de equipamentos; estrutura; forro de gesso | 20% | |
+| Instalações | 25% na apostila (20% no relatório real) | Etapa de risco e retrabalho |
 | Forros especiais; pinturas | 15% | |
 | Pisos e revestimentos; serviços não listados | 10% | |
 | Louças e metais | 7% | |
@@ -52,6 +53,36 @@ Cliente entra por um produto menor e sobe: **projeto → EVF → orçamento exec
 Argumento de venda: "a taxa diminui conforme o item fica mais caro e exige menos de nós; em determinado momento da obra a gente se paga" (a pesquisa de preço em marcenaria ou marmoraria economiza mais que a taxa).
 
 **Resultado no exemplo deles:** custo direto R$ 395 mil, taxas R$ 38,8 mil (**9,8%**), fixo R$ 17,2 mil (4 meses). **Total da gestão: R$ 56 mil, ou 14,2% sobre o custo.**
+
+### O que o módulo 7 acrescenta (Metodologia de Execução BNO)
+
+**Modalidades de obra e quando usar cada uma**
+- **Empreita (preço fechado):** "se você quiser se posicionar como maestro, não faça obra por empreita". O preço vem de suposição, e o construtor vive no modo "estou rico, estou pobre". **Regra deles:** empreita só se a obra durar **menos de uma semana** e tiver **até 3 itens controláveis**. **Nunca com demolição**, porque a surpresa vira aditivo ou prejuízo.
+- **Administração convencional (15% a 20% fixo sobre tudo):** é flexível, mas tem um risco: no acabamento, que é a etapa mais cara, o cliente já conhece o mestre e **dispensa o administrador para não pagar a porcentagem**. A tabela decrescente do Bora existe para tirar esse incentivo.
+- **Parâmetros de mercado segundo eles:** administração convencional 15%; empreita com BDI de 25% a 35%; no método deles, "é justo ganhar entre **10% e 15% do valor total da obra**". Obra pequena e barata precisa de percentual maior.
+
+**Como montam o fixo mensal**
+- Somam as horas de **deslocamento, fiscalização, telefonemas de cotação, documentos do administrativo e conversa com o operacional**, por dia, semana e mês, e multiplicam pela hora (sem lucro).
+- Acrescentam custos indiretos (uniforme, placas, RT, brinde) **rateados pelo prazo do cronograma**.
+- **O fixo vale só para os meses do cronograma.** Se a obra passar do prazo, não cobram mais meses. Se o cliente acrescenta escopo, apresentam um novo cronograma.
+- **O lucro e o risco ficam na taxa variável.** O reembolso também paga taxa.
+
+**Controle pelo pagamento**
+- "Só o que está realizado está pago. Não existe pagamento adiantado." O empreiteiro que fez 30% da parede recebe 30%; se fez mal, não recebe. **Quem libera o pagamento é o gestor**, depois da medição e do checklist de aceite.
+- Contratam **pequenos empreiteiros que lideram a própria equipe** (núcleos). O gestor fala com o líder de cada frente e **não ocupa o lugar do mestre**: "se o gestor se ocupa da posição do mestre, deixa de fazer o administrativo e o estratégico".
+- Fornecedor responde pelo que forneceu; a documentação mostra quem acionar no pós-obra.
+
+**A obra que vende a próxima**
+- Limpeza diária, armário para mochilas, placas (vizinhos, EPI, horários, "marque a gente nos stories"), presente e carta para cada vizinho, capacete com o nome do cliente, **quadro de gestão à vista** (Kanban por cores de equipe) e cronograma na parede, projeto atualizado na parede, mapa de fotos com os mesmos ângulos do projeto para o antes e depois.
+- **Combinam o depoimento no início:** "meu objetivo é chegar no final e ter um depoimento seu dizendo que valeu a pena".
+
+**A entrega**
+- **Manual do proprietário (NBR 14037)** montado durante a obra: cada item instalado já entra no manual com fornecedor e manutenção.
+- Vistoria com o cliente e **Termo de Recebimento com ressalvas**, que viram a lista do pós-obra.
+- **Caixa reservado para o pós-obra** e presente (overdelivery) já incluído no preço.
+
+**Módulo 8 (negócio)**
+Planejamento por **OKR anual dividido em trimestres**; "a família é um prato de cristal"; "contrate porque cresceu, não para crescer"; sair da esfera do técnico para a do dono.
 
 ### As três esferas da gestão (é assim que vendem e entregam)
 - **Planejamento (estratégico):** estudo e compatibilização dos projetos, visita técnica, análise crítica (prazos longos de marcenaria, vidro e marmoraria; regras do condomínio; mão de obra disponível), orçamento executivo, cronograma real e cronograma do cliente, logística do canteiro. Reforma: 7 a 15 dias; casa do zero: 30 a 45 dias. Fecha com **reunião de apresentação do planejamento e Termo de Recebimento do Planejamento** (vídeo Loom antes).
@@ -126,12 +157,14 @@ Aplicando a tabela do Bora a uma obra com o mesmo perfil do exemplo deles, a tax
 
 ## 4. Ajustes obrigatórios para a nossa realidade
 
+0. **Choque com a frente atual de reformas com preço fechado.** A regra do Bora (empreita só abaixo de uma semana, até 3 itens e sem demolição) bate com a nossa frente de "reformas com preço e data fechados" até 18/12. **Recomendação:** manter preço fechado (× 1,43) só para serviços pequenos e empacotados, como o banheiro sem quebrar (3 a 4 dias) e a pintura; **reforma com demolição ou com mais de uma semana passa para Gestão de Obra**. A decisão é sua, porque mexe na frente atual.
+0. **O Aruak fora do papel de mestre.** Hoje 60% das horas do Aruak são de canteiro (arquivo 01). No modelo do Bora, quem faz a presença diária é o gestor de campo (o Yan ou um estagiário treinado), com empreiteiros-núcleo, e o Aruak fica no estratégico. Isso é o que permite chegar à meta de 6 h por semana no canteiro.
 1. **Conselho e lei:** os modelos são de arquiteto (CAU, RRT, Lei 12.378). Trocar por **CREA-GO, ART e Lei 5.194/66**.
 2. **Uso de imagem:** o contrato do Bora dá à empresa o direito de usar imagens "sem aprovação do contratante". Isso contraria o que já decidimos (autorização específica e separada) e a LGPD. **Retirar.**
 3. **Cláusula que tira a contratada de qualquer processo** (11.9 do contrato de execução): juridicamente frágil. **Vicente revisa.**
 4. **Multa de 10% na rescisão** (contrato de execução): para obra pode ficar, mas sem conflitar com a regra de "sem fidelidade" que vale para os mensais (condomínio e escola).
 5. **Alçadas:** o Bora usa teto de R$ 500 no cartão do cliente. A Entre Colunas já tem Korran (compra até R$ 1.000) e Yan (mão de obra até R$ 2.000 com dois referenciais). **Escrever no contrato qual alçada vale na obra do cliente.**
-6. **Prazo e garantia:** adotar a garantia do Bora (sem fixo no período de atraso causado pela gestão) só depois de a primeira obra mostrar que o planejamento é cumprido. Antes disso é promessa sem medida (regra 6).
+6. **Prazo e garantia:** a regra do módulo 7 é mais forte que a do contrato: o fixo vale só para os meses do cronograma, seja qual for a causa do atraso (salvo escopo novo com cronograma novo). Adotar só depois de a primeira obra mostrar que o planejamento é cumprido. Antes disso é promessa sem medida (regra 6).
 7. **Tip Toy:** as condições combinadas (até R$ 100 mil sem taxa; R$ 101 a 250 mil 10%; acima de R$ 251 mil 8%) são um caso especial. Não usar como tabela geral.
 8. **Ferramenta:** o Bora vende o Sistema Gestão BNO. **Nenhum software pago antes de janeiro/2027**: usar o Painel de Obras, o Mais Controle e planilhas.
 9. **Preços de 2022:** EVF e orçamento executivo a R$ 3 mil a R$ 5 mil eram valores de 2022 em Brasília. Recalcular pela nossa hora.
@@ -172,8 +205,8 @@ A esteira v4 já diz: gestão de obra é o motor de lucro e precisa de **uma obr
 
 | O que preciso | Para quê |
 |---|---|
-| **Apostila dos módulos 5 a 8, principalmente o módulo 7 (Metodologia de Execução BNO)**, em PDF separado ou nas aulas | Detalhe da taxa variável, mobilização, medição, fluxo semanal e pós-obra |
-| Aula ou material sobre como eles **dimensionam a equipe** do fixo mensal | Fechar a fórmula do fixo |
+| Decisão do Aruak: reforma com demolição ou com mais de uma semana sai do preço fechado e passa para Gestão de Obra? | Define a regra comercial a partir de agora |
+| Horas reais do Yan por semana numa obra (deslocamento, fiscalização, cotações, documentos) | Fechar a fórmula do fixo com o método do módulo 7 |
 | Planilha MODELO_EVF (já está no Drive) | Modelar o EVF/orçamento executivo como produto de entrada |
 | Confirmar com o Ivan: imposto real e se 13% vale para a taxa de administração | Muda a conta da seção 3 |
 | Vicente: revisar o contrato de gestão adaptado (seção 4) | Antes da primeira proposta |
