@@ -46,8 +46,8 @@ Deixar explícito, porque é aqui que nasce o "achei que estava incluso":
 - **Reajuste:** anual pelo IPCA.
 
 ### 5. Prazo
-- 12 meses a partir de [data de início; considerar o início real do serviço].
-- Renovação automática por mais 12 meses, salvo aviso.
+- Prazo indeterminado, a partir de [data de início; considerar o início real do serviço]. **Sem fidelidade.**
+- Para a próxima escola (modelo): implantação maior, paga no início e sem devolução, e depois mensalidade menor de manutenção. Na Tip Toy, a implantação já aconteceu na prática; o contrato só registra a rotina.
 
 ### 6. Rescisão
 - Qualquer parte pode encerrar com aviso prévio de 30 dias, sem multa.

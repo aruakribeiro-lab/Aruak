@@ -34,7 +34,7 @@ Status na esteira: **T** (teste). Documento interno. Números são estimativas a
 
 ### Decisão pendente: conflito de interesse
 O dossiê entregue à Carmem diz: "Não executamos obras dentro da assessoria mensal. O relatório é do condomínio, não de quem quer vender serviço." Falta decidir se a Entre Colunas pode aparecer como uma das propostas quando o condomínio precisar de uma obra.
-**Recomendação:** pode, desde que três condições sejam cumpridas: (1) avisar por escrito que é proposta própria; (2) apresentar ao lado de pelo menos 2 propostas de terceiros; (3) deixar a decisão com o síndico. Se preferir proteger totalmente a confiança no piloto, não oferecer obra no Trípoli durante os 12 meses. **Quem decide é o Aruak.**
+**Recomendação:** pode, desde que três condições sejam cumpridas: (1) avisar por escrito que é proposta própria; (2) apresentar ao lado de pelo menos 2 propostas de terceiros; (3) deixar a decisão com o síndico. Se preferir proteger totalmente a confiança no piloto, não oferecer obra no Trípoli enquanto o contrato estiver ativo. **Quem decide é o Aruak.**
 
 ## 4. Entregáveis
 
@@ -139,7 +139,7 @@ Termômetro infravermelho, medidor de umidade, lanterna, trena, martelo de borra
 **O que muda em relação à esteira v4:** o produto não precisa dobrar de preço. Ele passa a pagar a hora do Aruak quando duas coisas acontecem juntas: a visita base cai para 1 por mês e o Yan assume a visita a partir do mês 4. Com 6,25 h por condomínio, o Yan atende 12 a 15 condomínios com cerca de 80 a 95 horas por mês, número parecido com os 12 contratos da empresa concorrente que você conhece.
 
 ### Proposta de tabela (a validar com o Trípoli)
-- **Implantação:** R$ 2.600, cobrada uma vez (à vista ou em 3 parcelas junto com as mensalidades).
+- **Implantação (maior, paga no início):** R$ 2.600, cobrada uma vez: 50% na assinatura e 50% na entrega da implantação, antes da 1ª mensalidade. Não parcelar junto com as mensalidades: sem fidelidade, o cliente poderia sair antes de terminar de pagar.
 - **Essencial (1 visita por mês):** R$ 1.400 a R$ 1.600 por mês.
 - **Completo (2 visitas por mês):** R$ 1.900 a R$ 2.100 por mês.
 - **Reajuste:** anual pelo IPCA.
@@ -153,7 +153,9 @@ Sugestão: valor cheio escrito (implantação R$ 2.600 e mensal R$ [x]); descont
 
 ## 8. Contrato e riscos
 
-- **Prazo de 12 meses.** ⚠️ **Atenção:** o dossiê entregue à Carmem promete "proposta clara, **sem fidelidade**". Para cumprir o que já foi escrito (regra 6), sugiro **contrato de 12 meses sem multa de saída**, com rescisão por aviso prévio de 30 dias. O que protege a empresa é a implantação paga no início, sem devolução, e não uma multa.
+- **Sem fidelidade** (decisão do Aruak, 01/11/2026), coerente com o que o dossiê prometeu à Carmem. Contrato por prazo indeterminado, sem multa, com rescisão por aviso prévio de 30 dias.
+- **A proteção é a estrutura de preço:** implantação maior, paga no início e sem devolução, que cobre as horas de montar a base; depois, a mensalidade menor de manutenção. Se o cliente sair, a empresa não fica com prejuízo da implantação.
+- **O mês em curso e o aviso de 30 dias são devidos.**
 - Responsabilidade limitada ao escopo; o condomínio contrata e fiscaliza os fornecedores.
 - ART do contrato de assessoria.
 - O condomínio garante acesso, documentos e um contato (zelador ou síndica).
