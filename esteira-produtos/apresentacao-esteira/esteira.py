@@ -32,9 +32,9 @@ DEG = [
         ('Já começou', 'Plano para Terminar a Obra', 'R$ 4.500 ou R$ 5.500*', 'estr'),
         ('Obra pequena', 'Reparo Rápido', 'preço fechado após medição', 'cons'),
         ('Conduzir a obra', 'Gestão de Obra', 'honorário mensal', 'cons')]),
-    (5, 'Parcerias', 'Quem indica clientes. Comissão de 4% por venda.', [
-        ('Arquitetos', 'Parceria com escritórios de arquitetura', '4% da venda', 'teste'),
-        ('Corretores', 'Parceria com corretores de imóveis', '4% da venda', 'novo')]),
+    (5, 'Parcerias', 'Quem indica clientes e recebe comissão pela venda.', [
+        ('Arquitetos', 'Parceria com escritórios de arquitetura', 'Obra fechada: 4% · laudos e vistorias: 10 a 15%', 'teste'),
+        ('Corretores', 'Parceria com corretores de imóveis', 'Obra fechada: 4% · laudos e vistorias: 10 a 15%', 'novo')]),
     (6, 'Recorrência', 'O cliente fica e paga todo mês.', [
         ('Condomínio', 'Engenheiro do Condomínio', 'R$ 1.600 ou R$ 2.200/mês', 'teste'),
         ('Escola', 'Engenheiro da Escola (Tip Toy)', 'R$ 1.800/mês compensado', 'op'),
@@ -73,7 +73,7 @@ def escada():
     return f'''<section class="pg">{head('A esteira em uma página', 'Seis degraus, do primeiro contato ao cliente que fica')}
 <div class="stairs">{cols}</div>
 <div class="legend"><div><b>Como ler:</b> cada entrega termina com a oferta do degrau seguinte. Os degraus 3 e 4 correm lado a lado: o cliente pode entrar direto em qualquer um, e um laudo de defeito costuma terminar numa obra.</div>
-<div><b>O degrau 5 é diferente:</b> o parceiro não compra, ele indica. Arquitetos e corretores alimentam todos os outros degraus e recebem 4% de cada venda.</div></div>
+<div><b>O degrau 5 é diferente:</b> o parceiro não compra, ele indica. Arquitetos e corretores alimentam todos os outros degraus e recebem comissão: 4% sobre obra fechada e de 10% a 15% sobre laudos e vistorias de recebimento.</div></div>
 {foot(2)}</section>'''
 
 def caminhos():
@@ -121,7 +121,7 @@ def parcerias():
 <p><b>O que muda para nós:</b> corretor precisa de resposta em horas, não em dias. A regularização deixa de ser só “por oportunidade” e passa a ser central.</p>
 <p><b>Ainda a desenhar:</b> abordagem, mensagens e o teste com os primeiros corretores.</p></div>
 </div>
-<div class="band"><div class="big">4%</div><div><b>Comissão por venda indicada, para arquitetos e corretores.</b> É comissão pela venda, como a do corretor, e não reserva técnica. Proposta para discussão: acordo de parceria por escrito, comissão paga depois que o cliente pagar, e o cliente sabendo dela.</div></div>
+<div class="band"><div class="rates"><div><span class="big">4%</span><span class="rl">sobre obra fechada</span></div><div><span class="big">10 a 15%</span><span class="rl">sobre laudos e vistorias de recebimento</span></div></div><div><b>Comissão por venda indicada, para arquitetos e corretores.</b> É comissão pela venda, como a do corretor, e não reserva técnica. Ela pode virar desconto para o cliente ou pagamento ao profissional, conforme o acordo entre os técnicos envolvidos.</div></div>
 <div class="kpis"><div><b>Indicações</b><span>por parceiro, por mês</span></div><div><b>Conversão</b><span>indicações que viram contrato</span></div><div><b>Receita</b><span>por parceiro</span></div><div><b>Tempo de resposta</b><span>da indicação ao primeiro contato</span></div></div>
 {foot(6)}</section>'''
 
@@ -167,7 +167,7 @@ h2 { font-family:"Barlow Semi Condensed"; font-size:16pt; color:var(--navy); mar
 .foot { position:absolute; left:15mm; right:15mm; bottom:7mm; display:flex; justify-content:space-between; font-size:7.5pt; color:var(--muted); border-top:1px solid var(--line); padding-top:2mm; }
 /* capa */
 .cover { background:var(--navy); color:#fff; display:flex; align-items:center; gap:16mm; padding:0 22mm; border-bottom:6mm solid var(--gold); }
-.cover .selo { width:105mm; height:105mm; flex:0 0 auto; }
+.cover .selo { width:100mm; height:100mm; flex:0 0 auto;  }
 .cover .brand { font-family:"Cinzel"; font-weight:700; letter-spacing:.18em; font-size:20pt; color:#fff; }
 .cover .tag { color:#c9d6e4; letter-spacing:.06em; font-size:11pt; margin-top:1mm; }
 .cover h1 { color:#fff; font-size:46pt; margin:9mm 0 5mm; }
@@ -218,7 +218,7 @@ h2 { font-family:"Barlow Semi Condensed"; font-size:16pt; color:var(--navy); mar
 .pcard p { margin:0 0 2mm; }
 .ph { font-family:"Barlow Semi Condensed"; font-weight:700; font-size:16pt; color:var(--deep); margin-bottom:2mm; display:flex; align-items:center; gap:3mm; }
 .band { display:flex; align-items:center; gap:6mm; background:var(--navy); color:#fff; border-radius:2.5mm; padding:4mm 6mm; margin-top:5mm; font-size:10.8pt; }
-.band .big { font-family:"Barlow Semi Condensed"; font-weight:700; font-size:34pt; color:var(--gold); line-height:1; }
+.band .big { display:block; font-family:"Barlow Semi Condensed"; font-weight:700; font-size:28pt; color:var(--gold); line-height:1; white-space:nowrap; } .rates { display:flex; gap:7mm; flex:0 0 auto; } .rl { display:block; font-size:8.6pt; color:#c9d6e4; max-width:38mm; margin-top:1mm; }
 .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:4mm; margin-top:4mm; }
 .kpis div { border-left:1.5mm solid var(--gold); background:#fff; padding:2mm 3mm; }
 .kpis b { display:block; font-family:"Barlow Semi Condensed"; font-size:12pt; color:var(--navy); } .kpis span { font-size:9.6pt; color:var(--muted); }
