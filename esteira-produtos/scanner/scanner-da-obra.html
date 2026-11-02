@@ -144,6 +144,43 @@ footer p { font-size: 13px; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .screen { animation: none; } .bar i { transition: none; } }
 @media (min-width: 520px) { .minor { grid-template-columns: 1fr 1fr 1fr; } }
 @media (max-width: 380px) { h1 { font-size: 25px; } .seal { width: 62px; height: 62px; } .brand .prod { font-size: 19px; } .seg button { font-size: 13.5px; } }
+/* v3: telas com várias perguntas, etiquetas de origem dos números e cartões de indicadores */
+[hidden] { display: none !important; }
+.qs { display: flex; flex-direction: column; gap: 18px; }
+.qs > .q + .q { border-top: 1px solid var(--line); padding-top: 16px; }
+.q { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.qt { font-weight: 600; font-size: 16px; line-height: 1.35; }
+.q.sub .qt { font-weight: 400; font-size: 14.5px; color: var(--muted); }
+.q input:not([type="checkbox"]), .q select { font: inherit; font-size: 17px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 8px; padding: 10px 12px; min-height: 50px; width: 100%; min-width: 0; }
+.q input[type="date"], .q input[type="month"] { display: block; -webkit-appearance: none; appearance: none; }
+.q input::placeholder { color: var(--muted); opacity: .8; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { min-height: 44px; padding: 8px 14px; border-radius: 22px; border: 1.5px solid var(--line); background: var(--choice); color: var(--ink); font-family: var(--f-body); font-size: 15.5px; line-height: 1.25; text-align: left; cursor: pointer; }
+.chip:hover { border-color: var(--navy); background: var(--choice-hover); }
+.chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; font-weight: 600; }
+.chip.sq[aria-pressed="true"]::before { content: "✓ "; }
+.chip.risk { border-color: color-mix(in srgb, var(--danger) 50%, var(--line)); }
+.chip.risk[aria-pressed="true"] { background: var(--danger); border-color: var(--danger); color: #fff; }
+.hl { border-left: 4px solid var(--gold); background: color-mix(in srgb, var(--gold) 12%, var(--surface)); border-radius: 6px; padding: 12px 14px; gap: 6px; }
+.hl b { font-family: var(--f-head); font-size: 18px; }
+.ent { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--choice); }
+.need { font-size: 14px; }
+.lbl { display: inline-block; font-family: var(--f-body); font-size: 11.5px; font-weight: 600; line-height: 1.5; padding: 0 7px; border-radius: 10px; white-space: nowrap; vertical-align: 1px; }
+.lb-doc { background: var(--green-bg); color: var(--green); }
+.lb-est { background: var(--yellow-bg); color: var(--gold-ink); }
+.lb-lev { background: transparent; color: var(--muted); border: 1px dashed var(--muted); }
+.tag.yellow { color: var(--gold-ink); }
+.tag.gray { background: var(--choice); color: var(--muted); border: 1px solid var(--line); }
+.stamp.gray { border-color: var(--muted); }
+h2.main { font-size: 21px; line-height: 1.25; }
+.ihead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px; }
+.kv td:first-child { padding-right: 8px; }
+.kv td:last-child { white-space: normal; min-width: 7.5em; }
+.choice b { font-family: var(--f-head); font-size: 17.5px; }
+.choice .muted { font-size: 14px; }
+.grid.wide { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+footer .num { white-space: nowrap; font-size: 13px; }
 </style>
 
 <header class="band">
@@ -160,17 +197,18 @@ footer p { font-size: 13px; color: var(--muted); }
 <main class="wrap" id="app" aria-live="polite">
   <section class="card screen stack" id="s-inicio">
     <p class="eyebrow">Grátis e sem compromisso</p>
-    <h1>O que você quer descobrir sobre a sua obra ou o seu imóvel?</h1>
+    <h1>O que você quer entender sobre o seu imóvel hoje?</h1>
     <div class="alert" role="note">
-      <b>Se existe risco agora</b> (estalos, trinca aumentando, teto ou laje cedendo, cheiro de queimado, fio esquentando, água perto de tomada ou quadro de luz, reboco ou fachada caindo): saia do local, mantenha as pessoas longe e ligue para os Bombeiros. Não espere este formulário.<br>
+      <b>Se existe perigo agora</b> (fumaça, faíscas, cheiro de queimado, algo caindo, teto, laje ou parede cedendo, água perto de tomada ou quadro de luz): saia do local, mantenha as pessoas longe e ligue para os Bombeiros. Não espere este formulário.<br>
       <span class="big">193</span>
     </div>
     <div class="doors">
-      <button type="button" class="door main" data-door="obra"><i>Raio-X da Obra · 6 a 8 minutos</i><b>Estou construindo ou reformando e quero saber se a obra está no caminho certo</b><span>Cruza o que você pagou com o que foi entregue e mostra se o dinheiro chega até o fim e se a equipe está cumprindo o combinado.</span></button>
-      <button type="button" class="door main" data-door="problema"><i>Problema no imóvel · 3 minutos</i><b>Moro ou trabalho no imóvel e apareceu um problema</b><span>Trinca, infiltração, vazamento, piso soltando, parte elétrica ou banheiro velho: veja o próximo passo certo.</span></button>
+      <button type="button" class="door main" data-door="problema"><i>Cerca de 3 minutos</i><b>Apareceu um problema no meu imóvel</b><span>Conte o que apareceu, onde e há quanto tempo. Indicamos o atendimento adequado para o seu caso.</span></button>
+      <button type="button" class="door main" data-door="obra"><i>Raio-X da Obra em Andamento · 10 a 15 minutos</i><b>Estou construindo ou reformando</b><span>Veja como estão as entregas da equipe, os pagamentos e o dinheiro que falta para terminar a sua obra.</span></button>
     </div>
+    <p class="muted" style="margin-bottom:-4px">Já sabe o que precisa?</p>
     <div class="minor">
-      <button type="button" class="door" data-door="comecar"><b>Vou começar uma obra</b><span>Ainda não comecei</span></button>
+      <button type="button" class="door" data-door="comecar"><b>Vou começar uma obra</b><span>Viabilidade e orçamento</span></button>
       <button type="button" class="door" data-door="imovel"><b>Vou receber ou comprar um imóvel</b><span>Vistoria</span></button>
       <button type="button" class="door" data-door="predio"><b>Cuido de um prédio</b><span>Síndico ou administrador</span></button>
     </div>
@@ -187,434 +225,627 @@ footer p { font-size: 13px; color: var(--muted); }
   'use strict';
   var WA_NUMBER = '5562981708669';
   var ASSISTENTE_URL = ''; // link do assistente (GPT) quando estiver pronto; vazio esconde o cartão
+  var DRAFT = 'scanner-raiox-v3';
   var app = document.getElementById('app');
 
   /* ---------- utilidades ---------- */
   function el(tag, attrs, html) { var e = document.createElement(tag); if (attrs) for (var k in attrs) e.setAttribute(k, attrs[k]); if (html != null) e.innerHTML = html; return e; }
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  function brl(v) { var n = Math.round(Math.abs(v)); var s = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); return (v < 0 ? '−' : '') + 'R$ ' + s; }
-  function pc(v) { return Math.round(v * 100) + '%'; }
-  function meses(v) { var r = Math.round(v * 10) / 10; return String(r).replace('.', ',') + (r === 1 ? ' mês' : ' meses'); }
-  function show(node) { app.innerHTML = ''; app.appendChild(node); if (window.scrollTo) window.scrollTo(0, 0); var h = node.querySelector('h1,h2'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); } }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function brl(v) { var n = Math.round(Math.abs(v)); var s = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); return (v < -0.5 ? '−' : '') + 'R$\u00a0' + s; }
+  function faixa(a, b) { return Math.round(a) === Math.round(b) ? brl(a) : 'de ' + brl(Math.min(a, b)) + ' a ' + brl(Math.max(a, b)); }
+  function num(v) { return typeof v === 'number' && isFinite(v) ? v : null; }
+  var TODAY = new Date(); TODAY.setHours(0, 0, 0, 0);
+  function pd(s) { if (!s || typeof s !== 'string') return null; var p = s.split('-'); if (p.length < 3) return null; var x = new Date(+p[0], +p[1] - 1, +p[2]); return isNaN(x) ? null : x; }
+  function ddmm(x) { if (!x) return ''; var p = function (n) { return (n < 10 ? '0' : '') + n; }; return p(x.getDate()) + '/' + p(x.getMonth() + 1); }
+  function mmaa(s) { if (!s) return ''; var p = s.split('-'); return p.length >= 2 ? p[1] + '/' + p[0] : s; }
+  function iso(x) { var p = function (n) { return (n < 10 ? '0' : '') + n; }; return x.getFullYear() + '-' + p(x.getMonth() + 1) + '-' + p(x.getDate()); }
+  function plusDays(n) { var x = new Date(TODAY); x.setDate(x.getDate() + n); return iso(x); }
   function stampTime() { var d = new Date(), p = function (x) { return (x < 10 ? '0' : '') + x; }; return p(d.getDate()) + '/' + p(d.getMonth() + 1) + '/' + d.getFullYear() + ' ' + p(d.getHours()) + 'h' + p(d.getMinutes()); }
+  function show(node) { app.innerHTML = ''; app.appendChild(node); if (window.scrollTo) window.scrollTo(0, 0); var h = node.querySelector('h1,h2'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); } }
+  function saveDraft() { try { localStorage.setItem(DRAFT, JSON.stringify({ A: A, i: idx })); } catch (e) { } }
+  function loadDraft() { try { var s = localStorage.getItem(DRAFT); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
+  function clearDraft() { try { localStorage.removeItem(DRAFT); } catch (e) { } }
+  function lab(t) { var m = { doc: ['lb-doc', 'com base em documento'], est: ['lb-est', 'estimado pelo proprietário'], lev: ['lb-lev', 'a levantar'], ref: ['lb-lev', 'referência do Scanner'] }[t]; return m ? ' <span class="lbl ' + m[0] + '">' + m[1] + '</span>' : ''; }
 
-  /* ---------- perguntas ---------- */
-  // pts: pontos de risco (0 a 3); dim: din (dinheiro), con (contratação e pagamentos), equ (equipe e execução), pra (prazo), pla (planejamento e controle)
-  function O(l, pts, flag, extra) { var o = { l: l, pts: pts || 0, flag: flag || null }; if (extra) for (var k in extra) o[k] = extra[k]; return o; }
-  var BLOCKS = ['A obra', 'Planejamento e controle', 'Contratação e pagamentos', 'Dinheiro', 'O que já foi feito', 'Prazo', 'Equipe e execução'];
-  var S = {
-    /* problema no imóvel */
-    p_problema: { kind: 'single', flow: 'p', t: 'O que está acontecendo?', o: [O('Trinca ou rachadura'), O('Infiltração, mofo ou umidade'), O('Vazamento'), O('Piso ou revestimento soltando'), O('Problema na parte elétrica'), O('Banheiro ou cozinha velhos, quero renovar')],
-      go: function () { return 'p_tipo'; } },
-    p_tipo: { kind: 'single', flow: 'p', t: 'Que tipo de imóvel?', o: [O('Casa'), O('Apartamento'), O('Comercial'), O('Área comum de condomínio')],
-      go: function () { return A.p_problema === 'Banheiro ou cozinha velhos, quero renovar' ? 'p_banheiro' : 'p_sinais'; } },
-    p_sinais: { kind: 'single', flow: 'p', t: 'Você percebe algum destes sinais agora?', hint: 'Marque o primeiro que aparecer na sua situação.', o: [
-        O('Trinca aumentando, ou trinca em viga, pilar ou laje', 0, null, { risk: 1 }), O('Teto, laje ou piso cedendo', 0, null, { risk: 1 }), O('Cheiro de queimado, fio esquentando ou disjuntor desarmando quando molha', 0, null, { risk: 1 }),
-        O('Pedaço de reboco, revestimento ou fachada caindo', 0, null, { risk: 1 }), O('Água escorrendo perto de tomada ou quadro de luz', 0, null, { risk: 1 }), O('Não sei dizer'), O('Nenhum destes')],
-      go: function (i) { return i <= 4 ? '=VERMELHO' : 'p_tempo'; } },
-    p_tempo: { kind: 'single', flow: 'p', t: 'Há quanto tempo isso acontece?', o: [O('Menos de 1 mês'), O('1 a 6 meses'), O('Mais de 6 meses'), O('Não sei')], go: function () { return 'p_voltou'; } },
-    p_voltou: { kind: 'single', flow: 'p', t: 'Já tentaram consertar e o problema voltou?', o: [O('Sim'), O('Não'), O('Nunca tentamos')], go: function () { return 'p_terceiros'; } },
-    p_terceiros: { kind: 'single', flow: 'p', t: 'Você vai precisar mostrar isso a alguém?', hint: 'Por exemplo: construtora, vizinho, condomínio, seguradora, advogado ou Justiça.', o: [O('Sim'), O('Não'), O('Não sei')],
-      go: function (i) { return i === 0 ? '=LAUDO' : '=DIAGNOSTICO'; } },
-    p_banheiro: { kind: 'single', flow: 'p', t: 'Nesse ambiente existe vazamento, infiltração, mancha de umidade ou mofo?', o: [O('Sim'), O('Não'), O('Não sei')],
-      go: function (i) { return i === 0 ? '=DIAGNOSTICO' : '=REPARO'; } },
-    i_tipo: { kind: 'single', flow: 'p', t: 'O imóvel é novo ou usado?', o: [O('Novo, vou receber da construtora'), O('Usado, vou comprar')], go: function (i) { return i === 0 ? '=VISTORIA' : '=COMPRA'; } },
+  /* ---------- estado ---------- */
+  var A = {}, door = null, idx = 0;
 
-    /* Raio-X da Obra */
-    rx_tipo: { kind: 'single', b: 0, t: 'Que obra é?', o: [O('Construção de casa nova'), O('Reforma geral de casa'), O('Reforma geral de apartamento'), O('Ampliação'), O('Obra comercial')], go: function () { return 'rx_fase'; } },
-    rx_fase: { kind: 'single', b: 0, t: 'Em que fase a obra está?', o: [O('Ainda não começou'), O('Fundação e estrutura'), O('Alvenaria e cobertura'), O('Instalações, reboco e contrapiso'), O('Acabamentos'), O('Quase pronta')],
-      go: function (i) { return i === 0 ? '=PREOBRA' : 'rx_ritmo'; } },
-    rx_ritmo: { kind: 'single', b: 0, dim: 'pra', t: 'Como a obra está andando?', o: [O('No ritmo combinado', 0), O('Mais devagar que o combinado', 2, 'A obra anda mais devagar que o combinado'), O('Parada há menos de 1 mês', 2, 'Obra parada'), O('Parada há mais de 1 mês', 3, 'Obra parada há mais de um mês', { crit: 'parada' })],
-      go: function () { return 'rx_projetos'; } },
-    rx_projetos: { kind: 'multi', b: 1, dim: 'pla', t: 'Que projetos a obra tem?', hint: 'Marque todos que existem no papel.', o: [O('Arquitetônico'), O('Estrutural'), O('Elétrico'), O('Hidrossanitário'), O('Nenhum projeto, só um desenho ou a ideia', 0, null, { none: 1 })],
-      go: function () { return 'rx_orcamento'; } },
-    rx_orcamento: { kind: 'single', b: 1, dim: 'pla', t: 'Antes de começar, havia um orçamento detalhado por etapa, com quantidades e preços?', o: [O('Sim, detalhado por etapa', 0), O('Só um valor total estimado', 2, 'Não há orçamento detalhado por etapa'), O('Não houve orçamento', 3, 'A obra começou sem orçamento')],
-      go: function () { return 'rx_cronograma'; } },
-    rx_cronograma: { kind: 'single', b: 1, dim: 'pla', t: 'Existe um cronograma com as datas de cada etapa?', o: [O('Sim, escrito, etapa por etapa', 0), O('Só a data final, combinada de boca', 2, 'Não há cronograma por etapa'), O('Não existe prazo combinado', 3, 'Não existe prazo combinado')],
-      go: function () { return 'rx_rt'; } },
-    rx_rt: { kind: 'single', b: 1, dim: 'pla', t: 'Algum engenheiro ou arquiteto responde tecnicamente pela obra (com ART ou RRT) e visita com frequência?', o: [O('Sim, e aparece com frequência', 0), O('Assinou, mas quase não aparece', 2, 'O responsável técnico quase não aparece'), O('Não há engenheiro nem arquiteto', 3, 'Ninguém responde tecnicamente pela obra'), O('Não sei', 2, 'Você não sabe quem responde tecnicamente pela obra')],
-      go: function () { return 'rx_alvara'; } },
-    rx_alvara: { kind: 'single', b: 1, dim: 'pla', t: 'A obra tem alvará ou aprovação na prefeitura?', o: [O('Sim', 0), O('Em andamento', 1), O('Não', 2, 'Obra sem alvará'), O('Não sei', 1), O('Não se aplica: reforma interna', 0)],
-      go: function () { return 'rx_semana'; } },
-    rx_semana: { kind: 'single', b: 1, dim: 'pla', t: 'Você sabe dizer o que foi feito na obra na última semana e o que será feito na próxima?', o: [O('Sim, com clareza', 0), O('Mais ou menos', 1), O('Não', 3, 'Você não sabe o que foi feito nem o que vem a seguir')],
-      go: function () { return 'rx_modelo'; } },
-    rx_modelo: { kind: 'single', b: 2, dim: 'con', t: 'Como a mão de obra foi contratada?', o: [O('Empreitada com preço fechado da obra toda', 1), O('Empreitada só da mão de obra; eu compro o material', 1), O('Por diária', 2, 'Equipe por diária, sem meta de produção'), O('Cada serviço com um prestador diferente', 1), O('Administração com construtora ou engenheiro', 0)],
-      go: function () { return 'rx_contrato'; } },
-    rx_contrato: { kind: 'single', b: 2, dim: 'con', t: 'Existe contrato escrito com escopo, preço, prazo e forma de pagamento?', o: [O('Sim, com tudo isso', 0), O('Só um orçamento assinado ou combinado por mensagem', 2, 'Não há contrato completo'), O('Não, tudo combinado de boca', 3, 'Não há contrato escrito', { crit: 'semcontrato' })],
-      go: function () { return 'rx_pagamento'; } },
-    rx_pagamento: { kind: 'single', b: 2, dim: 'con', t: 'Como você paga a equipe?', o: [O('Depois de medir o que foi feito', 0), O('Valor fixo por semana ou quinzena', 2, 'Pagamento fixo, sem medir o que foi feito'), O('Adiantado, antes de o serviço ser feito', 3, 'Pagamentos adiantados'), O('Quando eles pedem', 3, 'Você paga quando a equipe pede')],
-      go: function () { return 'rx_adiantou'; } },
-    rx_adiantou: { kind: 'single', b: 2, dim: 'con', t: 'Você já pagou por serviço ou material que ainda não foi entregue?', o: [O('Não', 0), O('Sim, valores pequenos', 1), O('Sim, valores altos', 3, 'Há dinheiro pago por serviço ou material ainda não entregue')],
-      go: function () { return 'rx_compra'; } },
-    rx_compra: { kind: 'single', b: 2, dim: 'con', t: 'Quem compra o material?', o: [O('Eu compro, com cotação', 0), O('Eu compro onde o pedreiro manda', 2, 'Compras sem cotação'), O('O empreiteiro compra com o meu dinheiro', 2, 'A equipe compra material com o seu dinheiro'), O('Sem regra, cada hora de um jeito', 2, 'Não há regra de compra')],
-      go: function () { return 'rx_recibos'; } },
-    rx_recibos: { kind: 'single', b: 2, dim: 'con', t: 'Você guarda notas, recibos e comprovantes de tudo que pagou?', o: [O('Sim, tudo organizado', 0), O('Só parte', 1), O('Não', 2, 'Pagamentos sem comprovantes organizados')],
-      go: function () { return 'rx_dinheiro'; } },
-    rx_dinheiro: { kind: 'money', b: 3, t: 'Os números da obra', hint: 'Pode ser aproximado. Some mão de obra e material.', f: [
-        { k: 'B', l: 'Quanto você planejou gastar na obra toda?' }, { k: 'P', l: 'Quanto já foi pago até hoje?' }, { k: 'D', l: 'Quanto ainda tem disponível para terminar, incluindo financiamento a liberar?' }],
-      go: function () { return 'rx_extras'; } },
-    rx_extras: { kind: 'single', b: 3, dim: 'din', t: 'Estão aparecendo gastos que não estavam previstos?', o: [O('Não', 0), O('Alguns, pequenos', 1), O('Sim, toda semana aparece algo', 3, 'Gastos extras aparecem toda semana')],
-      go: function () { return 'rx_financ'; } },
-    rx_financ: { kind: 'single', b: 3, dim: 'din', t: 'A obra depende de financiamento com liberação por etapa?', o: [O('Não', 0), O('Sim, e as liberações estão em dia', 1), O('Sim, e a próxima liberação depende de uma etapa atrasada', 3, 'A próxima parcela do financiamento depende de uma etapa atrasada')],
-      go: function () { return 'rx_etapas'; } },
-    rx_etapas: { kind: 'stages', b: 4, t: 'Como está cada etapa?', hint: 'Toque em Pronta ou Em andamento. O que você não marcar conta como não começada.', go: function () { return 'rx_prazo'; } },
-    rx_prazo: { kind: 'money', b: 5, t: 'O tempo da obra', f: [
-        { k: 'M', l: 'Há quantos meses a obra começou?', unit: 'meses' }, { k: 'T', l: 'Qual era o prazo combinado para terminar, em meses?', unit: 'meses' },
-        { k: 'C', l: 'Quanto a obra atrasada custa por mês (aluguel, juros, outra moradia)? Deixe em branco se não houver.', opt: 1 }],
-      go: function () { return 'rx_data'; } },
-    rx_data: { kind: 'single', b: 5, dim: 'pra', t: 'Existe uma data que não pode passar, como mudança, fim do aluguel ou liberação do banco?', o: [O('Não', 0), O('Sim, e ainda dá tempo', 1), O('Sim, e já estou atrasado para ela', 3, 'Uma data importante já passou ou vai passar')],
-      go: function () { return 'rx_faltas'; } },
-    rx_faltas: { kind: 'single', b: 6, dim: 'equ', t: 'Com que frequência a equipe falta ou some da obra?', o: [O('Quase nunca', 0), O('Às vezes', 1), O('Toda semana', 3, 'A equipe falta toda semana'), O('Já abandonou a obra', 3, 'A equipe abandonou a obra', { crit: 'abandono' })],
-      go: function () { return 'rx_cumpre'; } },
-    rx_cumpre: { kind: 'single', b: 6, dim: 'equ', t: 'Quem lidera a equipe responde quando você chama e cumpre o que combina?', o: [O('Sim', 0), O('Às vezes', 1), O('Não', 3, 'Quem lidera a equipe não cumpre o combinado')],
-      go: function () { return 'rx_mais'; } },
-    rx_mais: { kind: 'single', b: 6, dim: 'equ', t: 'Já pediram mais dinheiro do que o combinado para terminar o mesmo serviço?', o: [O('Não', 0), O('Uma vez', 2, 'Pediram dinheiro extra para o mesmo serviço'), O('Mais de uma vez', 3, 'Pedidos repetidos de dinheiro extra para o mesmo serviço')],
-      go: function () { return 'rx_refazer'; } },
-    rx_refazer: { kind: 'single', b: 6, dim: 'equ', t: 'Algum serviço precisou ser refeito (parede, piso, reboco, instalação)?', o: [O('Não', 0), O('Uma vez', 1), O('Várias vezes', 3, 'Serviços refeitos várias vezes')],
-      go: function () { return 'rx_trocas'; } },
-    rx_trocas: { kind: 'single', b: 6, dim: 'equ', t: 'Quantas vezes a equipe principal já foi trocada?', o: [O('Nunca', 0), O('Uma vez', 1), O('Duas ou mais', 3, 'A equipe já foi trocada duas ou mais vezes')],
-      go: function () { return 'rx_sinais'; } },
-    rx_sinais: { kind: 'multi', b: 6, dim: 'equ', t: 'Você vê algum destes sinais na obra?', hint: 'Marque todos que aparecem.', o: [
-        O('Trincas em paredes, vigas ou lajes novas', 3, 'Trincas em paredes, vigas ou lajes novas', { crit: 'trinca' }), O('Paredes tortas ou fora de prumo', 2, 'Paredes fora de prumo'),
-        O('Piso ou revestimento soando oco', 2, 'Piso ou revestimento soando oco'), O('Vazamento ou umidade em área nova', 2, 'Vazamento ou umidade em área nova'),
-        O('Fiação improvisada ou exposta', 2, 'Fiação improvisada ou exposta'), O('Material sumindo, sobrando ou desperdiçado', 2, 'Material sumindo ou desperdiçado'),
-        O('Obra suja e desorganizada', 1, 'Obra suja e desorganizada'), O('Nenhum destes', 0, null, { none: 1 })],
-      go: function () { return 'rx_horas'; } },
-    rx_horas: { kind: 'single', b: 6, dim: 'equ', t: 'Quantas horas por semana você ou a sua família gastam resolvendo coisas da obra?', o: [O('Até 2 horas', 0), O('De 3 a 8 horas', 1), O('Mais de 8 horas', 2, 'A obra está tomando o seu tempo')],
-      go: function () { return 'rx_sentimento'; } },
-    rx_sentimento: { kind: 'single', b: 6, t: 'Como você se sente com a obra hoje?', o: [O('Tranquilo'), O('Preocupado'), O('Arrependido, quero resolver')], go: function () { return '=RAIOX'; } }
-  };
-  var RX_ORDER = ['rx_tipo', 'rx_fase', 'rx_ritmo', 'rx_projetos', 'rx_orcamento', 'rx_cronograma', 'rx_rt', 'rx_alvara', 'rx_semana', 'rx_modelo', 'rx_contrato', 'rx_pagamento', 'rx_adiantou', 'rx_compra', 'rx_recibos',
-    'rx_dinheiro', 'rx_extras', 'rx_financ', 'rx_etapas', 'rx_prazo', 'rx_data', 'rx_faltas', 'rx_cumpre', 'rx_mais', 'rx_refazer', 'rx_trocas', 'rx_sinais', 'rx_horas', 'rx_sentimento'];
-  // pesos típicos de custo por etapa (aproximados), somam 100
+  /* ---------- Porta 1 · Apareceu um problema ---------- */
+  var RISCO = ['Fumaça, faíscas ou cheiro de queimado', 'Algo caindo ou com risco de cair', 'Teto, laje, parede ou piso cedendo de repente', 'Outro perigo imediato'];
+  var P_TELAS = [
+    { t: 'Há alguma situação oferecendo perigo às pessoas agora?', f: [{ k: 'p_perigo', type: 'chips1', big: 1, req: 1, o: RISCO.map(function (x) { return { l: x, risk: 1 }; }).concat([{ l: 'Nenhum sinal de perigo percebido' }, { l: 'Não sei avaliar' }]) }],
+      after: function () { return RISCO.indexOf(A.p_perigo) >= 0 ? '=VERMELHO' : null; } },
+    { t: 'Que problema apareceu?', f: [{ k: 'p_problema', type: 'chips1', big: 1, req: 1, o: ['Infiltração, mancha ou umidade', 'Fissura ou trinca', 'Piso ou revestimento soltando', 'Problema elétrico', 'Problema hidráulico: vazamento, entupimento ou pressão', 'Banheiro ou cozinha para renovar, sem vazamento', 'Outro'] }] },
+    { t: 'Onde ele aparece e quem mais foi afetado?', f: [{ k: 'p_onde', type: 'chips1', big: 1, req: 1, o: ['Em um ambiente', 'Em vários ambientes', 'Também no imóvel vizinho', 'Na área comum do prédio'] },
+      { k: 'p_imovel', type: 'chips1', label: 'Tipo de imóvel', o: ['Casa', 'Apartamento', 'Comercial'] }] },
+    { t: 'Quando você percebeu e o que mudou desde então?', f: [{ k: 'p_desde', type: 'chips1', label: 'Há quanto tempo', o: ['Menos de 1 mês', '1 a 6 meses', 'Mais de 6 meses'] },
+      { k: 'p_mudou', type: 'chips1', label: 'O que mudou', req: 1, o: ['Está igual', 'Aumentou', 'Aparece e some em certas condições', 'Voltou depois de um reparo'] },
+      { k: 'p_mudou_txt', type: 'txt', label: 'Explique em poucas palavras (opcional)' }] },
+    { t: 'O que costuma acontecer antes de o problema aparecer ou piorar?', hint: 'Marque o que se aplica.', f: [{ k: 'p_gatilho', type: 'chipsN', o: ['Chuva', 'Uso do chuveiro, da pia ou de outro equipamento', 'Obra no vizinho', { l: 'Nenhuma relação percebida', none: 1 }, { l: 'Não sei', none: 1 }] }] },
+    { t: 'Alguém já tentou descobrir a causa ou consertar?', f: [{ k: 'p_tentou', type: 'chips1', big: 1, req: 1, o: ['Ninguém ainda', 'Sim, e resolveu por um tempo', 'Sim, e não resolveu'] },
+      { k: 'p_tentou_txt', type: 'txt', label: 'Quem foi, o que fez e por quanto tempo resolveu (opcional)' }] },
+    { t: 'Que decisão você precisa tomar?', f: [{ k: 'p_decisao', type: 'chips1', big: 1, req: 1, o: ['Entender qual providência tomar', 'Contratar um reparo que já está definido', 'Documentar para construtora, condomínio ou seguradora', 'Tratar uma disputa com vizinho, construtora ou na Justiça', 'Outra'] }] },
+    { t: 'Tem fotos do local?', next: 'Ver o resultado', f: [{ type: 'info', html: '<p class="lead">Se você já tem fotos, separe para mandar pelo WhatsApp no próximo passo: uma de longe, uma de perto e uma da parede ou do teto ao lado.</p><p class="muted">Não se aproxime do problema para fotografar. Segurança vem antes.</p>' }],
+      after: function () { return pRoute(); } }
+  ];
+  function pRoute() {
+    var d = A.p_decisao, pr = A.p_problema, m = A.p_mudou;
+    if (/Documentar|disputa/.test(d)) return '=LAUDO';
+    if (/reparo que já está definido/.test(d)) {
+      if (/Banheiro ou cozinha/.test(pr)) return '=REPARO';
+      if (/Fissura/.test(pr) || /Aumentou|Voltou/.test(m) || (/Infiltração|hidráulico/.test(pr) && /não resolveu/.test(A.p_tentou || ''))) { A.p_guard = 1; return '=DIAGNOSTICO'; }
+      return '=REPARO';
+    }
+    if (/Banheiro ou cozinha/.test(pr) && /Entender/.test(d)) return '=REPARO';
+    return '=DIAGNOSTICO';
+  }
+
+  /* ---------- Porta 2 · Raio-X da Obra em Andamento ---------- */
   var ETAPAS = {
     nova: [['Serviços preliminares e fundação', 8], ['Estrutura: pilares, vigas e lajes', 15], ['Alvenaria', 8], ['Cobertura e telhado', 8], ['Instalações elétricas e hidráulicas (tubulação)', 10], ['Reboco e revestimento de paredes', 8],
       ['Contrapiso e impermeabilização', 5], ['Pisos e revestimentos cerâmicos', 10], ['Portas e janelas', 8], ['Forro', 3], ['Louças, metais e acabamento elétrico', 5], ['Pintura', 7], ['Área externa, muros e limpeza final', 5]],
-    reforma: [['Demolição e retirada', 6], ['Estrutura e alvenaria', 10], ['Instalações elétricas', 12], ['Instalações hidráulicas e esgoto', 12], ['Impermeabilização', 5], ['Reboco, gesso e contrapiso', 10],
+    reforma: [['Demolição e retirada', 6], ['Correções descobertas e alvenaria', 10], ['Instalações elétricas', 12], ['Instalações hidráulicas e esgoto', 12], ['Impermeabilização', 5], ['Recomposição: reboco, gesso e contrapiso', 10],
       ['Pisos e revestimentos', 15], ['Forro', 5], ['Portas e janelas', 8], ['Louças, metais e acabamento elétrico', 7], ['Pintura', 7], ['Marcenaria e limpeza final', 3]]
   };
-  function etapasList() { return /Reforma/.test(A.rx_tipo || '') ? ETAPAS.reforma : ETAPAS.nova; }
+  function ehReforma() { return /Reforma/.test(A.x_tipo || ''); }
+  function etapas() { return ehReforma() ? ETAPAS.reforma : ETAPAS.nova; }
+  function fases() { return ehReforma() ? ['Demolição', 'Correções descobertas', 'Instalações', 'Recomposição', 'Revestimentos', 'Acabamentos'] : ['Fundação', 'Estrutura', 'Alvenaria', 'Cobertura', 'Instalações', 'Reboco e contrapiso', 'Revestimentos e pisos', 'Esquadrias', 'Pintura', 'Acabamentos finais']; }
+  function faltaLista() {
+    return ehReforma() ? ['Demolição e descarte', 'Correções descobertas', 'Instalações', 'Recomposição: reboco, gesso e contrapiso', 'Pisos e revestimentos', 'Portas e esquadrias', 'Pedras e bancadas', 'Louças e metais', 'Elétrica final', 'Pintura', 'Marcenaria', 'Testes, correções e limpeza']
+      : ['Estrutura ou alvenaria restante', 'Cobertura', 'Instalações elétricas e hidráulicas', 'Reboco e contrapiso', 'Impermeabilização', 'Pisos e revestimentos', 'Portas e esquadrias', 'Pedras e bancadas', 'Louças e metais', 'Elétrica final: tomadas, iluminação e quadro', 'Forro', 'Pintura', 'Marcenaria', 'Área externa e muros', 'Testes, correções e limpeza'];
+  }
+  var QUEM = ['Eu', 'Engenheiro', 'Arquiteto', 'Empreiteiro', 'Encarregado ou mestre', 'Ninguém definido'];
+  var X_TELAS = [
+    { t: 'Em que ponto a sua obra está?', tag: 'Tela 1 de 5', f: [
+      { k: 'x_tipo', type: 'chips1', label: 'O que você está fazendo?', req: 1, o: ['Construção de casa nova', 'Reforma geral de casa', 'Reforma geral de apartamento', 'Ampliação', 'Conclusão de obra que recebi já iniciada'] },
+      { k: 'x_situacao', type: 'chips1', label: 'Como está a obra hoje?', req: 1, o: ['Trabalhando normalmente', 'Trabalhando com equipe reduzida', 'Andando e parando', 'Parada', 'Em troca de prestadores'] },
+      { k: 'x_ult', type: 'sel', label: 'Última etapa que você viu concluída', o: fases },
+      { k: 'x_exec', type: 'sel', label: 'Etapa em execução agora', o: fases },
+      { type: 'row', label: 'Datas (aproximadas)', f: [{ k: 'x_ini', type: 'month', label: 'Início' }, { k: 'x_entrega', type: 'month', label: 'Entrega combinada' }, { k: 'x_informa', type: 'month', label: 'Entrega que a equipe informa hoje' }] },
+      { k: 'x_motivo', type: 'sel', label: 'Se a data mudou, qual motivo foi informado?', o: ['A data não mudou', 'Chuva', 'Falta de material', 'Falta de equipe', 'Mudança pedida por mim', 'Problema encontrado na obra', 'Falta de pagamento', 'Não explicaram'] },
+      { k: 'x_contrat', type: 'sel', label: 'Como os serviços foram contratados?', o: ['Empreitada com material', 'Empreitada só de mão de obra', 'Equipes por etapa', 'Diárias', 'Administração por engenheiro ou construtora', 'Uma combinação'] },
+      { k: 'x_compra', type: 'sel', label: 'Quem compra o material?', o: ['Eu compro', 'O empreiteiro, com o meu dinheiro', 'A construtora ou o administrador', 'Cada hora um'] },
+      { k: 'x_coord', type: 'sel', label: 'Quem coordena as equipes no dia a dia?', o: QUEM },
+      { k: 'x_confere', type: 'sel', label: 'Quem confere a entrega antes de autorizar o pagamento?', o: QUEM },
+      { k: 'x_porque', type: 'chipsN', label: 'Por que você procurou o Raio-X agora?', o: ['Próximo pagamento alto', 'Atraso', 'Dúvida sobre a qualidade', 'Pedido de dinheiro extra', 'Receio de faltar dinheiro', 'Troca de equipe', 'Quero acompanhar melhor'] }] },
+    { t: 'O que a equipe combinou e o que realmente aconteceu?', tag: 'Tela 2 de 5', hint: 'É aqui que dá para avaliar a equipe com justiça: um atraso por falta de equipe pede uma conversa; um atraso por decisão ou compra que dependia de você pede outra.', f: [
+      { k: 'x_entregas', type: 'entregas', label: 'As três últimas entregas que a equipe prometeu', help: 'Ex.: “Assentar o piso da cozinha até sexta-feira”. Preencha as que lembrar.' },
+      { k: 'x_causas', type: 'chipsN', label: 'Quando alguma entrega atrasou, o que impediu o trabalho?', o: ['Faltou equipe', 'Faltou material', 'Faltou projeto ou definição técnica', 'Faltou uma decisão minha', 'Atraso de pagamento', 'Falta de acesso à obra', 'Chuva', 'O serviço anterior não estava pronto', 'A causa não foi esclarecida', { l: 'Nenhuma entrega atrasou', none: 1 }] },
+      { k: 'x_retrab', type: 'chips1', label: 'Nos últimos 30 dias, algum serviço precisou ser desfeito ou refeito?', o: ['Não', 'Sim, e a correção já foi aceita', 'Sim, e ainda está em correção', 'Sim, e ninguém ficou responsável pela correção'] },
+      { k: 'x_retrab_txt', type: 'txt', label: 'Qual serviço? (opcional)', show: function (L) { return /^Sim/.test(L.x_retrab || ''); } },
+      { k: 'x_ociosa', type: 'chips1', label: 'Alguma equipe ficou parada ou precisou voltar porque a frente de trabalho não estava pronta?', o: ['Não', 'Sim, uma vez', 'Sim, mais de uma vez'] },
+      { k: 'x_decide', type: 'chips1', label: 'Quando aparece um problema, você sabe quem decide e até que dia ele será resolvido?', o: ['Sim, com responsável e data registrados', 'Sim, só combinado de boca', 'Não, fica sem definição'] },
+      { type: 'row', label: 'Próxima entrega importante', f: [{ k: 'x_prox_s', type: 'txt', label: 'Serviço' }, { k: 'x_prox_d', type: 'date', label: 'Data' }] },
+      { k: 'x_prox_ok', type: 'chipsN', label: 'O que já está garantido para ela começar?', o: ['Material comprado e na obra', 'Medidas conferidas', 'Equipe confirmada', 'Frente anterior concluída', 'Projeto ou definição aprovada', { l: 'Nada disso confirmado', none: 1 }] },
+      { k: 'x_sinais', type: 'chipsN', label: 'Você percebe algum destes sinais na obra?', o: [{ l: 'Trinca aumentando em viga, pilar, laje ou parede nova', risk: 1 }, 'Trinca parada em parede nova', 'Parede fora de prumo', 'Piso ou revestimento soando oco', 'Umidade em área nova', 'Fiação improvisada', 'Material sumindo ou desperdiçado', { l: 'Nenhum destes', none: 1 }] }] },
+    { t: 'Quanto foi pago e quanto foi entregue?', tag: 'Tela 3 de 5', hint: 'Escolha o que quer conferir. Todos os valores desta tela devem ser do mesmo conjunto.', f: [
+      { k: 'x_escopo', type: 'chips1', label: 'O que você quer conferir?', req: 1, o: ['A obra inteira', 'A empreitada principal', 'Um prestador específico'] },
+      { k: 'x_prestador', type: 'txt', label: 'Qual prestador ou serviço?', show: function (L) { return L.x_escopo === 'Um prestador específico'; } },
+      { k: 'x_ref', type: 'date', label: 'Data de referência dos valores', def: function () { return iso(TODAY); } },
+      { k: 'x_valor', type: 'money', label: 'Valor combinado para esse conjunto', ns: 'Não sei' },
+      { k: 'x_valor_or', type: 'sel', label: 'De onde vem esse valor?', o: ['Contrato', 'Proposta', 'Orçamento', 'Estimativa minha'] },
+      { type: 'row', label: 'Acréscimos e retiradas de escopo já aprovados (opcional)', f: [{ k: 'x_acres', type: 'money', label: 'Acréscimos' }, { k: 'x_retir', type: 'money', label: 'Retiradas' }] },
+      { k: 'x_discussao', type: 'money', label: 'Pedidos ainda em discussão (opcional)' },
+      { k: 'x_pago', type: 'money', label: 'Quanto já foi efetivamente pago até a data, com sinal e parcelas?', ns: 'Não sei', req: 1 },
+      { k: 'x_metodo', type: 'chips1', label: 'Qual é o valor dos serviços já executados e aceitos?', req: 1, o: ['Tenho a última medição em reais', 'Não tenho em reais: vou marcar as etapas', 'Só tenho uma impressão geral', 'Não sei'] },
+      { k: 'x_medido', type: 'money', label: 'Valor executado e aceito na última medição', show: function (L) { return L.x_metodo === 'Tenho a última medição em reais'; } },
+      { k: 'x_etapas', type: 'stages', label: 'Como está cada etapa', show: function (L) { return L.x_metodo === 'Não tenho em reais: vou marcar as etapas'; } },
+      { k: 'x_impressao', type: 'pct', label: 'Quanto da obra você acha que está pronto? (fica registrado como impressão)', show: function (L) { return L.x_metodo === 'Só tenho uma impressão geral'; } },
+      { k: 'x_destino', type: 'money', label: 'Valor já pago que ainda não aparece como serviço, mas tem destino identificado (opcional)', help: 'Ex.: material pago e disponível na obra, peça sob encomenda documentada, adiantamento previsto em contrato.' },
+      { k: 'x_destino_med', type: 'chips1', label: 'Esse valor já entrou na medição?', o: ['Não, ainda não entrou', 'Sim, já está na medição', 'Não sei'], show: function (L) { return num(L.x_destino) > 0; } },
+      { k: 'x_deve', type: 'money', label: 'Já executado ou fornecido, mas você ainda deve pagar (opcional)', help: 'Medições aprovadas, notas e parcelas já devidas.' },
+      { type: 'row', label: 'Próximo pagamento pedido pela equipe', f: [{ k: 'x_pv', type: 'money', label: 'Valor' }, { k: 'x_pd', type: 'date', label: 'Data' }] },
+      { k: 'x_pmot', type: 'sel', label: 'O que dá direito a esse pagamento?', o: ['Serviço medido', 'Compra de material', 'Parcela por calendário', 'Adiantamento', 'Motivo ainda pouco claro'] },
+      { k: 'x_conferiu', type: 'sel', label: 'Quem conferiu a última medição?', o: ['Eu', 'Engenheiro ou arquiteto', 'O próprio empreiteiro', 'Ninguém'] },
+      { k: 'x_registro', type: 'sel', label: 'Que registro dessa medição você consegue consultar?', o: ['Planilha por etapa', 'Quantidades medidas', 'Aceite assinado', 'Fotos com descrição', 'Só informação verbal', 'Nenhum registro'] }] },
+    { t: 'O dinheiro chega até a mudança?', tag: 'Tela 4 de 5', hint: 'Aqui a referência volta a ser a obra inteira.', f: [
+      { k: 'x_ponto', type: 'chips1', label: 'O que precisa estar pronto para você considerar a obra entregue?', o: ['Pronta para morar', 'Pronta com todos os itens do projeto'] },
+      { k: 'x_depois', type: 'txt', label: 'O que ficou para depois, por decisão sua? (opcional)' },
+      { k: 'x_falta', type: 'chipsN', label: 'Quais serviços ou compras ainda faltam?', o: faltaLista },
+      { k: 'x_falta_txt', type: 'txt', label: 'Outro item que falta (opcional)' },
+      { type: 'box', html: '<b>A pergunta mais importante do Raio-X</b><p>Se amanhã outra equipe pegasse a sua obra exatamente como está, quanto ainda seria preciso gastar para chegar à entrega que você escolheu? Desconte o que já foi pago e será aproveitado. Se não souber o número exato, informe uma faixa.</p>' },
+      { type: 'row', label: 'Custo para terminar', f: [{ k: 'x_cmin', type: 'money', label: 'Mínimo' }, { k: 'x_cmax', type: 'money', label: 'Máximo' }] },
+      { k: 'x_cbase', type: 'chips1', label: 'De onde vem esse valor?', o: ['Contratado com preço definido', 'Cotado', 'Estimativa minha', 'Não sei'] },
+      { k: 'x_deve_obra', type: 'money', label: 'Quanto a obra inteira já deve por serviço executado ou material fornecido?', help: 'Se você conferiu a obra inteira na tela anterior, este valor já vem preenchido. Ele é somado uma única vez.', def: function () { return A.x_escopo === 'A obra inteira' ? A.x_deve : undefined; } },
+      { k: 'x_disp', type: 'money', label: 'Quanto dinheiro está disponível hoje e reservado para a obra?', ns: 'Prefiro não informar', help: 'Não pedimos extrato, CPF nem dados bancários.' },
+      { type: 'row', label: 'Recursos próprios já programados', f: [{ k: 'x_ep', type: 'money', label: 'Valor' }, { k: 'x_epd', type: 'date', label: 'Quando entra' }] },
+      { type: 'row', label: 'Financiamento aprovado a liberar', f: [{ k: 'x_ef', type: 'money', label: 'Valor' }, { k: 'x_efd', type: 'date', label: 'Quando libera' }] },
+      { k: 'x_efc', type: 'chips1', label: 'A liberação do financiamento depende de concluir alguma etapa?', o: ['Sim', 'Não'], show: function (L) { return num(L.x_ef) > 0; } },
+      { type: 'note', html: 'Uma venda esperada ou um crédito ainda em negociação ficam de fora: entram só recursos confirmados.' },
+      { k: 'x_pays', type: 'pays', label: 'Os maiores pagamentos dos próximos 30 dias', help: 'O primeiro já vem com o próximo pagamento pedido pela equipe, se você informou.' },
+      { k: 'x_surp', type: 'txt', label: 'Qual foi a última surpresa de custo? (opcional)' },
+      { type: 'row', label: '', f: [{ k: 'x_surpv', type: 'money', label: 'Quanto custou' }, { k: 'x_surpp', type: 'sel', label: 'Já foi paga?', o: ['Sim', 'Não'] }] },
+      { k: 'x_surpo', type: 'chips1', label: 'Existe outro item parecido ainda por resolver?', o: ['Sim', 'Não', 'Não sei'] }] },
+    { t: 'Quem governa a próxima decisão?', tag: 'Tela 5 de 5', next: 'Ver o Raio-X', f: [
+      { k: 'x_docs', type: 'chipsN', label: 'Se outra pessoa precisasse assumir a obra amanhã, que documentos você conseguiria entregar?', o: ['Projeto atualizado', 'Contratos', 'Orçamento atualizado', 'Comprovantes de pagamento', 'Medições', 'Lista de fornecedores', 'Lista de serviços pendentes', { l: 'Nenhum desses organizado', none: 1 }] },
+      { k: 'x_aprova', type: 'sel', label: 'Quem pode aprovar um gasto extra ou uma mudança de projeto?', o: ['Eu, sozinho', 'Eu e outra pessoa da família', 'O arquiteto', 'O empreiteiro decide e eu pago depois', 'Não está definido'] },
+      { k: 'x_aprov_reg', type: 'sel', label: 'Como essa aprovação fica registrada?', o: ['Por escrito, com valor', 'Mensagem de WhatsApp', 'Combinado de boca', 'Não fica registrada'] },
+      { type: 'row', label: 'Decisão que precisa ser tomada nos próximos sete dias', f: [{ k: 'x_dec7', type: 'txt', label: 'Qual decisão' }, { k: 'x_dec7v', type: 'money', label: 'Valor envolvido' }] },
+      { k: 'x_ajuda', type: 'chips1', label: 'Depois deste levantamento, que ajuda faria mais diferença?', req: 1, big: 1, o: ['Organizar os números por conta própria', 'Conferir uma medição antes da próxima parcela', 'Avaliar um problema técnico', 'Um plano para terminar com a equipe atual', 'Avaliar outra gestão para terminar'] }] }
+  ];
 
-  /* ---------- resultados simples ---------- */
+  /* ---------- montagem de telas ---------- */
+  function opts(o) { return (typeof o === 'function' ? o() : o).map(function (x) { return typeof x === 'string' ? { l: x } : x; }); }
+  function moneyFmt(d) { return d.replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+  function buildField(f, L, onchange) {
+    var w = el('div', { 'class': 'q' }), get = null;
+    if (f.type === 'info') { w.innerHTML = f.html; w.className = 'q stack'; return { node: w }; }
+    if (f.type === 'note') { w.innerHTML = '<p class="muted">' + f.html + '</p>'; return { node: w }; }
+    if (f.type === 'box') { w.className = 'q hl'; w.innerHTML = f.html; return { node: w }; }
+    if (f.type === 'row') {
+      w.innerHTML = f.label ? '<span class="qt">' + esc(f.label) + '</span>' : '';
+      var g = el('div', { 'class': 'grid' + (f.f.some(function (x) { return x.type === 'month'; }) ? ' wide' : '') }), subs = f.f.map(function (sf) { var b = buildField(sf, L, onchange); b.node.classList.add('sub'); g.appendChild(b.node); return b; });
+      w.appendChild(g);
+      return { node: w, subs: subs };
+    }
+    var id = 'q-' + f.k;
+    var head = f.label ? '<label class="qt" for="' + id + '">' + esc(f.label) + '</label>' : '';
+    var help = f.help ? '<p class="muted">' + esc(f.help) + '</p>' : '';
+    if (L[f.k] === undefined && f.def) { var dv = f.def(); if (dv !== undefined && dv !== null) L[f.k] = dv; }
+    var cur = L[f.k];
+    if (f.type === 'chips1' || f.type === 'chipsN') {
+      var multi = f.type === 'chipsN', sel = multi ? (Array.isArray(cur) ? cur.slice() : []) : cur;
+      w.innerHTML = (f.label ? '<span class="qt">' + esc(f.label) + '</span>' : '') + help;
+      var box = el('div', { 'class': f.big ? 'choices' : 'chips', role: 'group' });
+      if (f.label) box.setAttribute('aria-label', f.label);
+      var os = opts(f.o), btns = [];
+      os.forEach(function (o) {
+        var on = multi ? sel.indexOf(o.l) >= 0 : sel === o.l;
+        var b = el('button', { type: 'button', 'class': (f.big ? 'choice' : 'chip') + (multi ? ' sq' : '') + (o.risk ? ' risk' : ''), 'aria-pressed': on ? 'true' : 'false' }, f.big ? '<span class="tick" aria-hidden="true"></span><span>' + esc(o.l) + '</span>' : esc(o.l));
+        b.addEventListener('click', function () {
+          if (multi) {
+            var k = sel.indexOf(o.l);
+            if (k >= 0) sel.splice(k, 1); else { if (o.none) sel = []; else os.forEach(function (z) { if (z.none) { var j = sel.indexOf(z.l); if (j >= 0) sel.splice(j, 1); } }); sel.push(o.l); }
+            L[f.k] = sel.slice();
+          } else { sel = (sel === o.l && !f.req) ? undefined : o.l; L[f.k] = sel; }
+          btns.forEach(function (bb, i) { var v = os[i].l; bb.setAttribute('aria-pressed', (multi ? sel.indexOf(v) >= 0 : sel === v) ? 'true' : 'false'); });
+          onchange(f, o);
+        });
+        btns.push(b); box.appendChild(b);
+      });
+      w.appendChild(box);
+      return { node: w };
+    }
+    if (f.type === 'sel') {
+      var optHtml = function () { return '<option value="">Escolha</option>' + opts(f.o).map(function (o) { return '<option' + (L[f.k] === o.l ? ' selected' : '') + '>' + esc(o.l) + '</option>'; }).join(''); };
+      w.innerHTML = head + help + '<select id="' + id + '">' + optHtml() + '</select>';
+      var s = w.querySelector('select'); s.addEventListener('change', function () { L[f.k] = s.value || undefined; onchange(f); });
+      return { node: w, reopt: typeof f.o === 'function' ? function () { s.innerHTML = optHtml(); if (!s.value) L[f.k] = undefined; } : null };
+    }
+    if (f.type === 'txt') {
+      w.innerHTML = head + help + '<input id="' + id + '" type="text" maxlength="140" autocomplete="off">';
+      var t = w.querySelector('input'); if (cur) t.value = cur; t.addEventListener('input', function () { L[f.k] = t.value.trim() || undefined; onchange(f); });
+      return { node: w };
+    }
+    if (f.type === 'month' || f.type === 'date') {
+      w.innerHTML = head + help + '<input id="' + id + '" type="' + f.type + '"' + (f.type === 'month' ? ' placeholder="AAAA-MM"' : '') + '>';
+      var dt = w.querySelector('input'); if (cur) dt.value = cur; dt.addEventListener('input', function () { L[f.k] = dt.value || undefined; onchange(f); }); dt.addEventListener('change', function () { L[f.k] = dt.value || undefined; onchange(f); });
+      return { node: w };
+    }
+    if (f.type === 'money' || f.type === 'pct') {
+      var pct = f.type === 'pct';
+      w.innerHTML = head + help + '<div class="money"><span>' + (pct ? '%' : 'R$') + '</span><input id="' + id + '" inputmode="numeric" autocomplete="off" placeholder="' + (pct ? 'Ex.: 60' : 'Ex.: 25.000') + '"></div>' +
+        (f.ns ? '<label class="check" for="' + id + '-ns"><input type="checkbox" id="' + id + '-ns"><span>' + esc(f.ns) + '</span></label>' : '');
+      var inp = w.querySelector('#' + id), ns = w.querySelector('#' + id + '-ns');
+      if (cur === 'ns' && ns) { ns.checked = true; inp.disabled = true; } else if (num(cur) != null) inp.value = pct ? String(cur) : moneyFmt(String(Math.round(cur)));
+      inp.addEventListener('input', function () { var d = inp.value.replace(/\D/g, '').slice(0, pct ? 3 : 10); inp.value = pct ? d : moneyFmt(d); L[f.k] = d ? Math.min(pct ? 100 : 1e10, parseInt(d, 10)) : undefined; onchange(f); });
+      if (ns) ns.addEventListener('change', function () { inp.disabled = ns.checked; if (ns.checked) { inp.value = ''; L[f.k] = 'ns'; } else L[f.k] = undefined; onchange(f); });
+      return { node: w };
+    }
+    if (f.type === 'stages') {
+      var list = etapas(), st = (Array.isArray(cur) && cur.length === list.length) ? cur.slice() : list.map(function () { return 0; });
+      L[f.k] = st.slice();
+      w.innerHTML = head + '<p class="muted">Pronta conta inteira; em andamento conta metade. Cada etapa pesa conforme o custo típico dela na obra.</p>';
+      var sb = el('div', { 'class': 'stages' }), live = el('div', { 'class': 'live' }), labels = ['Pronta', 'Em andamento', 'Não começou'], vals = [1, 0.5, 0];
+      list.forEach(function (e, i) {
+        var row = el('div', { 'class': 'stage' }); row.innerHTML = '<span>' + esc(e[0]) + '</span>';
+        var seg = el('div', { 'class': 'seg', role: 'group', 'aria-label': e[0] });
+        labels.forEach(function (lb, j) {
+          var b = el('button', { type: 'button', 'aria-pressed': st[i] === vals[j] ? 'true' : 'false' }, lb);
+          b.addEventListener('click', function () { st[i] = vals[j]; L[f.k] = st.slice(); seg.querySelectorAll('button').forEach(function (x, k) { x.setAttribute('aria-pressed', k === j ? 'true' : 'false'); }); upd(); onchange(f); });
+          seg.appendChild(b);
+        });
+        row.appendChild(seg); sb.appendChild(row);
+      });
+      function upd() { var p = list.reduce(function (a, e, i) { return a + e[1] * st[i]; }, 0); live.innerHTML = '<span>Obra pronta, estimada</span><span>' + Math.round(p) + '%</span>'; }
+      w.appendChild(sb); upd(); w.appendChild(live);
+      return { node: w };
+    }
+    if (f.type === 'entregas' || f.type === 'pays') {
+      var isE = f.type === 'entregas', rows = Array.isArray(cur) ? cur.map(function (r) { return Object.assign({}, r); }) : [{}, {}, {}];
+      if (!isE && !Array.isArray(cur) && num(L.x_pv) > 0) rows[0] = { v: L.x_pv, d: L.x_pd };
+      L[f.k] = rows;
+      w.innerHTML = (f.label ? '<span class="qt">' + esc(f.label) + '</span>' : '') + help;
+      rows.forEach(function (r, i) {
+        var bx = el('div', { 'class': 'ent' });
+        if (isE) {
+          bx.innerHTML = '<span class="muted">Entrega ' + (i + 1) + '</span><input type="text" maxlength="90" placeholder="Serviço" aria-label="Serviço da entrega ' + (i + 1) + '">' +
+            '<div class="grid wide"><input type="date" aria-label="Data combinada da entrega ' + (i + 1) + '"><select aria-label="Situação da entrega ' + (i + 1) + '"><option value="">Situação hoje</option><option>Concluída e aceita</option><option>Concluída com pendência</option><option>Parcialmente feita</option><option>Não iniciada</option><option>Não conferida</option></select></div>';
+          var ins = bx.querySelectorAll('input,select');
+          ins[0].value = r.s || ''; ins[1].value = r.d || ''; ins[2].value = r.st || '';
+          ins[0].addEventListener('input', function () { r.s = ins[0].value.trim(); onchange(f); });
+          ins[1].addEventListener('change', function () { r.d = ins[1].value; onchange(f); });
+          ins[2].addEventListener('change', function () { r.st = ins[2].value; onchange(f); });
+        } else {
+          bx.innerHTML = '<span class="muted">Pagamento ' + (i + 1) + '</span><div class="grid"><div class="money"><span>R$</span><input inputmode="numeric" placeholder="Valor" aria-label="Valor do pagamento ' + (i + 1) + '"></div><input type="date" aria-label="Data do pagamento ' + (i + 1) + '"></div>';
+          var iv = bx.querySelector('.money input'), id2 = bx.querySelector('input[type=date]');
+          if (num(r.v) != null) iv.value = moneyFmt(String(Math.round(r.v))); if (r.d) id2.value = r.d;
+          iv.addEventListener('input', function () { var d = iv.value.replace(/\D/g, '').slice(0, 10); iv.value = moneyFmt(d); r.v = d ? parseInt(d, 10) : undefined; onchange(f); });
+          id2.addEventListener('change', function () { r.d = id2.value; onchange(f); });
+        }
+        w.appendChild(bx);
+      });
+      return { node: w };
+    }
+    return { node: w };
+  }
+
+  function renderTela(list, i) {
+    idx = i;
+    var t = list[i], L = A, sec = el('section', { 'class': 'card screen stack' }), total = list.length;
+    var top = door === 'obra'
+      ? '<p class="block">Raio-X da Obra em Andamento · ' + t.tag + '</p><div class="progress"><div class="bar"><i style="width:' + Math.round(100 * i / total) + '%"></i></div></div>'
+      : '<div class="progress"><span class="step">Pergunta ' + (i + 1) + ' de ' + total + '</span><div class="bar"><i style="width:' + Math.round(100 * i / total) + '%"></i></div></div>';
+    sec.innerHTML = top + '<h2>' + esc(t.t) + '</h2>' + (t.hint ? '<p class="muted">' + esc(t.hint) + '</p>' : '');
+    var form = el('div', { 'class': 'qs' }), fields = [], emer = el('div', { 'class': 'alert', hidden: '' }, '<b>Isso pode ser perigoso.</b> Mantenha as pessoas longe do local e, se houver estalos ou a trinca aumentar, ligue para os Bombeiros.<br><span class="big">193</span>');
+    function flat(fs) { fs.forEach(function (f) { if (f.type === 'row') flat(f.f); else fields.push(f); }); }
+    flat(t.f);
+    var auto = t.f.length === 1 && t.f[0].type === 'chips1', moved = false;
+    function refresh() {
+      nodes.forEach(function (n) { if (n.f.show) n.node.hidden = !n.f.show(L); });
+      var risk = (Array.isArray(L.x_sinais) && L.x_sinais.some(function (s) { return /aumentando/.test(s); }));
+      emer.hidden = !(door === 'obra' && risk);
+      var miss = fields.filter(function (f) { if (!f.req) return false; if (f.show && !f.show(L)) return false; var v = L[f.k]; return v === undefined || v === null || v === '' || (Array.isArray(v) && !v.length); });
+      next.disabled = miss.length > 0;
+      need.hidden = auto || !miss.length;
+      need.textContent = miss.length ? 'Para continuar, responda: ' + miss.map(function (f) { return (f.label || t.t).replace(/\?$/, ''); }).join('; ') + '.' : '';
+    }
+    var nodes = [], reopts = [];
+    function changed(f) {
+      if (f && f.k === 'x_tipo') reopts.forEach(function (fn) { fn(); });
+      refresh();
+      if (door === 'obra') saveDraft();
+      if (auto && f === t.f[0] && L[f.k]) setTimeout(function () { next.click(); }, 180);
+    }
+    function add(fs, parent) {
+      fs.forEach(function (f) {
+        var b = buildField(f, L, changed);
+        nodes.push({ f: f, node: b.node });
+        if (b.reopt) reopts.push(b.reopt);
+        if (b.subs) b.subs.forEach(function (sb, j) { nodes.push({ f: f.f[j], node: sb.node }); if (sb.reopt) reopts.push(sb.reopt); });
+        parent.appendChild(b.node);
+      });
+    }
+    add(t.f, form);
+    sec.appendChild(form); sec.appendChild(emer);
+    var need = el('p', { 'class': 'muted need' });
+    sec.appendChild(need);
+    var next = el('button', { type: 'button', 'class': 'btn btn-main' }, t.next || 'Continuar');
+    next.addEventListener('click', function () {
+      if (moved || next.disabled) return;
+      moved = true;
+      if (door === 'obra') saveDraft();
+      var r = t.after ? t.after() : null;
+      if (r) { finish(r); return; }
+      if (i + 1 < list.length) renderTela(list, i + 1); else finish(door === 'obra' ? '=RAIOX' : pRoute());
+    });
+    sec.appendChild(next);
+    var back = el('button', { type: 'button', 'class': 'link' }, 'Voltar');
+    back.addEventListener('click', function () { if (i === 0) { if (door === 'obra') xIntro(); else start(); } else renderTela(list, i - 1); });
+    sec.appendChild(back);
+    refresh();
+    show(sec);
+    if (door === 'obra') saveDraft();
+  }
+  function finish(code) { var c = code.slice(1); if (c === 'RAIOX') rxResult(); else result(c); }
+
+  /* ---------- Raio-X: contas ---------- */
+  function rxCalc() {
+    var r = { flags: [] };
+    var base = num(A.x_valor), Bp = base != null ? base + (num(A.x_acres) || 0) - (num(A.x_retir) || 0) : null;
+    var P = num(A.x_pago), X = null, Xl = null, E = null;
+    var regDoc = ['Planilha por etapa', 'Quantidades medidas', 'Aceite assinado'].indexOf(A.x_registro) >= 0;
+    if (A.x_metodo === 'Tenho a última medição em reais') { X = num(A.x_medido); Xl = regDoc ? 'doc' : 'est'; }
+    else if (A.x_metodo === 'Não tenho em reais: vou marcar as etapas' && Array.isArray(A.x_etapas)) {
+      var lst = etapas(); E = lst.reduce(function (a, e, i) { return a + e[1] * (A.x_etapas[i] || 0); }, 0) / 100;
+      if (Bp != null) { X = Bp * E; Xl = 'est'; }
+    }
+    var I = num(A.x_destino) || 0; if (A.x_destino_med === 'Sim, já está na medição') I = 0;
+    r.Bp = Bp; r.Bl = A.x_valor_or === 'Estimativa minha' ? 'est' : (A.x_valor_or ? 'doc' : 'est'); r.P = P; r.X = X; r.Xl = Xl; r.I = I; r.E = E;
+    r.Pl = (A.x_docs || []).indexOf('Comprovantes de pagamento') >= 0 ? 'doc' : 'est';
+    r.thr = Math.max(3000, Bp ? 0.03 * Bp : 3000);
+    if (P != null && X != null) { r.C = P - X - I; r.s1 = r.C > r.thr ? 'check' : r.C < -r.thr ? 'check' : 'ok'; } else r.s1 = 'na';
+    r.impr = A.x_metodo === 'Só tenho uma impressão geral' ? num(A.x_impressao) : null;
+    r.semReg = ['Só informação verbal', 'Nenhum registro'].indexOf(A.x_registro) >= 0 || ['O próprio empreiteiro', 'Ninguém'].indexOf(A.x_conferiu) >= 0;
+    r.pv = num(A.x_pv); r.pd = pd(A.x_pd); r.pmot = A.x_pmot;
+    r.pUnclear = r.pv > 0 && ['Adiantamento', 'Motivo ainda pouco claro'].indexOf(r.pmot) >= 0;
+    // fôlego para terminar
+    var D = num(A.x_disp), ep = num(A.x_ep) || 0, ef = num(A.x_ef) || 0, deve = num(A.x_deve_obra);
+    if (deve == null) deve = 0;
+    var cmin = num(A.x_cmin), cmax = num(A.x_cmax);
+    if (cmin == null && cmax != null) cmin = cmax; if (cmax == null && cmin != null) cmax = cmin;
+    if (cmin != null && cmin > cmax) { var tt = cmin; cmin = cmax; cmax = tt; }
+    r.D = D; r.ep = ep; r.ef = ef; r.deve = deve; r.cmin = cmin; r.cmax = cmax;
+    r.Cl = cmin == null ? 'lev' : (['Contratado com preço definido', 'Cotado'].indexOf(A.x_cbase) >= 0 ? 'doc' : 'est');
+    r.efCond = ef > 0 && A.x_efc === 'Sim';
+    if (D != null && cmin != null) {
+      r.R = D + ep + ef; r.best = r.R - (deve + cmin); r.worst = r.R - (deve + cmax);
+      r.s2 = r.best < 0 ? 'red' : r.worst < 0 ? 'check' : 'ok';
+    } else r.s2 = 'na';
+    if (A.x_escopo === 'A obra inteira' && P != null && Bp && X != null && X > 0.10 * Bp) { r.ref = P * Bp / X - P; }
+    // 30 dias
+    if (D != null) {
+      var ev = [], lim = new Date(TODAY), partial = false; lim.setDate(lim.getDate() + 30);
+      var epd = pd(A.x_epd), efd = pd(A.x_efd);
+      if (ep > 0 && epd && epd <= lim) ev.push({ d: epd, v: ep, t: 'Entrada de recursos próprios' });
+      if (ef > 0 && efd && efd <= lim) ev.push({ d: efd, v: ef, t: 'Liberação do financiamento' + (r.efCond ? ' (depende de etapa)' : '') });
+      (A.x_pays || []).forEach(function (p, i) { if (num(p.v) > 0) { var dd = pd(p.d); if (!dd) { dd = new Date(TODAY); partial = true; } if (dd <= lim) ev.push({ d: dd, v: -p.v, t: 'Pagamento ' + (i + 1) }); } });
+      ev.sort(function (a, b) { return a.d - b.d || a.v - b.v; });
+      var bal = D; r.cash = []; r.neg = null;
+      ev.forEach(function (e) { bal += e.v; r.cash.push({ d: e.d, t: e.t, v: e.v, bal: bal }); if (bal < 0 && !r.neg) r.neg = { d: e.d, falta: -bal }; });
+      r.partial = partial; r.hasPays = ev.some(function (e) { return e.v < 0; });
+      r.s3 = r.neg ? 'red' : r.hasPays ? 'ok' : 'na';
+    } else r.s3 = 'na';
+    // entregas
+    var ent = (A.x_entregas || []).filter(function (e) { return e && (e.s || e.st); });
+    r.ent = ent; r.nEnt = ent.length;
+    r.aceitas = ent.filter(function (e) { return e.st === 'Concluída e aceita'; }).length;
+    r.pend = ent.filter(function (e) { return e.st === 'Concluída com pendência' || e.st === 'Parcialmente feita'; }).length;
+    r.naoIni = ent.filter(function (e) { return e.st === 'Não iniciada'; }).length;
+    r.naoConf = ent.filter(function (e) { return e.st === 'Não conferida' || !e.st; }).length;
+    r.vencidas = ent.filter(function (e) { var dd = pd(e.d); return e.st !== 'Concluída e aceita' && dd && dd < TODAY; });
+    var cs = A.x_causas || [], euCompro = A.x_compra === 'Eu compro';
+    r.cDono = cs.filter(function (c) { return /decisão minha|Atraso de pagamento|projeto/.test(c) || (c === 'Faltou material' && euCompro); });
+    r.cEquipe = cs.filter(function (c) { return /Faltou equipe|anterior/.test(c) || (c === 'Faltou material' && !euCompro); });
+    r.cExt = cs.filter(function (c) { return /Chuva|acesso/.test(c); });
+    r.cNao = cs.indexOf('A causa não foi esclarecida') >= 0;
+    var retr = A.x_retrab === 'Sim, e ninguém ficou responsável pela correção', semDef = A.x_decide === 'Não, fica sem definição';
+    r.retr = retr; r.semDef = semDef;
+    r.s4 = !ent.length ? 'na' : (r.vencidas.length || retr || semDef || r.cNao) ? 'check' : 'ok';
+    r.prontoProx = (A.x_prox_ok || []).filter(function (x) { return x !== 'Nada disso confirmado'; }).length;
+    r.risco = (A.x_sinais || []).some(function (s) { return /aumentando/.test(s); });
+    r.sinaisTec = (A.x_sinais || []).filter(function (s) { return s !== 'Nenhum destes'; });
+    r.parada = A.x_situacao === 'Parada' || A.x_situacao === 'Em troca de prestadores';
+    // classificação
+    var checks = [];
+    if (r.s1 === 'check') checks.push('conciliar');
+    if (r.s2 === 'check') checks.push('custo');
+    if (r.s4 === 'check') checks.push('entregas');
+    if (r.semReg && P != null) checks.push('medicao');
+    if (r.pUnclear) checks.push('pagamento');
+    if (cmin != null && cmax > 1.3 * cmin) checks.push('faixa');
+    if (r.risco) checks.push('tecnico');
+    r.checks = checks;
+    if (r.s2 === 'red' || r.s3 === 'red' || r.parada) r.level = 'red';
+    else if (r.s1 === 'na' && r.s2 === 'na') r.level = 'na';
+    else if (checks.length) r.level = 'check';
+    else r.level = 'ok';
+    return r;
+  }
+
+  var LEVEL = {
+    ok: { tag: 'Acompanhamento regular', cls: 'green' },
+    check: { tag: 'Conferir antes da próxima decisão', cls: 'yellow' },
+    red: { tag: 'Replanejamento prioritário', cls: 'red' },
+    na: { tag: 'Dados insuficientes', cls: 'gray' }
+  };
+  var ST = { ok: ['green', 'Fecha'], check: ['yellow', 'Conferir'], red: ['red', 'Falta'], na: ['gray', 'Dados insuficientes'] };
+
+  function rxMain(r) {
+    var ent = A.x_ponto ? ' (' + A.x_ponto.toLowerCase() + ')' : '';
+    var s = '';
+    if (r.s2 === 'red') s = 'O ponto que merece sua atenção agora é o custo para terminar. Pelos valores que você informou, faltam ' + faixa(-r.best, -r.worst) + ' para chegar à entrega' + ent + '.';
+    else if (r.s3 === 'red') s = 'O ponto que merece sua atenção agora é o caixa dos próximos 30 dias: em ' + ddmm(r.neg.d) + ' o saldo fica negativo em ' + brl(r.neg.falta) + ', mesmo que o total chegue até o fim.';
+    else if (r.parada) s = 'A obra está ' + (A.x_situacao === 'Parada' ? 'parada' : 'em troca de prestadores') + '. Antes de qualquer novo pagamento, é preciso registrar o que foi feito, o que falta e quanto custa terminar.';
+    else if (r.level === 'na') {
+      var falt = [];
+      if (r.X == null) falt.push('uma medição por etapa');
+      if (r.cmin == null) falt.push('um custo atualizado para concluir');
+      if (r.D == null) falt.push('o valor reservado para a obra');
+      if (r.P != null) s = 'Ainda não foi possível calcular se o dinheiro chega ao fim. Você sabe quanto já pagou, mas ainda não tem ' + falt.join(' nem ') + '.';
+      else { falt.unshift('o total já pago'); s = 'Ainda não foi possível calcular se o dinheiro chega ao fim. Para isso faltam ' + falt.slice(0, -1).join(', ') + ' e ' + falt[falt.length - 1] + '.'; }
+    }
+    else if (r.s1 === 'check' && r.C > 0) s = 'O ponto que merece sua atenção agora são ' + brl(r.C) + ' pagos sem correspondência identificada no que foi entregue.';
+    else if (r.s2 === 'check') s = 'O dinheiro fecha no valor mais baixo que você estimou, mas, se o custo para terminar chegar ao mais alto, faltam ' + brl(-r.worst) + '.';
+    else if (r.s4 === 'check') s = r.s2 === 'ok' ? 'O dinheiro não é o problema principal agora: o ponto de atenção são as entregas da equipe.' : 'O ponto de atenção agora são as entregas da equipe.';
+    else if (r.level === 'check') s = 'Os números fecham, mas há pontos a conferir antes da próxima decisão.';
+    else s = 'Nos dados informados, a obra fecha: o dinheiro cobre o que falta e a próxima etapa tem responsável e data.';
+    if (r.s1 === 'check' && r.C > 0 && !/sem correspondência/.test(s)) s += ' Também há ' + brl(r.C) + ' em pagamentos cuja correspondência ainda precisa ser conferida.';
+    return s;
+  }
+
+  var CAUSA = { 'Faltou equipe': 'falta de equipe', 'Faltou material': 'falta de material', 'Faltou projeto ou definição técnica': 'falta de projeto ou definição técnica', 'Faltou uma decisão minha': 'decisão sua pendente',
+    'Atraso de pagamento': 'atraso de pagamento', 'Falta de acesso à obra': 'falta de acesso à obra', 'Chuva': 'chuva', 'O serviço anterior não estava pronto': 'serviço anterior não estava pronto' };
+  function causas(l) { return l.map(function (c) { return CAUSA[c] || c.toLowerCase(); }).join(', '); }
+  function kv(rows) { return '<table class="kv">' + rows.map(function (x) { return '<tr' + (x[2] ? ' class="' + x[2] + '"' : '') + '><td>' + x[0] + '</td><td>' + x[1] + '</td></tr>'; }).join('') + '</table>'; }
+  function pill(s, txt) { return '<span class="tag ' + ST[s][0] + '">' + esc(txt || ST[s][1]) + '</span>'; }
+
+  function rxResult() {
+    var r = rxCalc(), lv = LEVEL[r.level], sec = el('section', { 'class': 'screen stack' });
+    var top = el('div', { 'class': 'card stack' });
+    top.innerHTML = '<div class="stamp ' + lv.cls + '"><code>SCN-OBRA</code><small>Raio-X da Obra em Andamento · ' + stampTime() + '</small></div>' +
+      '<span class="tag ' + lv.cls + '">' + lv.tag + '</span><h2 class="main">' + esc(rxMain(r)) + '</h2>' +
+      (r.risco ? '<div class="alert"><b>Trinca aumentando em estrutura ou parede nova:</b> mantenha as pessoas longe e, se houver estalos ou a trinca crescer, ligue para os Bombeiros.<br><span class="big">193</span></div>' : '') +
+      '<p class="muted">Cada número traz a origem: <span class="lbl lb-doc">com base em documento</span> <span class="lbl lb-est">estimado pelo proprietário</span> <span class="lbl lb-lev">a levantar</span>. Nada aqui foi conferido pela Entre Colunas.</p>';
+    sec.appendChild(top);
+
+    // 1 · pagamentos
+    var esc1 = A.x_escopo === 'Um prestador específico' ? 'Prestador: ' + (A.x_prestador || 'informado') : A.x_escopo || 'Conjunto analisado';
+    var c1 = el('div', { 'class': 'card stack' }), rows1 = [];
+    if (r.Bp != null) rows1.push(['Valor combinado' + lab(r.Bl), brl(r.Bp)]);
+    if (r.P != null) rows1.push([(pd(A.x_ref) ? 'Pago até ' + ddmm(pd(A.x_ref)) : 'Pago até hoje') + lab(r.Pl), brl(r.P)]);
+    if (r.X != null) rows1.push(['Executado e aceito' + lab(r.Xl) + (r.E != null ? ' <span class="muted">(' + Math.round(r.E * 100) + '% pelas etapas)</span>' : ''), brl(r.X)]);
+    else rows1.push(['Executado e aceito' + lab('lev'), 'sem medição']);
+    if (r.I > 0) rows1.push(['Pago com destino identificado, fora da medição' + lab('est'), brl(r.I)]);
+    if (r.C != null) rows1.push([r.s1 === 'ok' ? 'Diferença' : r.C > 0 ? 'A conciliar com a equipe' : 'Executado além do que foi pago', brl(Math.abs(r.C)), r.s1 === 'check' ? 'hot' : 'sum']);
+    var t1 = '';
+    if (r.s1 === 'na') t1 = (r.impr != null ? 'Você estima a obra cerca de ' + r.impr + '% pronta. Essa impressão fica registrada, mas não é convertida em reais. ' : '') + 'Sem a medição, não dá para saber quanto do pagamento tem correspondência no que foi entregue. Peça a última medição: serviço por etapa, quantidade executada e valor.';
+    else if (r.C > r.thr) t1 = 'Restam ' + brl(r.C) + ' a conciliar. Peça a composição desse valor e verifique se corresponde a outra entrega, a um adiantamento ou a material.';
+    else if (r.C < -r.thr) t1 = 'O executado passa do que foi pago em ' + brl(-r.C) + '. Confira o que ainda é devido antes de combinar novos pagamentos.';
+    else t1 = 'Os pagamentos têm correspondência com o que foi entregue' + (Math.abs(r.C) >= 1 ? ' (diferença de ' + brl(Math.abs(r.C)) + ')' : '') + '.';
+    if (r.semReg && r.s1 !== 'na') t1 += ' A última medição não tem registro conferível ou foi feita por quem recebe o pagamento: vale uma conferência independente.';
+    var pnext = '';
+    if (r.pv > 0) pnext = '<div class="next"><b>Próximo pagamento pedido</b><p>' + brl(r.pv) + (r.pd ? ' em ' + ddmm(r.pd) : '') + (r.pmot ? ', referente a: ' + esc(r.pmot.toLowerCase()) : '') + '.' + (r.pUnclear || r.s1 === 'check' ? ' Antes de pagar, peça a composição do valor e confira se corresponde a serviço medido.' : '') + '</p></div>';
+    c1.innerHTML = '<div class="ihead"><p class="eyebrow">1 · Pagamento e entrega</p>' + pill(r.s1, r.s1 === 'check' ? 'Conciliar' : r.s1 === 'ok' ? 'Confere' : null) + '</div><p class="muted">' + esc(esc1) + '</p>' + kv(rows1) + '<p>' + esc(t1) + '</p>' + pnext;
+    sec.appendChild(c1);
+
+    // 2 · fôlego para terminar
+    var c2 = el('div', { 'class': 'card stack' }), rows2 = [];
+    rows2.push(['Reservado hoje' + lab(r.D != null ? 'est' : 'lev'), r.D != null ? brl(r.D) : 'não informado']);
+    if (r.ep + r.ef > 0) rows2.push(['Entradas confirmadas' + (r.efCond ? ' <span class="muted">(o financiamento depende de etapa)</span>' : '') + lab('est'), brl(r.ep + r.ef)]);
+    var deveInf = num(A.x_deve_obra) != null;
+    rows2.push(['Ainda deve por entregas anteriores' + lab(deveInf ? 'est' : 'lev'), deveInf ? brl(r.deve) : 'não informado']);
+    rows2.push(['Custo para terminar' + lab(r.Cl), r.cmin != null ? faixa(r.cmin, r.cmax) : 'a levantar']);
+    var t2 = '';
+    if (r.s2 !== 'na') {
+      if (r.s2 === 'ok') rows2.push(['Sobra', faixa(r.worst, r.best), 'sum']);
+      else if (r.s2 === 'red') rows2.push(['Falta', faixa(-r.best, -r.worst), 'hot']);
+      else rows2.push(['No custo mínimo, sobra', brl(r.best), 'sum'], ['No custo máximo, falta', brl(-r.worst), 'hot']);
+      t2 = 'São ' + brl(r.R) + ' de recursos para ' + faixa(r.deve + r.cmin, r.deve + r.cmax) + ' de compromissos e trabalho restante.' + (r.efCond ? ' A liberação do financiamento depende de uma etapa: se ela atrasar, a entrada atrasa junto.' : '') + (deveInf ? '' : ' Dívidas com a equipe ou com fornecedores não foram informadas e entraram como zero.');
+    } else {
+      t2 = r.cmin == null ? 'Falta estimar quanto custa terminar. Na próxima reunião, peça à equipe uma folha com três colunas: serviço que falta, valor que ainda será pago e data prevista. Comece pelos cinco itens mais caros.' : 'Informe quanto está reservado para a obra para calcular se o dinheiro chega até a entrega.';
+      if (r.ref != null) t2 += ' Como referência do Scanner: no ritmo de gasto até aqui, faltaria cerca de ' + brl(r.ref) + ' para terminar. Essa conta não substitui o orçamento do que falta.';
+    }
+    c2.innerHTML = '<div class="ihead"><p class="eyebrow">2 · Fôlego para terminar</p>' + pill(r.s2) + '</div><p class="muted">Obra inteira, até a entrega' + (A.x_ponto ? ' ' + esc(A.x_ponto.toLowerCase()) : '') + '.</p>' + kv(rows2) + '<p>' + esc(t2) + '</p>';
+    sec.appendChild(c2);
+
+    // 3 · 30 dias
+    var c3 = el('div', { 'class': 'card stack' }), t3 = '', rows3 = [];
+    if (r.s3 === 'na') t3 = r.D == null ? 'Informe quanto está reservado para calcular o caixa dos próximos 30 dias.' : 'Informe os maiores pagamentos dos próximos 30 dias para ver se o caixa aguenta até a próxima entrada.';
+    else {
+      rows3.push(['Hoje', brl(r.D)]);
+      r.cash.forEach(function (c) { rows3.push([ddmm(c.d) + ' · ' + esc(c.t) + ' (' + (c.v > 0 ? '+' : '') + brl(c.v) + ')', brl(c.bal), c.bal < 0 ? 'hot' : '']); });
+      t3 = r.neg ? 'Em ' + ddmm(r.neg.d) + ' o saldo pode ficar negativo em ' + brl(r.neg.falta) + '. Uma obra pode ter dinheiro suficiente no total e parar antes da próxima entrada.' : 'Com os pagamentos informados, o saldo não fica negativo nos próximos 30 dias.';
+      if (r.partial) t3 += ' Um ou mais pagamentos estão sem data e foram considerados hoje: a projeção é parcial.';
+    }
+    c3.innerHTML = '<div class="ihead"><p class="eyebrow">3 · Fôlego nos próximos 30 dias</p>' + pill(r.s3) + '</div>' + (rows3.length ? kv(rows3) : '') + '<p>' + esc(t3) + '</p>';
+    sec.appendChild(c3);
+
+    // 4 · entregas
+    var c4 = el('div', { 'class': 'card stack' }), t4 = '';
+    if (r.s4 === 'na') t4 = 'Você não informou as últimas entregas prometidas. Peça à equipe as metas da semana por escrito, com serviço e data, e confira na data.';
+    else {
+      var parts = [r.aceitas + ' aceita' + (r.aceitas === 1 ? '' : 's')];
+      if (r.pend) parts.push(r.pend + ' com pendência ou parcial'); if (r.naoIni) parts.push(r.naoIni + ' não iniciada' + (r.naoIni === 1 ? '' : 's')); if (r.naoConf) parts.push(r.naoConf + ' não conferida' + (r.naoConf === 1 ? '' : 's'));
+      t4 = 'Das ' + r.nEnt + ' entregas prometidas: ' + parts.join(', ') + '.' + (r.vencidas.length ? ' ' + r.vencidas.length + ' já ' + (r.vencidas.length === 1 ? 'passou' : 'passaram') + ' da data sem aceite.' : '');
+      if (r.cDono.length) t4 += ' Parte do atraso depende de você (' + causas(r.cDono) + '): resolver isso destrava a equipe.';
+      if (r.cEquipe.length) t4 += ' Parte aponta para a equipe (' + causas(r.cEquipe) + '): combine meta e responsável por escrito.';
+      if (r.cExt.length) t4 += ' Parte veio de fora (' + causas(r.cExt) + '): vale registrar e replanejar as datas.';
+      if (r.cNao) t4 += ' Em algum atraso a causa não foi esclarecida: pergunte antes do próximo pagamento.';
+      if (r.retr) t4 += ' Há serviço refeito sem responsável pela correção.';
+      if (r.semDef) t4 += ' Quando aparece um problema, ninguém define quem resolve e até quando.';
+    }
+    if (A.x_prox_s) t4 += ' Próxima entrega: ' + A.x_prox_s + (A.x_prox_d ? ' em ' + ddmm(pd(A.x_prox_d)) : '') + (r.prontoProx >= 3 ? ', com o principal já garantido.' : ', mas ainda falta confirmar material, medidas, equipe ou frente anterior.');
+    if (r.sinaisTec.length) t4 += ' Sinais na obra: ' + r.sinaisTec.join(', ').toLowerCase() + '.';
+    c4.innerHTML = '<div class="ihead"><p class="eyebrow">4 · Confiabilidade das entregas</p>' + pill(r.s4, r.s4 === 'check' ? 'Conferir' : r.s4 === 'ok' ? 'Em dia' : null) + '</div><p>' + esc(t4) + '</p>';
+    sec.appendChild(c4);
+
+    // próxima ação
+    var acts = [];
+    function act(p, t) { acts.push({ p: p, t: t }); }
+    if (r.s3 === 'red') act(1, 'Reorganize os pagamentos dos próximos 30 dias antes de ' + ddmm(r.neg.d) + ': negocie datas ou antecipe uma entrada confirmada.');
+    if (r.s2 === 'red') act(2, 'Antes de comprar o que falta, decida o que pode ficar para depois ou ser trocado por algo mais barato.');
+    if (r.pUnclear) act(3, 'Antes de pagar ' + brl(r.pv) + (r.pd ? ' em ' + ddmm(r.pd) : '') + ', peça a composição do valor e o serviço medido a que ele corresponde.');
+    if (r.s1 !== 'ok' || r.semReg) act(4, 'Reúna a última medição, a relação de materiais pagos e o orçamento das etapas restantes. Com esses três documentos dá para conferir os pagamentos e atualizar o custo para terminar.');
+    if (r.cmin == null) act(4, 'Na próxima reunião, peça à equipe uma folha com três colunas: serviço que falta, valor que ainda será pago e data prevista. Comece pelos cinco itens mais caros.');
+    if (r.cDono.length && r.s4 === 'check') act(5, 'Resolva o que depende de você e está travando a equipe: decisão, compra ou pagamento.');
+    if ((r.cEquipe.length || r.cNao || r.vencidas.length) && r.s4 === 'check') act(6, 'Combine por escrito uma data e um responsável para cada entrega pendente e confira na data.');
+    if ((A.x_docs || []).indexOf('Nenhum desses organizado') >= 0 || (A.x_docs || []).length < 3) act(7, 'Organize uma pasta com contrato, comprovantes e medições. É o que permite cobrar e, se for preciso, trocar de equipe sem perder o histórico.');
+    if (!acts.length) act(9, 'Mantenha a medição antes de cada pagamento e atualize o custo para terminar uma vez por mês.');
+    acts.sort(function (a, b) { return a.p - b.p; });
+    acts = acts.map(function (a) { return a.t; });
+    var dual = r.s1 === 'check' && r.C > 0 && r.s2 !== 'na';
+    var c5 = el('div', { 'class': 'card stack' });
+    c5.innerHTML = '<p class="eyebrow">Sua próxima ação</p><ol class="actions">' + acts.slice(0, 4).map(function (a) { return '<li>' + esc(a) + '</li>'; }).join('') + '</ol>' +
+      (dual ? '<p class="muted">Os ' + brl(r.C) + ' a conciliar e o que falta para terminar são indicadores diferentes. Somar um ao outro distorceria a situação.</p>' : '');
+    sec.appendChild(c5);
+
+    // convites
+    var inv = [
+      { k: 'med', t: 'Quero conferir uma medição antes da próxima parcela', d: 'Avaliação técnica delimitada, com escopo e honorários apresentados antes da visita.', s: (r.s1 === 'check' || r.pUnclear || r.semReg) ? 3 : 1, a: 'Conferir uma medição antes da próxima parcela' },
+      { k: 'plano', t: 'Quero um plano para terminar com a equipe que já está aqui', d: 'Levantamento do saldo de serviços, orçamento para terminar e sequência das próximas etapas.', s: r.s2 === 'ok' ? 2 : 3.5, a: 'Um plano para terminar com a equipe atual' },
+      { k: 'gest', t: 'Quero avaliar a Entre Colunas para assumir a gestão da conclusão', d: 'Depois de vistoria de entrada, registro da situação recebida e conferência financeira.', s: r.parada ? 4 : 1, a: 'Avaliar outra gestão para terminar' },
+      { k: 'tec', t: 'Quero que um engenheiro avalie um problema técnico na obra', d: 'Visita técnica com nota por escrito do que foi observado e do que fazer.', s: r.sinaisTec.length ? 3 : 0, a: 'Avaliar um problema técnico' }
+    ].filter(function (x) { return x.s > 0 || x.a === A.x_ajuda; });
+    inv.forEach(function (x) { if (x.a === A.x_ajuda) x.s += 5; });
+    inv.sort(function (a, b) { return b.s - a.s; });
+    var chosen = inv[0];
+    var c6 = el('div', { 'class': 'card stack' });
+    c6.innerHTML = '<p class="eyebrow">Onde a Entre Colunas entra</p><h3>Escolha o que faria mais diferença agora</h3>' + (A.x_ajuda === 'Organizar os números por conta própria' ? '<p class="muted">Você pode seguir sozinho com a próxima ação acima. Se quiser ajuda, estas são as opções.</p>' : '');
+    var invBox = el('div', { 'class': 'choices' });
+    inv.forEach(function (x, i) {
+      var b = el('button', { type: 'button', 'class': 'choice', 'aria-pressed': i === 0 ? 'true' : 'false' }, '<span class="tick" aria-hidden="true"></span><span><b>' + esc(x.t) + '</b><br><span class="muted">' + esc(x.d) + '</span></span>');
+      b.addEventListener('click', function () { chosen = x; invBox.querySelectorAll('.choice').forEach(function (z) { z.setAttribute('aria-pressed', z === b ? 'true' : 'false'); }); upd(); });
+      invBox.appendChild(b);
+    });
+    c6.appendChild(invBox);
+    sec.appendChild(c6);
+
+    var form = waForm({ send: 'Fotos da obra de hoje, o contrato ou orçamento, a última medição e a lista de pagamentos.' }, function () { return rxLines(r, chosen); });
+    sec.appendChild(form.node); tail(sec); show(sec); form.wire();
+    function upd() { form.refresh(); }
+  }
+
+  function rxLines(r, chosen) {
+    var L = ['Olá! Fiz o Raio-X da Obra em Andamento no Scanner.', 'Código: SCN-OBRA · ' + LEVEL[r.level].tag];
+    L.push('Obra: ' + (A.x_tipo || '') + ' · ' + (A.x_situacao || '') + (A.x_exec ? ' · em execução: ' + A.x_exec : ''));
+    if (A.x_contrat || A.x_compra) L.push('Contratação: ' + (A.x_contrat || '?') + ' · material: ' + (A.x_compra || '?'));
+    if (A.x_coord || A.x_confere) L.push('Coordena: ' + (A.x_coord || '?') + ' · confere antes de pagar: ' + (A.x_confere || '?'));
+    if (A.x_entrega || A.x_informa) L.push('Entrega combinada: ' + (mmaa(A.x_entrega) || '?') + ' · a equipe informa: ' + (mmaa(A.x_informa) || '?') + (A.x_motivo && A.x_motivo !== 'A data não mudou' ? ' (' + A.x_motivo.toLowerCase() + ')' : ''));
+    if (r.P != null) L.push('Pagamentos (' + (A.x_escopo || '').toLowerCase() + '): pago ' + brl(r.P) + (r.X != null ? ' · executado ' + brl(r.X) : ' · sem medição') + (r.C != null && Math.abs(r.C) > r.thr ? ' · a conciliar ' + brl(r.C) : ''));
+    if (r.s2 !== 'na') L.push('Até a entrega: recursos ' + brl(r.R) + ' · compromissos ' + faixa(r.deve + r.cmin, r.deve + r.cmax) + (r.best < 0 ? ' · faltam ' + faixa(-r.best, -r.worst) : r.worst < 0 ? ' · pode faltar até ' + brl(-r.worst) : ' · fecha'));
+    else L.push('Até a entrega: ' + (r.cmin == null ? 'custo para terminar a levantar' : 'dinheiro reservado não informado'));
+    if (r.neg) L.push('Caixa 30 dias: negativo em ' + ddmm(r.neg.d) + ' (falta ' + brl(r.neg.falta) + ')');
+    if (r.nEnt) L.push('Entregas: ' + r.aceitas + ' de ' + r.nEnt + ' aceitas' + ((A.x_causas || []).length ? ' · atrasos: ' + causas(A.x_causas) : ''));
+    if (r.pv > 0) L.push('Próximo pagamento: ' + brl(r.pv) + (r.pd ? ' em ' + ddmm(r.pd) : '') + (r.pmot ? ' (' + r.pmot.toLowerCase() + ')' : ''));
+    if (A.x_dec7) L.push('Decisão nos próximos 7 dias: ' + A.x_dec7 + (num(A.x_dec7v) > 0 ? ' (' + brl(A.x_dec7v) + ')' : ''));
+    if ((A.x_porque || []).length) L.push('Por que agora: ' + A.x_porque.join(', ').toLowerCase());
+    L.push('Quero: ' + chosen.t.replace(/^Quero /, ''));
+    return L;
+  }
+
+  /* ---------- resultados da Porta 1 e atalhos ---------- */
   var R = {
-    VERMELHO: { h: 'Atenção: seu caso pede cuidado imediato.', p: 'Os sinais que você marcou podem indicar risco. Saia do local e mantenha as pessoas longe. Se for elétrico e der para fazer com segurança, desligue o disjuntor daquele circuito. Se houver estalos, trinca aumentando ou queda de material, ligue agora para os Bombeiros.',
+    VERMELHO: { h: 'Atenção: o que você descreveu pode oferecer perigo agora.', p: 'Saia do local e mantenha as pessoas longe. Se for elétrico e der para fazer com segurança, desligue o disjuntor daquele circuito. Se houver fumaça, faíscas, estalos ou queda de material, ligue agora para os Bombeiros.',
       n: 'Segurança primeiro. Depois, se quiser, fale com a gente: no horário comercial, casos assim têm prioridade.', send: 'Fotos só se for seguro tirar.', red: true },
     DIAGNOSTICO: { h: 'Seu caso pede descobrir a causa antes de gastar com conserto.', p: 'Se pintar, trocar revestimento ou impermeabilizar sem achar a origem, o problema tende a voltar. O caminho indicado é a Visita Diagnóstica: um engenheiro vai ao imóvel, mede, fotografa e entrega por escrito o que foi observado, a causa provável quando houver evidência e o que fazer agora.',
       n: 'Visita Diagnóstica, com nota técnica por escrito. Antes de agendar, você recebe o valor e as condições por escrito.', send: '3 fotos: de longe, de perto e da parede ou do teto ao lado.' },
-    LAUDO: { h: 'Como você vai precisar mostrar isso a alguém, o caminho indicado é um laudo técnico com ART.', p: 'O laudo registra a pergunta, o método, as evidências, a conclusão possível e os seus limites, assinado por engenheiro. Antes da proposta, uma conversa curta define o que o laudo precisa responder e para quem.',
+    LAUDO: { h: 'Como você precisa de um documento para uma decisão formal, o caminho indicado é um laudo técnico com ART.', p: 'O laudo registra a pergunta, o método, as evidências, a conclusão possível e os seus limites, assinado por engenheiro. Antes da proposta, uma conversa curta define o que o laudo precisa responder e para quem. Se já existe processo com perito nomeado, o serviço é de assistência técnica, com proposta própria.',
       n: 'Conversa de 15 minutos com o engenheiro para definir o escopo do laudo.', send: '3 fotos do problema e para quem o documento vai, com a data limite, se houver.' },
-    REPARO: { h: 'Seu banheiro ou cozinha pode ser um caso de renovação sem quebradeira.', p: 'Para dizer se cabe, com preço fechado e as datas de início, de fim dos trabalhos e de volta ao uso, precisamos ver e medir o ambiente. Se aparecer vazamento ou infiltração, primeiro descobrimos a causa.',
-      n: 'Visita de medição, sem custo, de até 1 hora.', send: '3 fotos do ambiente: geral, piso e parede do box ou da bancada.' },
+    REPARO: { h: 'Seu caso parece um reparo com solução definida.', p: 'Para fechar preço e as datas de início, de fim dos trabalhos e de volta ao uso, precisamos ver e medir. Se aparecer vazamento, infiltração ou trinca ativa, primeiro descobrimos a causa.',
+      n: 'Visita de medição, sem custo, de até 1 hora.', send: '3 fotos do ambiente: geral, piso e parede.' },
     VISTORIA: { h: 'O que não estiver registrado no recebimento fica mais difícil de cobrar depois.', p: 'Fazemos a vistoria de recebimento com checklist e entregamos o relatório fotográfico com ART, pronto para enviar à construtora. São mais de 100 vistorias entregues.',
       n: 'Com a metragem e a data das chaves, você recebe o valor e dois horários.', send: 'Metragem privativa, endereço ou nome do empreendimento e a data das chaves.' },
     COMPRA: { h: 'Antes de assinar, vale ver o que não aparece na visita do corretor.', p: 'Vistoriamos o imóvel usado e entregamos por escrito o que precisa de reparo, para você negociar com informação.',
       n: 'Com a metragem e a data da assinatura, você recebe o valor e dois horários.', send: 'Metragem, endereço e a data prevista da assinatura.' },
-    PREOBRA: { h: 'Antes de começar, descubra se o projeto cabe na sua verba.', p: 'Fazemos o estudo de viabilidade ou o orçamento executivo com preços reais de mercado e o plano da obra, junto com o seu arquiteto. A maior parte dos problemas de obra nasce antes do primeiro tijolo: sem orçamento por etapa, sem cronograma e sem contrato.',
+    PREOBRA: { h: 'Antes de começar, descubra se o projeto cabe na sua verba.', p: 'Fazemos o estudo de viabilidade ou o orçamento executivo com preços reais de mercado e o plano da obra, junto com o seu arquiteto. Boa parte dos problemas de obra nasce antes do primeiro tijolo: sem orçamento por etapa, sem cronograma e sem contrato.',
       n: 'Reunião de 30 a 45 minutos com você e o seu arquiteto.', send: 'O projeto (PDF ou fotos) e o contato do seu arquiteto.' },
     SINDICO: { h: 'O síndico responde pela conservação do prédio.', p: 'Comece pelo Dossiê do Prédio, gratuito: levantamos o que a lei e as normas pedem do seu prédio e o que precisa ser confirmado nos documentos.',
       n: 'Dossiê do Prédio gratuito e uma conversa com o engenheiro.', send: 'Nome e endereço do condomínio e o número de unidades.' }
   };
-  var PLABEL = { p_tipo: 'Imóvel', p_problema: 'O que está acontecendo', p_sinais: 'Sinais', p_tempo: 'Há quanto tempo', p_voltou: 'Já consertaram e voltou', p_terceiros: 'Preciso mostrar a alguém', p_banheiro: 'Vazamento, infiltração ou mofo no ambiente', i_tipo: 'Imóvel' };
-
-  /* ---------- estado e navegação ---------- */
-  var A = {}, hist = [], mode = null;
-  function reset() { A = {}; hist = []; mode = null; }
-  function go(id) {
-    if (id.charAt(0) === '=') { var c = id.slice(1); if (c === 'RAIOX') rxResult(); else result(c); return; }
-    hist.push(id); render(id);
-  }
-  function back() {
-    hist.pop();
-    if (!hist.length) { start(); return; }
-    render(hist[hist.length - 1]);
-  }
-  function header(id) {
-    var s = S[id];
-    if (s.b == null) {
-      var n = hist.length, total = Math.max(n, n + (id === 'p_problema' ? 4 : id === 'p_tipo' ? 3 : 1));
-      return '<div class="progress"><span class="step">Pergunta ' + n + '</span><div class="bar"><i style="width:' + Math.round(100 * (n - 1) / total) + '%"></i></div></div>';
-    }
-    var i = RX_ORDER.indexOf(id) + 1, N = RX_ORDER.length;
-    return '<p class="block">Raio-X da Obra · ' + BLOCKS[s.b] + '</p><div class="progress"><span class="step">' + i + ' de ' + N + '</span><div class="bar"><i style="width:' + Math.round(100 * (i - 1) / N) + '%"></i></div></div>';
-  }
-  function render(id) {
-    var s = S[id], sec = el('section', { 'class': 'card screen stack' });
-    sec.innerHTML = header(id) + '<h2>' + esc(s.t) + '</h2>' + (s.hint ? '<p class="muted">' + esc(s.hint) + '</p>' : '');
-    if (s.kind === 'single') single(sec, id, s);
-    else if (s.kind === 'multi') multi(sec, id, s);
-    else if (s.kind === 'money') money(sec, id, s);
-    else if (s.kind === 'stages') stages(sec, id, s);
-    var b = el('button', { type: 'button', 'class': 'link' }, 'Voltar'); b.addEventListener('click', back); sec.appendChild(b);
-    show(sec);
-  }
-  function single(sec, id, s) {
-    var list = el('div', { 'class': 'choices' });
-    s.o.forEach(function (o, i) {
-      var btn = el('button', { type: 'button', 'class': 'choice' + (o.risk ? ' risk' : ''), 'aria-pressed': A[id] === o.l ? 'true' : 'false' }, '<span class="tick" aria-hidden="true"></span><span>' + esc(o.l) + '</span>');
-      btn.addEventListener('click', function () { A[id] = o.l; A[id + '_i'] = i; go(s.go(i)); });
-      list.appendChild(btn);
-    });
-    sec.appendChild(list);
-  }
-  function multi(sec, id, s) {
-    var sel = (A[id] || []).slice(), list = el('div', { 'class': 'choices' });
-    var noneIdx = s.o.findIndex(function (o) { return o.none; });
-    var btns = s.o.map(function (o, i) {
-      var btn = el('button', { type: 'button', 'class': 'choice sq', 'aria-pressed': sel.indexOf(o.l) >= 0 ? 'true' : 'false' }, '<span class="tick" aria-hidden="true"></span><span>' + esc(o.l) + '</span>');
-      btn.addEventListener('click', function () {
-        var k = sel.indexOf(o.l);
-        if (k >= 0) sel.splice(k, 1); else { if (o.none) sel = []; else if (noneIdx >= 0) { var j = sel.indexOf(s.o[noneIdx].l); if (j >= 0) sel.splice(j, 1); } sel.push(o.l); }
-        btns.forEach(function (b2, j2) { b2.setAttribute('aria-pressed', sel.indexOf(s.o[j2].l) >= 0 ? 'true' : 'false'); });
-        next.disabled = !sel.length;
-      });
-      list.appendChild(btn); return btn;
-    });
-    sec.appendChild(list);
-    var next = el('button', { type: 'button', 'class': 'btn btn-main' }, 'Continuar');
-    next.disabled = !sel.length;
-    next.addEventListener('click', function () { A[id] = sel; go(s.go()); });
-    sec.appendChild(next);
-  }
-  function money(sec, id, s) {
-    var vals = A[id] || {}, box = el('div', { 'class': 'stack' });
-    s.f.forEach(function (f) {
-      var cur = vals[f.k], fid = 'm-' + f.k;
-      var w = el('div', { 'class': 'field' });
-      w.innerHTML = '<label for="' + fid + '">' + esc(f.l) + '</label><div class="money"><span>' + (f.unit ? 'meses' : 'R$') + '</span><input id="' + fid + '" inputmode="numeric" autocomplete="off" placeholder="' + (f.unit ? 'Ex.: 6' : 'Ex.: 250.000') + '"></div>' +
-        (f.opt ? '' : '<label class="check"><input type="checkbox" id="' + fid + '-ns"><span>Não sei</span></label>');
-      var inp = w.querySelector('input'), ns = w.querySelector('#' + fid + '-ns');
-      if (cur === 'ns') { ns.checked = true; inp.disabled = true; } else if (typeof cur === 'number') inp.value = f.unit ? String(cur) : String(cur).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-      inp.addEventListener('input', function () { var d = inp.value.replace(/\D/g, '').slice(0, f.unit ? 3 : 10); inp.value = f.unit ? d : d.replace(/\B(?=(\d{3})+(?!\d))/g, '.'); check(); });
-      if (ns) ns.addEventListener('change', function () { inp.disabled = ns.checked; if (ns.checked) inp.value = ''; check(); });
-      box.appendChild(w);
-    });
-    sec.appendChild(box);
-    var err = el('p', { 'class': 'err', hidden: '' }, 'Preencha cada campo ou marque “Não sei”.'); sec.appendChild(err);
-    var next = el('button', { type: 'button', 'class': 'btn btn-main' }, 'Continuar'); sec.appendChild(next);
-    function read() {
-      var out = {}, ok = true;
-      s.f.forEach(function (f) {
-        var inp = sec.querySelector('#m-' + f.k), ns = sec.querySelector('#m-' + f.k + '-ns'), d = inp.value.replace(/\D/g, '');
-        if (ns && ns.checked) out[f.k] = 'ns'; else if (d) out[f.k] = parseInt(d, 10); else if (f.opt) out[f.k] = null; else ok = false;
-      });
-      return ok ? out : null;
-    }
-    function check() { next.disabled = !read(); if (!next.disabled) err.hidden = true; }
-    next.addEventListener('click', function () { var v = read(); if (!v) { err.hidden = false; return; } A[id] = v; go(s.go()); });
-    check();
-  }
-  function stages(sec, id, s) {
-    var list = etapasList(), st = (A[id] && A[id].length === list.length) ? A[id].slice() : list.map(function () { return 0; });
-    var box = el('div', { 'class': 'stages' }), live = el('div', { 'class': 'live' });
-    var labels = ['Pronta', 'Em andamento', 'Não começou'], vals = [1, 0.5, 0];
-    list.forEach(function (e, i) {
-      var row = el('div', { 'class': 'stage' }); row.innerHTML = '<span>' + esc(e[0]) + '</span>';
-      var seg = el('div', { 'class': 'seg', role: 'group', 'aria-label': e[0] });
-      labels.forEach(function (lb, j) {
-        var b = el('button', { type: 'button', 'aria-pressed': st[i] === vals[j] ? 'true' : 'false' }, lb);
-        b.addEventListener('click', function () { st[i] = vals[j]; seg.querySelectorAll('button').forEach(function (x, k) { x.setAttribute('aria-pressed', k === j ? 'true' : 'false'); }); upd(); });
-        seg.appendChild(b);
-      });
-      row.appendChild(seg); box.appendChild(row);
-    });
-    function pct() { return list.reduce(function (a, e, i) { return a + e[1] * st[i]; }, 0); }
-    function upd() { live.innerHTML = '<span>Obra pronta, estimada</span><span>' + Math.round(pct()) + '%</span>'; }
-    sec.appendChild(box); upd(); sec.appendChild(live);
-    var note = el('p', { 'class': 'muted' }, 'A estimativa usa o peso típico de custo de cada etapa. A medição real é feita na obra.'); sec.appendChild(note);
-    var next = el('button', { type: 'button', 'class': 'btn btn-main' }, 'Continuar');
-    next.addEventListener('click', function () { A[id] = st; go(s.go()); });
-    sec.appendChild(next);
-  }
-
-  /* ---------- Raio-X: contas e pontuação ---------- */
-  var DIMS = [['din', 'Dinheiro', .30], ['con', 'Contratação e pagamentos', .20], ['equ', 'Equipe e execução', .20], ['pra', 'Prazo', .15], ['pla', 'Planejamento e controle', .15]];
-  function rxCompute() {
-    var pts = { din: 0, con: 0, equ: 0, pra: 0, pla: 0 }, max = { din: 0, con: 0, equ: 0, pra: 0, pla: 0 }, flags = [], crit = {};
-    var TOP = { abandono: 1, trinca: 1, adiantamento: 1, cobertura: 1 };
-    function add(dim, p, mx, flag, sev, critKey) {
-      pts[dim] += p; max[dim] += mx;
-      if (flag && p > 0) flags.push({ t: flag, p: p, sev: critKey && TOP[critKey] ? 5 : (sev || (p >= 3 ? 3 : 2)) });
-      if (critKey && p > 0) crit[critKey] = 1;
-    }
-    RX_ORDER.forEach(function (id) {
-      var s = S[id]; if (!s.dim) return;
-      if (s.kind === 'single') {
-        var i = A[id + '_i']; if (i == null) return; var o = s.o[i];
-        add(s.dim, o.pts, 3, o.flag, null, o.crit);
-      } else if (s.kind === 'multi' && id === 'rx_projetos') {
-        var sel = A[id] || [], none = sel.indexOf(s.o[4].l) >= 0, nova = !/Reforma/.test(A.rx_tipo || '');
-        var faltam = ['Arquitetônico', 'Estrutural', 'Elétrico', 'Hidrossanitário'].filter(function (x) { return sel.indexOf(x) < 0 && (nova || x !== 'Estrutural'); }), miss = faltam.length;
-        if (none) add('pla', 3, 3, 'A obra não tem projeto', 3);
-        else add('pla', Math.min(3, miss), 3, miss >= 2 ? 'Faltam projetos: ' + faltam.join(', ').toLowerCase() : (nova && sel.indexOf('Estrutural') < 0 ? 'Sem projeto estrutural' : null));
-      } else if (s.kind === 'multi' && id === 'rx_sinais') {
-        var sl = A[id] || [], tot = 0;
-        s.o.forEach(function (o) { if (sl.indexOf(o.l) >= 0 && o.pts) { tot += o.pts; if (o.flag) flags.push({ t: o.flag, p: o.pts, sev: o.pts >= 3 ? 3 : 2 }); if (o.crit) crit[o.crit] = 1; } });
-        pts.equ += Math.min(3, tot); max.equ += 3;
-      }
-    });
-    // números
-    var m = A.rx_dinheiro || {}, B = typeof m.B === 'number' ? m.B : null, P = typeof m.P === 'number' ? m.P : null, D = typeof m.D === 'number' ? m.D : null;
-    var list = etapasList(), st = A.rx_etapas || [], E = list.reduce(function (a, e, i) { return a + e[1] * (st[i] || 0); }, 0) / 100;
-    var t = A.rx_prazo || {}, M = typeof t.M === 'number' ? t.M : null, T = typeof t.T === 'number' && t.T > 0 ? t.T : null, C = typeof t.C === 'number' ? t.C : null;
-    var n = { B: B, P: P, D: D, E: E, M: M, T: T, C: C };
-    if (P == null) add('din', 2, 2, 'Você não sabe quanto já foi pago', 2); else max.din += 2;
-    if (B == null) add('din', 1, 1, 'Não existe um valor total planejado', 2); else max.din += 1;
-    if (B && P != null) {
-      n.EV = E * B; n.adv = P - n.EV; var r = n.adv / B;
-      var pa = r > 0.20 ? 3 : r > 0.10 ? 2 : r > 0.05 ? 1 : 0;
-      add('din', pa, 3, pa ? 'Você pagou cerca de ' + brl(n.adv) + ' a mais do que vale o que foi entregue' : null, pa >= 2 ? 4 : 2, pa === 3 ? 'adiantamento' : null);
-      if (E >= 0.10 && P > 0) { n.EAC = P / E; n.over = n.EAC - B; n.faltaRitmo = n.EAC - P; }
-      n.faltaMelhor = Math.max(0, B - P);      // tudo o que foi pago vira serviço e o resto custa o planejado
-      n.faltaOrc = Math.max(0, B - n.EV);      // o valor pago a mais não volta em serviço
-      if (D != null) {
-        var pc2 = 0, fl = null, ck = null;
-        if (D < n.faltaMelhor) { pc2 = 3; fl = 'O dinheiro disponível não cobre o que falta nem no melhor caso'; ck = 'cobertura'; }
-        else if (D < n.faltaOrc) { pc2 = 3; fl = 'Se o valor pago a mais não virar serviço, o dinheiro não chega até o fim'; }
-        else if (n.faltaRitmo != null && D < n.faltaRitmo) { pc2 = 2; fl = 'No ritmo atual de gasto, o dinheiro acaba antes da obra'; }
-        add('din', pc2, 3, fl, 4, ck);
-      } else max.din += 3;
-    } else { max.din += 6; }
-    if (M != null && T) {
-      var tf = Math.min(M / T, 1.5), gap = tf - E, pt = gap > 0.20 ? 3 : gap > 0.10 ? 2 : gap > 0.05 ? 1 : 0;
-      add('pra', pt, 3, pt ? 'A obra está mais atrasada do que o tempo que já passou' : null, pt >= 2 ? 3 : 2);
-      var venc = M > T && E < 0.95 ? 2 : 0; add('pra', venc, 2, venc ? 'O prazo combinado já venceu' : null, 3);
-      if (E >= 0.10) { n.projTotal = M / E; n.atraso = Math.max(0, n.projTotal - T); if (C) n.custoAtraso = C * n.atraso; }
-    } else { max.pra += 5; }
-    var health = {}, overall = 0;
-    DIMS.forEach(function (d) { var k = d[0]; health[k] = max[k] ? Math.round(100 * (1 - pts[k] / max[k])) : 100; overall += d[2] * health[k]; });
-    overall = Math.round(overall);
-    var level = overall >= 70 ? 'green' : overall >= 45 ? 'yellow' : 'red';
-    var critList = Object.keys(crit);
-    if (crit.parada && !crit.semcontrato && critList.length === 1) critList = [];
-    if (critList.length) level = 'red';
-    flags.sort(function (a, b) { return b.sev - a.sev || b.p - a.p; });
-    var seen = {}; flags = flags.filter(function (f) { if (seen[f.t]) return false; seen[f.t] = 1; return true; });
-    return { n: n, health: health, overall: overall, level: level, flags: flags, crit: crit };
-  }
-
-  function rxActions(r) {
-    var a = [], has = function (re) { return r.flags.some(function (f) { return re.test(f.t); }); };
-    if (r.crit.trinca) a.push('Trinca em parede, viga ou laje nova precisa de avaliação de um engenheiro antes de a obra continuar. Se houver estalos ou a trinca aumentar, saia do local e ligue 193.');
-    if (has(/adiantad|pede|fixo|a mais do que vale|não entregue/)) a.push('Pare de adiantar: pague só o que estiver feito e conferido. Antes de cada pagamento, liste o que foi entregue.');
-    if (has(/contrato/)) a.push('Antes do próximo pagamento, coloque no papel o que falta fazer, o preço e o prazo de cada serviço, assinado pelas duas partes.');
-    if (has(/não sabe quanto|comprovantes/)) a.push('Junte notas e comprovantes numa planilha simples: data, quem recebeu, etapa e valor. Sem isso não dá para saber quanto a obra realmente custa.');
-    if (has(/orçamento|dinheiro acaba|não cobre|não chega|valor total/)) a.push('Antes de comprar mais material, liste o que falta e quanto custa cada etapa. É isso que mostra se o dinheiro chega até o fim.');
-    if (has(/falta toda semana|não cumpre|diária|abandonou/)) a.push('Combine metas da semana por escrito e confira toda sexta. Etapa que não foi entregue não é paga.');
-    if (has(/trocada|abandonou/)) a.push('Não troque de equipe no impulso: primeiro levante o que foi feito e o que falta, para o próximo prestador não cobrar de novo pelo mesmo serviço.');
-    if (has(/cotação|compra material|regra de compra/)) a.push('Compre você, com pelo menos duas cotações, e receba o material com nota fiscal no seu nome.');
-    if (has(/financiamento/)) a.push('Concentre a equipe na etapa que libera a próxima parcela do banco.');
-    if (has(/tecnicamente|responsável técnico/)) a.push('Tenha um engenheiro ou arquiteto respondendo pela obra. Erro de estrutura e de instalação custa caro para desfazer.');
-    if (has(/projeto/)) a.push('Providencie os projetos que faltam antes das etapas que dependem deles: estrutural antes das lajes, elétrico e hidráulico antes do reboco.');
-    if (!a.length) a.push('Continue medindo antes de pagar e registrando o que foi feito toda semana. Revise o orçamento do que falta a cada mês.');
-    return a.slice(0, 5);
-  }
-
-  var LV = {
-    red: { tag: 'Risco', h: 'Sua obra está em risco: há sinais de que o dinheiro pode acabar antes da obra.' },
-    yellow: { tag: 'Atenção', h: 'Sua obra pede atenção: alguns sinais mostram que ela pode sair do controle.' },
-    green: { tag: 'Sob controle', h: 'Sua obra mostra sinais de controle. Vale manter o acompanhamento.' }
-  };
-
-  function rxResult() {
-    var r = rxCompute(), n = r.n, lv = LV[r.level];
-    var sec = el('section', { 'class': 'screen stack' });
-    var top = el('div', { 'class': 'card stack lv-' + r.level });
-    top.innerHTML = '<div class="stamp ' + r.level + '"><code>SCN-OBRA</code><small>Raio-X da Obra · ' + stampTime() + '</small></div>' +
-      '<div class="level"><div class="dial">' + r.overall + '<small>de 100</small></div><div class="stack" style="gap:6px"><span class="tag ' + r.level + '">' + lv.tag + '</span><h2>' + esc(lv.h) + '</h2></div></div>' +
-      (r.crit.trinca ? '<div class="alert"><b>Trincas em estrutura nova:</b> se houver estalos ou a trinca aumentar, saia do local e ligue para os Bombeiros.<br><span class="big">193</span></div>' : '');
-    sec.appendChild(top);
-
-    // números
-    if (n.B && n.P != null) {
-      var rows = [['Planejado para a obra toda', brl(n.B)], ['Pago até agora', brl(n.P) + ' · ' + pc(n.P / n.B)], ['Obra pronta, estimada pelas etapas', pc(n.E)], ['Valor do que foi entregue', brl(n.EV)]];
-      var hot = [];
-      if (n.adv > 0.10 * n.B) { rows.push(['Pago a mais do que foi entregue', brl(n.adv)]); hot.push(rows.length - 1); } else rows.push(['Pago a mais do que foi entregue', n.adv > 0 ? brl(n.adv) : 'nada']);
-      if (n.EAC) { rows.push(['Custo final se o ritmo de gasto continuar', brl(n.EAC)]); if (n.over > 0.10 * n.B) { rows.push(['Acima do planejado', brl(n.over) + ' · ' + pc(n.over / n.B)]); hot.push(rows.length - 1); } }
-      rows.push(['Falta pagar no melhor caso (tudo o que foi pago vira serviço)', brl(n.faltaMelhor)]);
-      if (n.adv > 0) rows.push(['Falta pagar se o valor pago a mais não virar serviço', brl(n.faltaOrc)]);
-      if (n.faltaRitmo != null) rows.push(['Falta pagar se o ritmo de gasto continuar', brl(n.faltaRitmo)]);
-      if (n.D != null) {
-        rows.push(['Disponível para terminar', brl(n.D)]);
-        var gapBest = n.faltaMelhor - n.D, need = n.faltaRitmo != null ? n.faltaRitmo : n.faltaOrc, gap = need - n.D;
-        if (gapBest > 0) { rows.push(['Faltaria mesmo no melhor caso', brl(gapBest)]); hot.push(rows.length - 1); }
-        if (gap > 0 && gap !== gapBest) { rows.push(['Faltaria se o ritmo continuar', brl(gap)]); if (gap > 0.05 * n.B) hot.push(rows.length - 1); }
-      }
-      var tb = '<table class="kv">' + rows.map(function (x, i) { return '<tr' + (hot.indexOf(i) >= 0 ? ' class="hot"' : '') + '><td>' + esc(x[0]) + '</td><td>' + esc(x[1]) + '</td></tr>'; }).join('') + '</table>';
-      var txt = 'Você já pagou ' + pc(n.P / n.B) + ' do planejado e a obra está cerca de ' + pc(n.E) + ' pronta.';
-      if (n.faltaRitmo != null && n.faltaRitmo > n.faltaMelhor + 0.02 * n.B) txt += ' Para terminar, falta pagar entre ' + brl(n.faltaMelhor) + ', se tudo o que foi pago virar serviço entregue, e ' + brl(n.faltaRitmo) + ', se o ritmo de gasto continuar igual.';
-      else txt += ' Para terminar, falta pagar cerca de ' + brl(n.faltaMelhor) + '.';
-      if (n.D != null) txt += ' Você tem ' + brl(n.D) + ' disponíveis.';
-      if (n.E < 0.10) txt += ' A obra está no começo: ainda é cedo para projetar o custo final.';
-      var c1 = el('div', { 'class': 'card stack' });
-      c1.innerHTML = '<p class="eyebrow">Os números da sua obra</p>' + (txt ? '<p class="lead">' + esc(txt) + '</p>' : '') + tb +
-        '<p class="muted">Estimativa feita com as suas respostas e com o peso típico de custo de cada etapa. A medição real é feita na obra.</p>';
-      sec.appendChild(c1);
-    }
-    if (n.M != null && n.T) {
-      var trows = [['Prazo combinado', meses(n.T)], ['Já se passaram', meses(n.M)]];
-      if (n.projTotal) { trows.push(['Término no ritmo atual', meses(n.projTotal)]); if (n.atraso > 0.5) trows.push(['Atraso estimado', meses(n.atraso)]); if (n.custoAtraso > 0) trows.push(['Custo do atraso (aluguel, juros)', brl(n.custoAtraso)]); }
-      var c2 = el('div', { 'class': 'card stack' });
-      c2.innerHTML = '<p class="eyebrow">O tempo da sua obra</p><table class="kv">' + trows.map(function (x) { return '<tr' + (/Atraso|Custo do atraso/.test(x[0]) ? ' class="hot"' : '') + '><td>' + esc(x[0]) + '</td><td>' + esc(x[1]) + '</td></tr>'; }).join('') + '</table>' +
-        (n.projTotal ? '<p class="muted">Projeção simples: mantém o ritmo dos meses que já passaram.</p>' : '');
-      sec.appendChild(c2);
-    }
-    // dimensões
-    var c3 = el('div', { 'class': 'card stack' });
-    c3.innerHTML = '<p class="eyebrow">Onde está o problema</p><div class="dims">' + DIMS.map(function (d) {
-      var h = r.health[d[0]], c = h >= 70 ? 'green' : h >= 45 ? 'yellow' : 'red';
-      return '<div class="dim ' + c + '"><b>' + esc(d[1]) + '</b><em>' + h + '/100</em><div class="bar"><i style="width:' + h + '%"></i></div></div>';
-    }).join('') + '</div>';
-    sec.appendChild(c3);
-    if (r.flags.length) {
-      var c4 = el('div', { 'class': 'card stack' });
-      c4.innerHTML = '<p class="eyebrow">Sinais de alerta encontrados</p><ul class="flags">' + r.flags.slice(0, 8).map(function (f) { return '<li' + (f.sev < 3 ? ' class="mid"' : '') + '>' + esc(f.t) + '</li>'; }).join('') + '</ul>';
-      sec.appendChild(c4);
-    }
-    var c5 = el('div', { 'class': 'card stack' });
-    c5.innerHTML = '<p class="eyebrow">O que fazer agora, mesmo sem contratar ninguém</p><ol class="actions">' + rxActions(r).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>';
-    sec.appendChild(c5);
-    var c6 = el('div', { 'class': 'card stack' });
-    c6.innerHTML = '<p class="eyebrow">Como a Entre Colunas entra no meio</p><h3>Terminar a obra antes que o dinheiro acabe</h3>' +
-      '<ol class="actions"><li><b>Levantamento:</b> medimos o que foi feito, listamos o que falta e calculamos quanto custa terminar.</li><li><b>Plano de retomada:</b> orçamento e cronograma do que falta, com prioridade para o que libera dinheiro e uso.</li><li><b>Gestão:</b> compras aprovadas por você, pagamento só do que foi medido e relatório toda semana. O dinheiro da obra continua com você.</li></ol>' +
-      '<div class="next"><b>Próximo passo</b><p>Conversa de 30 minutos com o engenheiro para olhar os seus números e ver o caminho para terminar a obra.</p></div>';
-    sec.appendChild(c6);
-    var form = waForm({ red: false, send: 'Fotos da obra de hoje, o orçamento ou contrato (se houver) e a planilha de pagamentos.' }, rxMessage(r));
-    sec.appendChild(form.node);
-    tail(sec);
-    show(sec); form.wire();
-  }
-
-  function rxMessage(r) {
-    var n = r.n, L = ['Olá! Fiz o Raio-X da Obra no Scanner.', 'Código: SCN-OBRA · Índice ' + r.overall + '/100 (' + LV[r.level].tag + ')'];
-    L.push('Obra: ' + (A.rx_tipo || '') + ' · Fase: ' + (A.rx_fase || '') + ' · ' + (A.rx_ritmo || ''));
-    if (n.B && n.P != null) L.push('Planejado: ' + brl(n.B) + ' · Pago: ' + brl(n.P) + ' · Pronta: ' + pc(n.E));
-    if (n.B && n.P != null && n.adv > 0) L.push('Pago a mais do que o entregue: ' + brl(n.adv));
-    if (n.B && n.P != null) L.push('Falta pagar: ' + (n.faltaRitmo != null && n.faltaRitmo > n.faltaMelhor + 0.02 * n.B ? 'entre ' + brl(n.faltaMelhor) + ' e ' + brl(n.faltaRitmo) : brl(n.faltaMelhor)));
-    if (n.D != null) L.push('Disponível para terminar: ' + brl(n.D));
-    if (n.M != null && n.T) L.push('Prazo: ' + meses(n.T) + ' combinados · ' + meses(n.M) + ' passados');
-    L.push('Contratação: ' + (A.rx_modelo || '') + ' · Pagamento: ' + (A.rx_pagamento || ''));
-    if (r.flags.length) L.push('Alertas: ' + r.flags.slice(0, 5).map(function (f) { return f.t; }).join('; '));
-    L.push('Como me sinto: ' + (A.rx_sentimento || ''));
-    return L;
-  }
-
-  /* ---------- resultados simples ---------- */
+  var PL = [['p_perigo', 'Perigo'], ['p_problema', 'Problema'], ['p_onde', 'Onde'], ['p_imovel', 'Imóvel'], ['p_desde', 'Há quanto tempo'], ['p_mudou', 'O que mudou'], ['p_mudou_txt', 'Detalhe'], ['p_gatilho', 'Aparece ou piora com'], ['p_tentou', 'Tentativas'], ['p_tentou_txt', 'Quem tentou'], ['p_decisao', 'Decisão'], ['i_tipo', 'Imóvel']];
   function result(code) {
-    var r = R[code], sec = el('section', { 'class': 'screen stack' });
-    var top = el('div', { 'class': 'card stack' });
+    var r = R[code], sec = el('section', { 'class': 'screen stack' }), top = el('div', { 'class': 'card stack' });
+    var extra = code === 'REPARO' && /Banheiro ou cozinha/.test(A.p_problema || '') ? '<p>Banheiro ou cozinha com cara de velho pode ser renovado sem quebradeira, com preço fechado e data para voltar a usar.</p>' : '';
+    var guard = code === 'DIAGNOSTICO' && A.p_guard ? '<p><b>Por que não o reparo direto:</b> como o problema ' + (/Aumentou/.test(A.p_mudou) ? 'aumentou' : /Voltou/.test(A.p_mudou) ? 'voltou depois de um reparo' : 'envolve trinca ou não foi resolvido antes') + ', vale descobrir a causa antes de pagar o conserto.</p>' : '';
+    var duvida = A.p_perigo === 'Não sei avaliar' && code !== 'VERMELHO' ? '<div class="alert">Na dúvida sobre segurança, mantenha as pessoas longe do local até a visita. Se surgir fumaça, faíscas, estalos ou queda de material, ligue para os Bombeiros: <b>193</b>.</div>' : '';
     top.innerHTML = '<div class="stamp' + (r.red ? ' red' : '') + '"><code>SCN-' + code + '</code><small>Protocolo do Scanner · ' + stampTime() + '</small></div>' +
-      '<h2>' + esc(r.h) + '</h2><p>' + esc(r.p) + '</p>' + (r.red ? '<div class="alert"><b>Bombeiros</b><br><span class="big">193</span></div>' : '') +
+      '<h2>' + esc(r.h) + '</h2>' + extra + '<p>' + esc(r.p) + '</p>' + guard + duvida + (r.red ? '<div class="alert"><b>Bombeiros</b><br><span class="big">193</span></div>' : '') +
       '<div class="next"><b>Próximo passo</b><p>' + esc(r.n) + '</p></div><p class="muted">Orientação inicial automática, com base nas suas respostas. Não é avaliação técnica e não substitui a vistoria.</p>';
     sec.appendChild(top);
-    var L = ['Olá! Fiz o Scanner da Obra.', 'Código: SCN-' + code];
-    ['p_problema', 'p_tipo', 'i_tipo', 'p_sinais', 'p_tempo', 'p_voltou', 'p_terceiros', 'p_banheiro', 'rx_tipo'].forEach(function (k) { if (A[k]) L.push((PLABEL[k] || 'Obra') + ': ' + A[k]); });
-    var form = waForm(r, L); sec.appendChild(form.node); tail(sec); show(sec); form.wire();
+    var lines = function () {
+      var L = ['Olá! Fiz o Scanner da Obra.', 'Código: SCN-' + code];
+      PL.forEach(function (p) { var v = A[p[0]]; if (v && (!Array.isArray(v) || v.length)) L.push(p[1] + ': ' + (Array.isArray(v) ? v.join(', ') : v)); });
+      return L;
+    };
+    var form = waForm(r, lines); sec.appendChild(form.node); tail(sec); show(sec); form.wire();
   }
 
-  function waForm(r, lines) {
+  /* ---------- WhatsApp ---------- */
+  function waForm(r, getLines) {
     var form = el('form', { 'class': 'card stack', novalidate: '' });
-    form.innerHTML = '<p class="eyebrow">' + (r.red ? 'Depois de garantir a segurança' : 'Fale com a equipe') + '</p><h2>Envie o seu caso pelo WhatsApp</h2>' +
-      '<p class="muted">A mensagem já vai com o código e as suas respostas, para ninguém precisar perguntar de novo. Atendimento de segunda a sexta, das 8h às 17h30.</p>' +
+    form.innerHTML = '<p class="eyebrow">' + (r.red ? 'Depois de garantir a segurança' : 'Fale com a equipe') + '</p><h2>Envie pelo WhatsApp</h2>' +
+      '<p class="muted">A mensagem já vai com o código e um resumo das suas respostas, para ninguém precisar perguntar de novo. Atendimento de segunda a sexta, das 8h às 17h30.</p>' +
       '<div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" autocomplete="given-name"></div>' +
       '<div class="field"><label for="f-bairro">Bairro e cidade</label><input id="f-bairro" autocomplete="address-level2" placeholder="Ex.: Setor Bueno, Goiânia"></div>' +
       '<div class="field"><label for="f-origem">Como conheceu o Scanner</label><select id="f-origem"><option value="">Prefiro não dizer</option><option>Instagram</option><option>Status do WhatsApp</option><option>Catálogo do WhatsApp</option><option>Indicação</option><option>Já sou cliente</option><option>Outro</option></select></div>' +
@@ -623,12 +854,13 @@ footer p { font-size: 13px; color: var(--muted); }
       '<a class="btn btn-wa" id="f-wa" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar pelo WhatsApp</a>' +
       '<p class="muted">O WhatsApp abre com a mensagem pronta. Ela só é enviada quando você tocar em enviar lá. <b>Para adiantar:</b> ' + esc(r.send) + '</p>' +
       '<div class="row"><button type="button" class="btn btn-line" id="f-copy">Copiar mensagem</button><p class="muted">Ou escreva para <span class="num">(62) 98170-8669</span></p></div>';
-    return { node: form, wire: function () {
+    var api = { node: form, refresh: function () { }, wire: function () {
       var nome = form.querySelector('#f-nome'), bairro = form.querySelector('#f-bairro'), origem = form.querySelector('#f-origem'), ok = form.querySelector('#f-ok');
       var wa = form.querySelector('#f-wa'), err = form.querySelector('#f-err'), copy = form.querySelector('#f-copy');
-      function msg() { var L = lines.slice(); L.push('Nome: ' + nome.value.trim()); L.push('Bairro e cidade: ' + bairro.value.trim()); if (origem.value) L.push('Conheci o Scanner por: ' + origem.value); return L.join('\n'); }
+      function msg() { var L = getLines().slice(); L.push('Nome: ' + nome.value.trim()); L.push('Bairro e cidade: ' + bairro.value.trim()); if (origem.value) L.push('Conheci o Scanner por: ' + origem.value); return L.join('\n'); }
       function valid() { return nome.value.trim().length >= 2 && bairro.value.trim().length >= 2 && ok.checked; }
       function update() { var v = valid(); wa.setAttribute('aria-disabled', v ? 'false' : 'true'); wa.href = v ? 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg()) : '#'; if (v) err.hidden = true; }
+      api.refresh = update;
       [nome, bairro, origem, ok].forEach(function (x) { x.addEventListener('input', update); x.addEventListener('change', update); });
       wa.addEventListener('click', function (e) { if (!valid()) { e.preventDefault(); err.hidden = false; } });
       form.addEventListener('submit', function (e) { e.preventDefault(); });
@@ -640,8 +872,8 @@ footer p { font-size: 13px; color: var(--muted); }
       });
       update();
     } };
+    return api;
   }
-
   function tail(sec) {
     if (ASSISTENTE_URL) {
       var ai = el('div', { 'class': 'card stack ai' });
@@ -649,46 +881,72 @@ footer p { font-size: 13px; color: var(--muted); }
         '<a class="btn btn-main" href="' + esc(ASSISTENTE_URL) + '" target="_blank" rel="noopener">Abrir o assistente</a>';
       sec.appendChild(ai);
     }
-    var again = el('button', { type: 'button', 'class': 'link' }, 'Refazer o Scanner'); again.addEventListener('click', start); sec.appendChild(again);
+    var again = el('button', { type: 'button', 'class': 'link' }, 'Refazer o Scanner'); again.addEventListener('click', function () { clearDraft(); start(); }); sec.appendChild(again);
   }
 
-  /* ---------- entrada ---------- */
-  var DOORS = { obra: 'rx_tipo', problema: 'p_problema', comecar: '=PREOBRA', imovel: 'i_tipo', predio: '=SINDICO' };
-  function wireDoors(root) { root.querySelectorAll('[data-door]').forEach(function (b) { b.addEventListener('click', function () { reset(); go(DOORS[b.getAttribute('data-door')]); }); }); }
+  /* ---------- entradas ---------- */
+  function xIntro() {
+    door = 'obra';
+    var d = loadDraft(), sec = el('section', { 'class': 'card screen stack' });
+    sec.innerHTML = '<p class="eyebrow">Raio-X da Obra em Andamento</p><h2>Antes do próximo pagamento, entenda o que já foi entregue, o que está travando a sua obra e se o dinheiro cobre o que falta até a mudança.</h2>' +
+      '<p class="lead">Pense na próxima conta que vai vencer na sua obra. Você sabe qual serviço ela paga, o que já foi entregue e quanto precisa guardar para as etapas seguintes?</p>' +
+      '<p>Se tiver à mão, use o orçamento, os últimos pagamentos e a última medição. Pode marcar “não sei”: o resultado mostra exatamente qual informação pedir à equipe.</p>' +
+      '<p class="muted">5 telas, de 10 a 15 minutos. As respostas ficam só neste aparelho até você decidir enviar pelo WhatsApp.</p>';
+    var b1 = el('button', { type: 'button', 'class': 'btn btn-main' }, d && d.A && d.A.x_tipo ? 'Continuar de onde parei' : 'Começar o Raio-X');
+    b1.addEventListener('click', function () { if (d && d.A && d.A.x_tipo) { A = d.A; renderTela(X_TELAS, Math.min(d.i || 0, X_TELAS.length - 1)); } else { A = {}; renderTela(X_TELAS, 0); } });
+    sec.appendChild(b1);
+    if (d && d.A && d.A.x_tipo) { var b2 = el('button', { type: 'button', 'class': 'btn btn-line' }, 'Começar de novo'); b2.addEventListener('click', function () { clearDraft(); A = {}; renderTela(X_TELAS, 0); }); sec.appendChild(b2); }
+    var back = el('button', { type: 'button', 'class': 'link' }, 'Voltar'); back.addEventListener('click', start); sec.appendChild(back);
+    show(sec);
+  }
+  var DOORS = {
+    problema: function () { door = 'problema'; A = {}; renderTela(P_TELAS, 0); },
+    obra: xIntro,
+    comecar: function () { A = {}; result('PREOBRA'); },
+    imovel: function () { A = {}; door = 'imovel'; var sec = el('section', { 'class': 'card screen stack' }); sec.innerHTML = '<h2>O imóvel é novo ou usado?</h2>'; var box = el('div', { 'class': 'choices' });
+      [['Novo, vou receber da construtora', 'VISTORIA'], ['Usado, vou comprar', 'COMPRA']].forEach(function (x) { var b = el('button', { type: 'button', 'class': 'choice' }, '<span class="tick" aria-hidden="true"></span><span>' + x[0] + '</span>'); b.addEventListener('click', function () { A.i_tipo = x[0]; result(x[1]); }); box.appendChild(b); });
+      sec.appendChild(box); var bk = el('button', { type: 'button', 'class': 'link' }, 'Voltar'); bk.addEventListener('click', start); sec.appendChild(bk); show(sec); },
+    predio: function () { A = {}; result('SINDICO'); }
+  };
+  function wireDoors(root) { root.querySelectorAll('[data-door]').forEach(function (b) { b.addEventListener('click', function () { DOORS[b.getAttribute('data-door')](); }); }); }
   var tpl = document.createElement('template'); tpl.content.appendChild(document.getElementById('s-inicio').cloneNode(true));
-  function start() { reset(); var intro = tpl.content.firstElementChild.cloneNode(true); show(intro); wireDoors(intro); if (location.hash === '#teste') testPanel(); }
+  function start() { door = null; A = {}; var intro = tpl.content.firstElementChild.cloneNode(true); show(intro); wireDoors(intro); if (location.hash === '#teste') testPanel(); }
 
   /* ---------- modo de teste ---------- */
-  var RX_RISCO = { rx_tipo: 0, rx_fase: 2, rx_ritmo: 1, rx_projetos: ['Arquitetônico'], rx_orcamento: 1, rx_cronograma: 1, rx_rt: 2, rx_alvara: 2, rx_semana: 1, rx_modelo: 1, rx_contrato: 1, rx_pagamento: 2, rx_adiantou: 2, rx_compra: 1, rx_recibos: 1,
-    rx_dinheiro: { B: 400000, P: 260000, D: 120000 }, rx_extras: 2, rx_financ: 0, rx_etapas: [1, 1, 0.5, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0], rx_prazo: { M: 9, T: 8, C: 2500 }, rx_data: 2,
-    rx_faltas: 2, rx_cumpre: 1, rx_mais: 2, rx_refazer: 1, rx_trocas: 1, rx_sinais: ['Fiação improvisada ou exposta', 'Material sumindo, sobrando ou desperdiçado'], rx_horas: 2, rx_sentimento: 1 };
-  var RX_OK = { rx_tipo: 1, rx_fase: 3, rx_ritmo: 0, rx_projetos: ['Arquitetônico', 'Elétrico', 'Hidrossanitário'], rx_orcamento: 0, rx_cronograma: 0, rx_rt: 0, rx_alvara: 4, rx_semana: 0, rx_modelo: 1, rx_contrato: 0, rx_pagamento: 0, rx_adiantou: 0, rx_compra: 0, rx_recibos: 0,
-    rx_dinheiro: { B: 180000, P: 95000, D: 100000 }, rx_extras: 1, rx_financ: 0, rx_etapas: [1, 1, 1, 1, 0.5, 0.5, 0, 0, 0, 0, 0, 0], rx_prazo: { M: 3, T: 6, C: null }, rx_data: 0,
-    rx_faltas: 0, rx_cumpre: 0, rx_mais: 0, rx_refazer: 0, rx_trocas: 0, rx_sinais: ['Nenhum destes'], rx_horas: 0, rx_sentimento: 0 };
-  function loadRx(p) {
-    reset();
-    RX_ORDER.forEach(function (id) {
-      var v = p[id], s = S[id];
-      if (s.kind === 'single') { A[id] = s.o[v].l; A[id + '_i'] = v; } else A[id] = v;
-    });
-    rxResult();
-  }
+  var BASE = { x_tipo: 'Construção de casa nova', x_situacao: 'Trabalhando normalmente', x_ult: 'Cobertura', x_exec: 'Instalações', x_ini: '2026-03', x_entrega: '2026-12', x_informa: '2027-02', x_motivo: 'Falta de material',
+    x_contrat: 'Empreitada só de mão de obra', x_compra: 'Eu compro', x_coord: 'Empreiteiro', x_confere: 'Eu', x_escopo: 'A obra inteira', x_ref: iso(TODAY), x_valor_or: 'Orçamento', x_ponto: 'Pronta para morar' };
+  function mk(o) { var a = {}; Object.keys(BASE).forEach(function (k) { a[k] = BASE[k]; }); Object.keys(o).forEach(function (k) { a[k] = o[k]; }); return a; }
+  var CASOS = {
+    equilibrada: mk({ x_situacao: 'Trabalhando normalmente', x_informa: '2026-12', x_motivo: 'A data não mudou', x_coord: 'Engenheiro', x_confere: 'Engenheiro', x_porque: ['Quero acompanhar melhor'],
+      x_entregas: [{ s: 'Concluir a cobertura', d: plusDays(-12), st: 'Concluída e aceita' }, { s: 'Tubulação elétrica do térreo', d: plusDays(-4), st: 'Concluída e aceita' }, { s: 'Chapisco interno', d: plusDays(6), st: 'Parcialmente feita' }],
+      x_causas: ['Nenhuma entrega atrasou'], x_retrab: 'Não', x_ociosa: 'Não', x_decide: 'Sim, com responsável e data registrados', x_prox_s: 'Reboco interno', x_prox_d: plusDays(14), x_prox_ok: ['Material comprado e na obra', 'Equipe confirmada', 'Frente anterior concluída'], x_sinais: ['Nenhum destes'],
+      x_valor: 600000, x_pago: 300000, x_metodo: 'Tenho a última medição em reais', x_medido: 250000, x_destino: 50000, x_destino_med: 'Não, ainda não entrou', x_deve: 10000, x_pv: 18000, x_pd: plusDays(10), x_pmot: 'Serviço medido', x_conferiu: 'Engenheiro ou arquiteto', x_registro: 'Planilha por etapa',
+      x_cmin: 280000, x_cmax: 300000, x_cbase: 'Cotado', x_deve_obra: 10000, x_disp: 180000, x_ep: 60000, x_epd: plusDays(20), x_ef: 100000, x_efd: plusDays(45), x_efc: 'Sim', x_pays: [{ v: 18000, d: plusDays(10) }, { v: 25000, d: plusDays(20) }, {}],
+      x_docs: ['Projeto atualizado', 'Contratos', 'Orçamento atualizado', 'Comprovantes de pagamento', 'Medições'], x_aprova: 'Eu, sozinho', x_aprov_reg: 'Por escrito, com valor', x_ajuda: 'Organizar os números por conta própria' }),
+    caixa: mk({ x_situacao: 'Trabalhando com equipe reduzida', x_porque: ['Receio de faltar dinheiro', 'Próximo pagamento alto'],
+      x_entregas: [{ s: 'Assentar o piso da cozinha', d: plusDays(-9), st: 'Concluída e aceita' }, { s: 'Instalar as portas internas', d: plusDays(-5), st: 'Não iniciada' }, { s: 'Pintura da sala', d: plusDays(-2), st: 'Parcialmente feita' }],
+      x_causas: ['Faltou material', 'A causa não foi esclarecida'], x_retrab: 'Sim, e a correção já foi aceita', x_ociosa: 'Sim, uma vez', x_decide: 'Sim, só combinado de boca', x_prox_s: 'Instalar as portas', x_prox_d: plusDays(7), x_prox_ok: ['Equipe confirmada'], x_sinais: ['Nenhum destes'],
+      x_valor: 520000, x_pago: 300000, x_metodo: 'Tenho a última medição em reais', x_medido: 250000, x_destino: 30000, x_destino_med: 'Não, ainda não entrou', x_deve: 15000, x_pv: 35000, x_pd: plusDays(5), x_pmot: 'Parcela por calendário', x_conferiu: 'Eu', x_registro: 'Planilha por etapa',
+      x_cmin: 230000, x_cmax: 230000, x_cbase: 'Estimativa minha', x_deve_obra: 15000, x_disp: 120000, x_ep: 40000, x_epd: plusDays(15), x_ef: 60000, x_efd: plusDays(40), x_efc: 'Sim', x_pays: [{ v: 35000, d: plusDays(5) }, { v: 45000, d: plusDays(12) }, { v: 30000, d: plusDays(25) }],
+      x_docs: ['Contratos', 'Comprovantes de pagamento'], x_aprova: 'Eu e outra pessoa da família', x_aprov_reg: 'Mensagem de WhatsApp', x_ajuda: 'Um plano para terminar com a equipe atual' }),
+    semmedicao: mk({ x_situacao: 'Andando e parando', x_porque: ['Atraso', 'Pedido de dinheiro extra'], x_entregas: [{}, {}, {}], x_causas: ['A causa não foi esclarecida'], x_retrab: 'Sim, e ninguém ficou responsável pela correção', x_decide: 'Não, fica sem definição', x_sinais: ['Parede fora de prumo'],
+      x_valor: 'ns', x_pago: 180000, x_metodo: 'Só tenho uma impressão geral', x_impressao: 70, x_pv: 20000, x_pd: plusDays(4), x_pmot: 'Motivo ainda pouco claro', x_conferiu: 'O próprio empreiteiro', x_registro: 'Só informação verbal',
+      x_cbase: 'Não sei', x_disp: 50000, x_pays: [{ v: 20000, d: plusDays(4) }, {}, {}], x_docs: ['Nenhum desses organizado'], x_aprova: 'Não está definido', x_aprov_reg: 'Combinado de boca', x_ajuda: 'Conferir uma medição antes da próxima parcela' })
+  };
   var TESTES = [
-    ['RAIO-X EM RISCO', 'Casa nova, R$ 400 mil planejados, R$ 260 mil pagos, equipe falhando', function () { loadRx(RX_RISCO); }],
-    ['RAIO-X SOB CONTROLE', 'Reforma de casa com orçamento, contrato e medição', function () { loadRx(RX_OK); }],
-    ['VERMELHO', 'Problema → Trinca → Casa → Trinca aumentando', function () { reset(); A.p_problema = 'Trinca ou rachadura'; A.p_tipo = 'Casa'; A.p_sinais = S.p_sinais.o[0].l; result('VERMELHO'); }],
-    ['DIAGNOSTICO', 'Problema → Infiltração → Apartamento → Nenhum → 1 a 6 meses → Sim → Não', function () { reset(); A.p_problema = 'Infiltração, mofo ou umidade'; A.p_tipo = 'Apartamento'; A.p_sinais = 'Nenhum destes'; A.p_tempo = '1 a 6 meses'; A.p_voltou = 'Sim'; A.p_terceiros = 'Não'; result('DIAGNOSTICO'); }],
-    ['LAUDO', 'Problema → Vazamento → Casa → Nenhum → Mais de 6 meses → Sim → Sim', function () { reset(); A.p_problema = 'Vazamento'; A.p_tipo = 'Casa'; A.p_sinais = 'Nenhum destes'; A.p_tempo = 'Mais de 6 meses'; A.p_voltou = 'Sim'; A.p_terceiros = 'Sim'; result('LAUDO'); }],
-    ['REPARO', 'Problema → Banheiro velho → Apartamento → Não', function () { reset(); A.p_problema = 'Banheiro ou cozinha velhos, quero renovar'; A.p_tipo = 'Apartamento'; A.p_banheiro = 'Não'; result('REPARO'); }],
-    ['VISTORIA', 'Vou receber ou comprar → Novo', function () { reset(); A.i_tipo = 'Novo, vou receber da construtora'; result('VISTORIA'); }],
-    ['COMPRA', 'Vou receber ou comprar → Usado', function () { reset(); A.i_tipo = 'Usado, vou comprar'; result('COMPRA'); }],
-    ['PREOBRA', 'Vou começar uma obra', function () { reset(); result('PREOBRA'); }],
-    ['SINDICO', 'Cuido de um prédio', function () { reset(); result('SINDICO'); }]
+    ['Raio-X: obra equilibrada com materiais antecipados', 'Acompanhamento regular', function () { door = 'obra'; A = CASOS.equilibrada; rxResult(); }],
+    ['Raio-X: obra com falta de caixa', 'Replanejamento prioritário', function () { door = 'obra'; A = CASOS.caixa; rxResult(); }],
+    ['Raio-X: obra sem medição confiável', 'Dados insuficientes', function () { door = 'obra'; A = CASOS.semmedicao; rxResult(); }],
+    ['Problema: perigo agora', 'SCN-VERMELHO', function () { door = 'problema'; A = { p_perigo: RISCO[0] }; result('VERMELHO'); }],
+    ['Problema: infiltração, entender a providência', 'SCN-DIAGNOSTICO', function () { door = 'problema'; A = { p_perigo: 'Nenhum sinal de perigo percebido', p_problema: 'Infiltração, mancha ou umidade', p_onde: 'Em um ambiente', p_mudou: 'Aumentou', p_tentou: 'Ninguém ainda', p_decisao: 'Entender qual providência tomar' }; result(pRoute().slice(1)); }],
+    ['Problema: documentar para a construtora', 'SCN-LAUDO', function () { door = 'problema'; A = { p_perigo: 'Nenhum sinal de perigo percebido', p_problema: 'Fissura ou trinca', p_onde: 'Em vários ambientes', p_mudou: 'Está igual', p_tentou: 'Ninguém ainda', p_decisao: 'Documentar para construtora, condomínio ou seguradora' }; result(pRoute().slice(1)); }],
+    ['Problema: banheiro para renovar, reparo definido', 'SCN-REPARO', function () { door = 'problema'; A = { p_perigo: 'Nenhum sinal de perigo percebido', p_problema: 'Banheiro ou cozinha para renovar, sem vazamento', p_onde: 'Em um ambiente', p_mudou: 'Está igual', p_tentou: 'Ninguém ainda', p_decisao: 'Contratar um reparo que já está definido' }; result(pRoute().slice(1)); }],
+    ['Problema: reparo definido, mas voltou depois de reparo', 'SCN-DIAGNOSTICO', function () { door = 'problema'; A = { p_perigo: 'Não sei avaliar', p_problema: 'Infiltração, mancha ou umidade', p_onde: 'Em um ambiente', p_mudou: 'Voltou depois de um reparo', p_tentou: 'Sim, e não resolveu', p_decisao: 'Contratar um reparo que já está definido' }; result(pRoute().slice(1)); }]
   ];
   function testPanel() {
     var t = el('section', { 'class': 'card stack test' });
-    t.innerHTML = '<p class="eyebrow">Modo de teste</p><h2>Caminhos do Scanner</h2><p class="muted">Percorra os caminhos tocando nas opções. O botão Simular pula direto para o resultado de um caso de exemplo.</p><ol>' +
-      TESTES.map(function (x, i) { return '<li>' + esc(x[1]) + ' <b>' + x[0] + '</b><button type="button" data-i="' + i + '">Simular</button></li>'; }).join('') + '</ol>';
+    t.innerHTML = '<p class="eyebrow">Modo de teste</p><h2>Casos de teste do Scanner</h2><p class="muted">Percorra os caminhos tocando nas opções. O botão Simular abre direto o resultado de um caso de exemplo.</p><ol>' +
+      TESTES.map(function (x, i) { return '<li>' + esc(x[0]) + ' → <b>' + esc(x[1]) + '</b><button type="button" data-i="' + i + '">Simular</button></li>'; }).join('') + '</ol>';
     t.querySelectorAll('button[data-i]').forEach(function (b) { b.addEventListener('click', function () { TESTES[+b.getAttribute('data-i')][2](); }); });
     app.appendChild(t);
   }
