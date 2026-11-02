@@ -93,16 +93,45 @@ def premissas():
         prem + '<div class="two"><div><h2>As três contas</h2>' + tres + '</div><div><h2>Exemplo de leitura</h2>' + conta + '</div></div>' + reg)
 
 def mapa():
+    V = '<span class="pill p-v">Vendido</span>'
+    T_ = '<span class="pill p-t">Em teste</span>'
+    S = '<span class="pill p-c">Sob consulta</span>'
+    N = '<span class="pill p-t">Estruturado, sem venda</span>'
+    O = '<span class="pill p-i">Por oportunidade</span>'
+    P = '<span class="pill p-v">Publicado</span>'
+    def g(n, nome):
+        return {'cls': 'tot', 'cells': [f'<b>{n}</b>', f'@@SPAN<b>{nome}</b>']}
     rows = [
-        ['1', 'Scanner da Obra', '0 · porta', 'Morador, comprador, síndico', 'Grátis', '<span class="pill p-t">Em teste</span>', 'Gabriela', 'Formulário + Gabriela', '30 formulários com custo por cliente pago'],
-        ['2', 'Visita Diagnóstica, Laudo e Vistoria', '1 · diagnóstico', 'Quem tem um problema sem causa clara, precisa de documento ou vai receber ou comprar imóvel', 'Visita R$ 1.200 · laudo a partir de R$ 3.000 · vistoria R$ 840 a R$ 1.950', '<span class="pill p-v">Vendido</span> laudo e vistoria · <span class="pill p-t">Em teste</span> visita', 'Aruak', 'Aruak', '5 visitas qualificadas até 30/11; último laudo reconstruído; 3 vistorias cronometradas'],
-        ['3', 'Reparo Rápido', '2 · solução', 'Morador de banheiro ocupado, sem querer quebradeira', 'Preço global fechado após medição', '<span class="pill p-c">Sob consulta</span>', 'Aruak', 'Aplicador + coordenador; Aruak libera', 'Banheiro do Alexandre com cotação, aplicador e três datas'],
-        ['4', 'Gestão de Obra', '2 · solução', 'Dono com projeto, verba e decisor, que quer previsibilidade', 'Honorário mensal por equipe (recomendado)', '<span class="pill p-c">Sob consulta</span>', 'Aruak', 'Coordenador de campo + Aruak', 'Medição Medeiros reconstruída; 1 proposta apresentada'],
-        ['5', 'Pré-obra com Arquitetos', '1 · diagnóstico', 'Cliente do arquiteto travado no investimento', 'Viabilidade R$ 2.500 · orçamento executivo R$ 5.000', '<span class="pill p-t">Em teste</span>', 'Aruak (Ivan, se aceitar)', 'Aruak + apoio técnico a definir', '2 escritórios, 1 projeto real cada, 1 estudo pago'],
-        ['6', 'Engenheiro do Condomínio', '3 · recorrência', 'Síndica do Trípoli', 'Implantação R$ 2.600 · Essencial R$ 1.600/mês · Completo R$ 2.200/mês', '<span class="pill p-t">Em teste</span>', 'Aruak', 'Aruak; Yan após a regra de passagem', 'Proposta apresentada à Carmem e decisão'],
+        g('0', 'Porta de entrada · grátis'),
+        ['', 'Problema no imóvel', 'Scanner: porta do problema', 'Grátis', P, 'F1', '30 Scanners e custo por cliente pago'],
+        ['', 'Obra em andamento', 'Scanner: Raio-X da Obra', 'Grátis', P, 'F1 e doc. próprio', 'Idem'],
+        ['', 'Prédio', 'Dossiê do Prédio', 'Grátis', T_, 'F6', 'Entregue ao Trípoli'],
+        g('1', 'Diagnóstico · ajuda o cliente a decidir'),
+        ['', 'Problema sem causa clara', 'Visita Diagnóstica', 'R$ 1.200', T_, 'F2', '5 visitas qualificadas'],
+        ['', 'Parcela para pagar', 'Conferência da Medição', 'R$ 1.800 ' + tag('P'), N, 'Doc. próprio', '3 Conferências ou 1 Plano'],
+        g('2', 'Solução em laudos e documentos · o cliente compra um documento para terceiros'),
+        ['', 'Documento técnico', 'Laudo', 'A partir de R$ 3.000', V, 'F2', 'Último laudo reconstruído'],
+        ['', 'Receber ou comprar imóvel', 'Vistoria de recebimento e de compra', 'R$ 840 a R$ 1.950', V, 'F2', '3 vistorias cronometradas'],
+        ['', 'Regularização', 'Regularização de imóveis', 'Sob cotação', O, '—', 'Fora da meta'],
+        ['', 'Disputa', 'Perícia e assistência técnica', 'Sob cotação', O, '—', 'Fora da meta'],
+        ['', 'Prefeitura', 'EIV e EIT', 'Sob cotação', O, '—', 'Fora da meta'],
+        g('3', 'Solução em obras · o cliente compra o problema resolvido no imóvel'),
+        ['', 'Antes de começar', 'Estudo de Viabilidade Financeira', 'R$ 2.500', T_, 'F5', '1 estudo pago de 2 escritórios'],
+        ['', 'Antes de começar', 'Orçamento Executivo com Plano de Obra', 'R$ 5.000', T_, 'F5', 'Idem'],
+        ['', 'Já começou', 'Plano para Terminar a Obra', 'R$ 4.500 ou R$ 5.500 ' + tag('P'), N, 'Doc. próprio', 'Idem Conferência'],
+        ['', 'Obra pequena', 'Reparo Rápido', 'Fechado após medição', S, 'F3', 'Alexandre com cotação e três datas'],
+        ['', 'Conduzir a obra', 'Gestão de Obra', 'Honorário mensal', S, 'F4', 'Medeiros reconstruída; 1 proposta'],
+        g('4', 'Recorrência · mantém o cliente'),
+        ['', 'Condomínio', 'Engenheiro do Condomínio', 'R$ 2.600 + R$ 1.600 ou 2.200/mês', T_, 'F6', 'Decisão da Carmem'],
+        ['', 'Escola', 'Engenheiro da Escola (Tip Toy)', 'R$ 1.800/mês compensado', O, 'Estrutura', 'Fora da meta'],
+        ['', 'Empresa', 'Engenheiro da Empresa', 'R$ 3.000/mês', O, 'Estrutura', 'Fora da meta'],
     ]
-    t = table(['#', 'Frente', 'Degrau', 'Para quem', 'Preço ou critério', 'Estágio', 'Quem vende', 'Quem executa hoje', 'Prova até 18/12'], rows, 'sm',
-              widths=['3%', '13%', '8%', '17%', '17%', '11%', '8%', '11%', '12%'])
-    escada = box('Como a escada funciona', '<p>O degrau 0 qualifica sem consumir o Aruak. O degrau 1 cobra o trabalho técnico que ajuda o cliente a decidir. O degrau 2 resolve (Reparo Rápido com preço fechado; Gestão por administração). O degrau 3 mantém o cliente (condomínio e empresa). Cada entrega termina com a oferta do degrau seguinte, sem vender execução ao condomínio assessorado durante o piloto.</p>')
-    fora = '<p class="small"><b>Fora das duas prioridades, só por oportunidade:</b> Engenheiro da Empresa (R$ 3.000/mês, ' + brl(EMPRESA.ph) + '/h estimados), Engenheiro da Escola (Tip Toy, R$ 1.800/mês compensados na mensalidade, sem entrada de caixa e com cerca de ' + brl(TIPTOY_TRIB) + ' de tributo a 8%), perícia, regularização e EIV. Não entram nas metas até 18/12.</p>'
-    return page('Mapa', 'As seis frentes em uma página', 'Quem compra, o que compra, em que estágio está e qual prova precisa existir até 18/12/2026.', t + escada + fora)
+    t = table(['Degrau', 'Braço', 'Produto', 'Preço', 'Estágio', 'Capítulo', 'Prova até 18/12'], rows, 'sm map',
+              widths=['5%', '16%', '23%', '17%', '14%', '8%', '17%'])
+    t = t.replace('<td>@@SPAN', '<td colspan="6">')
+    escada = box('Como a esteira funciona', '<p>O degrau 0 qualifica sem consumir o Aruak. O degrau 1 cobra o trabalho que ajuda o cliente a decidir e leva ao 2 ou ao 3. '
+        'O degrau 2 entrega um documento para terceiros (construtora, juiz, prefeitura, seguradora). O degrau 3 resolve no imóvel. O degrau 4 mantém o cliente. '
+        'Os degraus 2 e 3 são paralelos: o cliente pode entrar direto em qualquer um, e um laudo de defeito costuma levar a um reparo. Cada entrega termina com a oferta seguinte.</p>')
+    fora = ('<p class="small"><b>No mapa não é o mesmo que na meta:</b> os braços por oportunidade são atendidos quando aparecem e não entram nas metas até 18/12. '
+            'Prioridades: Reformas (degraus 1 a 3) e Condomínio. Capítulos F1 a F6 = seis frentes; Conferência e Plano estão no documento próprio. Link do Scanner ainda a liberar.</p>')
+    return page('Mapa', 'A esteira em cinco degraus', 'Itens principais e seus braços: quem compra, quanto custa, em que estágio está e qual prova precisa existir até 18/12/2026.', t + escada + fora)

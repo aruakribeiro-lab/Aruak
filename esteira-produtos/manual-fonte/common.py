@@ -194,4 +194,5 @@ h1.ct { font-size: 27pt; margin: 1mm 0 2.5mm; }
 .cprice p { margin: 1.5mm 0 0; font-size: 8.6pt; color: #d5dde0; }
 .cnext { background: #e8f2ee; border-radius: 2mm; padding: 3mm 4mm; }
 .cfoot { font-size: 7.2pt; color: #7a868c; margin-top: 3mm; }
+table.map td { padding: .9mm 1.6mm; } table.map tr.tot td { padding-top: 1.4mm; }
 """

@@ -15,11 +15,11 @@ def capa():
 <p class="lead" style="margin-top:6mm;font-size:9.5pt">Versão 1.0 · 02/11/2026 · Goiânia · circulação interna · complementa o Manual operacional das seis frentes</p></div>
 <div class="meta">
 <h2>Onde fica na esteira</h2>
-{table(['Degrau', 'O que o cliente compra', 'Preço', 'Saída natural'], [
-        ['Raio-X da Obra em Andamento (Scanner)', 'Os quatro indicadores e a classificação da obra, na hora', 'Grátis', 'Código SCN-OBRA no WhatsApp'],
-        ['<b>Conferência da Medição</b>', 'Saber se a próxima parcela corresponde ao que foi executado', brl(CM_PRECO), 'Plano para Terminar, com abatimento'],
-        ['<b>Plano para Terminar</b>', 'Saldo de serviços, orçamento para terminar, sequência até a mudança e plano de caixa', f'{brl(PT_PRECO)} ou {brl(5500)}; {brl(3900)} depois da Conferência', 'A equipe atual termina com o plano, ou a Gestão da conclusão'],
-        ['Gestão de Obra (frente 4)', 'Coordenação da conclusão por honorário mensal', 'Mensal e fixo', 'Fechamento e indicação'],
+{table(['Degrau e produto', 'O que o cliente compra', 'Preço', 'Saída natural'], [
+        ['0 · Raio-X da Obra em Andamento (Scanner)', 'Os quatro indicadores e a classificação da obra, na hora', 'Grátis', 'Código SCN-OBRA no WhatsApp'],
+        ['1 · <b>Conferência da Medição</b> (diagnóstico)', 'Saber se a próxima parcela corresponde ao que foi executado', brl(CM_PRECO), 'Plano para Terminar, com abatimento'],
+        ['3 · <b>Plano para Terminar</b> (obras, braço “já começou”)', 'Saldo de serviços, orçamento para terminar, sequência até a mudança e plano de caixa', f'{brl(PT_PRECO)} ou {brl(5500)}; {brl(3900)} depois da Conferência', 'A equipe atual termina com o plano, ou a Gestão da conclusão'],
+        ['3 · Gestão de Obra (obras, braço “conduzir a obra”)', 'Coordenação da conclusão por honorário mensal', 'Mensal e fixo', 'Fechamento e indicação'],
     ], 'sm', widths=['26%', '38%', '18%', '18%'])}
 <div class="two">
 <div><h2>Por que este é o próximo produto</h2>
