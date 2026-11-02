@@ -762,8 +762,8 @@ footer .num { white-space: nowrap; font-size: 13px; }
 
     // convites
     var inv = [
-      { k: 'med', t: 'Quero conferir uma medição antes da próxima parcela', d: 'Avaliação técnica delimitada, com escopo e honorários apresentados antes da visita.', s: (r.s1 === 'check' || r.pUnclear || r.semReg) ? 3 : 1, a: 'Conferir uma medição antes da próxima parcela' },
-      { k: 'plano', t: 'Quero um plano para terminar com a equipe que já está aqui', d: 'Levantamento do saldo de serviços, orçamento para terminar e sequência das próximas etapas.', s: r.s2 === 'ok' ? 2 : 3.5, a: 'Um plano para terminar com a equipe atual' },
+      { k: 'med', t: 'Quero conferir uma medição antes da próxima parcela', d: 'Conferência da Medição: o engenheiro confere na obra, serviço por serviço, e você recebe uma nota antes de pagar.', s: (r.s1 === 'check' || r.pUnclear || r.semReg) ? 3 : 1, a: 'Conferir uma medição antes da próxima parcela' },
+      { k: 'plano', t: 'Quero um plano para terminar com a equipe que já está aqui', d: 'Plano para Terminar a Obra: o que falta, quanto custa, em que ordem e se o dinheiro chega até a mudança.', s: r.s2 === 'ok' ? 2 : 3.5, a: 'Um plano para terminar com a equipe atual' },
       { k: 'gest', t: 'Quero avaliar a Entre Colunas para assumir a gestão da conclusão', d: 'Depois de vistoria de entrada, registro da situação recebida e conferência financeira.', s: r.parada ? 4 : 1, a: 'Avaliar outra gestão para terminar' },
       { k: 'tec', t: 'Quero que um engenheiro avalie um problema técnico na obra', d: 'Visita técnica com nota por escrito do que foi observado e do que fazer.', s: r.sinaisTec.length ? 3 : 0, a: 'Avaliar um problema técnico' }
     ].filter(function (x) { return x.s > 0 || x.a === A.x_ajuda; });
