@@ -14,7 +14,7 @@ def capa():
 <div class="band"><div class="brand">ENTRE COLUNAS · ENGENHARIA DE PREVISIBILIDADE</div>
 <h1>Documento mestre da Entre Colunas</h1>
 <p class="lead">Tudo o que foi estruturado até agora em um só lugar: o posicionamento de gestora e fiscal do cliente, a esteira do item 1 ao 6 com preços e mensagens, o Scanner e o Raio-X da Obra, o Plano para Terminar a Obra, a gestão em vez de administração e a abordagem aos arquitetos.</p>
-<p class="lead" style="margin-top:6mm;font-size:9.5pt">Versão 1.1 · 06/11/2026 · Goiânia · circulação interna</p></div>
+<p class="lead" style="margin-top:6mm;font-size:9.5pt">Versão 1.2 · 06/11/2026 · Goiânia · circulação interna</p></div>
 <div class="meta">
 {table(['Parte', 'Conteúdo'], [
         ['1 · Onde estamos', 'O que já está pronto, o que está em teste e o que falta decidir'],
@@ -24,10 +24,10 @@ def capa():
         ['5 · Parcerias na prática', 'Roteiro da conversa com arquitetos, o que a Mariana contou e o Registro de Alteração de Obra'],
         ['6 · Scanner da Obra e Raio-X', 'As portas, os quatro indicadores e a classificação'],
         ['7 · Plano para Terminar a Obra', 'O produto novo completo: oferta, ficha, margem, triagem, mensagens, campo e riscos'],
-        ['8 · Fichas operacionais detalhadas', 'O manual das seis frentes de 01/11: premissas, fichas, roteiros, modelos, margens, estrutura da empresa, quadro de ações e dúvidas'],
+        ['8 · Fichas operacionais detalhadas', 'O que é único no manual de 01/11: fichas internas, modelos, casos reais, contas, estrutura da empresa, quadro até 18/12 e dúvidas'],
         ['9 · Decisões e lançamento', 'O que falta decidir e em que ordem lançar'],
     ], 'sm', widths=['28%', '72%'])}
-<p class="small">Une este documento ao Manual operacional das seis frentes (01/11), que entra inteiro na parte 8. Onde os dois divergirem, valem as partes 1 a 7. Marcas: {tag('D')} decisão do Aruak · {tag('P')} proposta, vale até confirmar · {tag('E')} estimado, a medir.</p>
+<p class="small">Une este documento ao Manual operacional das seis frentes (01/11), do qual a parte 8 traz só o que não se repete. Onde os dois divergirem, valem as partes 1 a 7. Marcas: {tag('D')} decisão do Aruak · {tag('P')} proposta, vale até confirmar · {tag('E')} estimado, a medir.</p>
 <p class="small">{RT} · {CONTATO}</p>
 </div></section>'''
 
@@ -165,7 +165,7 @@ def scanner():
 
 def plano():
     # o Plano entra como parte 7, com a mesma capa de produto como abertura do capítulo
-    return '<div style="break-before:page"></div>' + pb.capa() + pb.comercial() + pb.ficha() + pb.dinheiro() + pb.triagem() + pb.mensagens() + pb.execucao() + pb.riscos_duvidas()
+    return pb.comercial() + pb.ficha() + pb.dinheiro() + pb.triagem() + pb.mensagens() + pb.execucao() + pb.riscos_duvidas()
 
 
 def aviso_manual():
@@ -180,13 +180,31 @@ def aviso_manual():
         ['Mapa das seis frentes', 'Mapa da esteira em seis itens', 'Parte 3'],
     ], 'sm', widths=['36%', '46%', '18%'])
     return page('Parte 8 · Fichas operacionais', 'Parte 8 · Fichas operacionais detalhadas',
-        'O manual de 01/11 entra inteiro a seguir, com as fichas internas, roteiros, modelos, contas de margem, casos, estrutura da empresa, quadro de ações e dúvidas. Ele foi escrito antes do novo posicionamento: onde divergir, vale a tabela abaixo.',
+        'Do manual de 01/11 ficou só o que não existe nas partes 1 a 7: fichas internas, modelos, casos reais, contas, estrutura da empresa, quadro até 18/12 e dúvidas. Foi escrito antes do novo posicionamento: onde divergir, vale a tabela abaixo.',
         '<h2>O que mudou desde 01/11</h2>' + t +
+        '<h2>O que entrou e o que saiu</h2>' + table(['Entrou nesta parte', 'Saiu, porque está nas partes 1 a 7 ou ficou desatualizado'], [[
+            ul(['Premissas e contas', 'Visita, Laudo e Vistoria: ficha, exemplo, agendamento, checklist e modelos', 'Reparo Rápido: ficha, caso Alexandre, condições ocultas, datas e caixa',
+                'Gestão: caso Medeiros, ordem de compra, medição, relatório semanal e fechamento financeiro', 'Pré-obra: proposta e amostra de entrega',
+                'Condomínio: proposta do Trípoli, ficha, plano de 90 dias, checklist, relatório e limites', 'Estrutura da empresa, quadro até 18/12 e dúvidas']),
+            ul(['Scanner no Google Formulários (o Scanner já está publicado)', 'Páginas comerciais antigas de Visita, Laudo, Vistoria, Reparo, Gestão e Pré-obra (as fichas da parte 3 substituem)',
+                'Gestão de Obra no modelo de executor', 'Abordagem ao arquiteto sem comissão (substituída pela parte 5)', 'Comparativo das seis frentes e mapa antigo', 'Quadro de ações da semana de 03/11, que já passou', 'Exemplo de canais, composição simulada de custos e comparação de formas de cobrar a gestão'])]],
+            'sm', widths=['50%', '50%']) +
         '<p class="small">Todos os números do manual continuam conferidos (32 de 32 valores do consolidado). As frentes seguem a ordem do manual: 1 Scanner, 2 Visita, Laudo e Vistoria, 3 Reparo Rápido, 4 Gestão de Obra, 5 Pré-obra com Arquitetos, 6 Engenheiro do Condomínio.</p>')
 
 
 def manual():
-    return aviso_manual() + s0_intro.como_usar() + s0_intro.premissas() + ''.join(m.build() for m in MANUAL)
+    m = {x.__name__: x for x in MANUAL}
+    s2, s3, s4, s5, s6, s7, s8 = m['s2_diag'], m['s3_reparo'], m['s4_gestao'], m['s5_preobra'], m['s6_condo'], m['s7_empresa'], m['s8_acoes']
+    acoes = s8.build()
+    acoes = acoes[acoes.index('<section', 10):]  # só o quadro até 18/12; a semana de 03/11 já passou
+    return (aviso_manual() + s0_intro.premissas()
+            + s2.ficha() + s2.agenda_checklist() + s2.devolutiva()
+            + s3.ficha() + s3.alexandre() + s3.oculta_datas()
+            + s4.medeiros() + s4.oc_medicao() + s4.relatorio_fechamento()
+            + s5.proposta_amostra()
+            + s6.comercial() + s6.ficha() + s6.plano90() + s6.checklist() + s6.relatorio_limites()
+            + s7.cenario() + s7.patamares() + s7.ivan_vicente()
+            + acoes + m['s9_duvidas'].build())
 
 
 def main():
