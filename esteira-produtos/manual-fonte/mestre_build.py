@@ -3,6 +3,8 @@
 from common import *
 import esteira_build as eb
 import plano_build as pb
+import importlib, s0_intro
+MANUAL = [importlib.import_module(m) for m in ['s1_scanner', 's2_diag', 's3_reparo', 's4_gestao', 's5_preobra', 's6_condo', 's7_empresa', 's8_acoes', 's9_duvidas']]
 
 SEC = 'Documento mestre'
 
@@ -12,7 +14,7 @@ def capa():
 <div class="band"><div class="brand">ENTRE COLUNAS · ENGENHARIA DE PREVISIBILIDADE</div>
 <h1>Documento mestre da Entre Colunas</h1>
 <p class="lead">Tudo o que foi estruturado até agora em um só lugar: o posicionamento de gestora e fiscal do cliente, a esteira do item 1 ao 6 com preços e mensagens, o Scanner e o Raio-X da Obra, o Plano para Terminar a Obra, a gestão em vez de administração e a abordagem aos arquitetos.</p>
-<p class="lead" style="margin-top:6mm;font-size:9.5pt">Versão 1.0 · 05/11/2026 · Goiânia · circulação interna</p></div>
+<p class="lead" style="margin-top:6mm;font-size:9.5pt">Versão 1.1 · 06/11/2026 · Goiânia · circulação interna</p></div>
 <div class="meta">
 {table(['Parte', 'Conteúdo'], [
         ['1 · Onde estamos', 'O que já está pronto, o que está em teste e o que falta decidir'],
@@ -22,9 +24,10 @@ def capa():
         ['5 · Parcerias na prática', 'Roteiro da conversa com arquitetos, o que a Mariana contou e o Registro de Alteração de Obra'],
         ['6 · Scanner da Obra e Raio-X', 'As portas, os quatro indicadores e a classificação'],
         ['7 · Plano para Terminar a Obra', 'O produto novo completo: oferta, ficha, margem, triagem, mensagens, campo e riscos'],
-        ['8 · Decisões e lançamento', 'O que falta decidir e em que ordem lançar'],
+        ['8 · Fichas operacionais detalhadas', 'O manual das seis frentes de 01/11: premissas, fichas, roteiros, modelos, margens, estrutura da empresa, quadro de ações e dúvidas'],
+        ['9 · Decisões e lançamento', 'O que falta decidir e em que ordem lançar'],
     ], 'sm', widths=['28%', '72%'])}
-<p class="small">Substitui como referência principal o Manual operacional das seis frentes (01/11), que segue valendo para as fichas operacionais detalhadas de cada frente. Marcas: {tag('D')} decisão do Aruak · {tag('P')} proposta, vale até confirmar · {tag('E')} estimado, a medir.</p>
+<p class="small">Une este documento ao Manual operacional das seis frentes (01/11), que entra inteiro na parte 8. Onde os dois divergirem, valem as partes 1 a 7. Marcas: {tag('D')} decisão do Aruak · {tag('P')} proposta, vale até confirmar · {tag('E')} estimado, a medir.</p>
 <p class="small">{RT} · {CONTATO}</p>
 </div></section>'''
 
@@ -165,9 +168,30 @@ def plano():
     return '<div style="break-before:page"></div>' + pb.capa() + pb.comercial() + pb.ficha() + pb.dinheiro() + pb.triagem() + pb.mensagens() + pb.execucao() + pb.riscos_duvidas()
 
 
+def aviso_manual():
+    t = table(['No manual de 01/11', 'O que vale agora', 'Onde ver'], [
+        ['Construtora Entre Colunas', 'Entre Colunas Engenharia de Previsibilidade', 'Parte 2'],
+        ['Seis frentes', 'Esteira em seis itens: porta, diagnóstico, laudos e documentos, obras, parcerias, recorrência', 'Parte 3'],
+        ['Gestão de Obra com compras e engenheiro responsável pelas decisões técnicas', 'Gestão e fiscalização: a Entre Colunas não executa; responde pela fiscalização', 'Partes 3 e 4'],
+        ['Scanner no Google Formulários', 'Scanner publicado como página, com Raio-X, obra nova, vistorias e jornada', 'Parte 6'],
+        ['Arquiteto que pede comissão é eliminatório; sem reserva técnica', 'Comissão de 4% sobre obra fechada e 10% a 15% em laudos e vistorias, como desconto ou pagamento ao profissional', 'Parte 2'],
+        ['Obra em andamento ia direto para a Gestão', 'Conferência da Medição e Plano para Terminar como porta de entrada', 'Partes 3 e 7'],
+        ['Perícia, regularização, EIV, escola e empresa fora da esteira', 'Braços dos itens 3 e 6, com preços propostos; PGR, LTCAT e PCMSO incluídos', 'Parte 3'],
+        ['Mapa das seis frentes', 'Mapa da esteira em seis itens', 'Parte 3'],
+    ], 'sm', widths=['36%', '46%', '18%'])
+    return page('Parte 8 · Fichas operacionais', 'Parte 8 · Fichas operacionais detalhadas',
+        'O manual de 01/11 entra inteiro a seguir, com as fichas internas, roteiros, modelos, contas de margem, casos, estrutura da empresa, quadro de ações e dúvidas. Ele foi escrito antes do novo posicionamento: onde divergir, vale a tabela abaixo.',
+        '<h2>O que mudou desde 01/11</h2>' + t +
+        '<p class="small">Todos os números do manual continuam conferidos (32 de 32 valores do consolidado). As frentes seguem a ordem do manual: 1 Scanner, 2 Visita, Laudo e Vistoria, 3 Reparo Rápido, 4 Gestão de Obra, 5 Pré-obra com Arquitetos, 6 Engenheiro do Condomínio.</p>')
+
+
+def manual():
+    return aviso_manual() + s0_intro.como_usar() + s0_intro.premissas() + ''.join(m.build() for m in MANUAL)
+
+
 def main():
     body = (capa() + onde_estamos() + eb.regras() + eb.item1() + eb.item2() + eb.item3() + eb.item4() + eb.item5() + eb.item6() + eb.tabela_rapida()
-            + gestao() + parcerias() + scanner() + plano() + eb.decisoes())
+            + gestao() + parcerias() + scanner() + plano() + manual() + eb.decisoes())
     extra = ('table.ficha thead{display:none} table.ficha{border-top:2px solid #1b6b57} table.ficha td:first-child{color:#1b6b57} '
              'table.ficha td table.t thead{display:table-header-group} table.ficha td table.t{margin:0} '
              '.client{font-size:9.3pt}.client h1.ct{font-size:24pt}.cgrid{gap:4mm 6mm}')
